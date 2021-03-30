@@ -1,0 +1,22 @@
+
+#import <Foundation/Foundation.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+
+
+FOUNDATION_EXPORT NSString *const TUPVEImageClip_TYPE_NAME;
+
+FOUNDATION_EXPORT NSString *const TUPVEImageClip_CONFIG_PATH;
+FOUNDATION_EXPORT NSString *const TUPVEImageClip_CONFIG_BLOB;
+
+FOUNDATION_EXPORT NSString *const TUPVEImageClip_CONFIG_DURATION;
+FOUNDATION_EXPORT NSString *const TUPVEImageClip_CONFIG_MAX_SIDE;
+
+
+
+@interface TUPVEImageClip : NSObject
+
+@end
+
+NS_ASSUME_NONNULL_END

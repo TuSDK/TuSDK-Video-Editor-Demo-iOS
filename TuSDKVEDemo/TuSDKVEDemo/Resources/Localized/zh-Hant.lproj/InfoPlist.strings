@@ -1,0 +1,9 @@
+"CFBundleDisplayName" = "塗圖視頻剪輯";
+"CFBundleName" = "塗圖視頻剪輯";
+"NSLocationWhenInUseUsageDescription" = "錄製需要獲取您的位置";
+"NSMicrophoneUsageDescription" = "錄音需要您的麥克風權限";
+"NSCameraUsageDescription" = "錄製視頻需要您的攝像頭權限";
+"NSPhotoLibraryAddUsageDescription" = "獲取視頻需要您的相冊權限";
+"NSPhotoLibraryUsageDescription" = "保存視頻需要您的相冊權限";
+"NSLocalNetworkUsageDescription" = "塗圖視頻剪輯將不會連接到網絡上的設備，它只會檢測與本地網關的連接";
+"NSDocumentsFolderUsageDescription" = "保存视频需要您的文档权限";
