@@ -31,6 +31,8 @@
 	<string>Saving videos requires Document Folder permission</string>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>TuSDKVideo Editor will not connect to device on your network, it only detects the connectivity with your local gateway</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>TuSDKVideo Editor will not connect to device on your network, it only detects the connectivity with your local gateway</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Recording video requires your location permission</string>
 	<key>NSMicrophoneUsageDescription</key>
