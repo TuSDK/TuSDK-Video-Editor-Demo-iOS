@@ -449,12 +449,9 @@
 		D77D6B2E2498AFEF00844D76 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D6B2D2498AFEF00844D76 /* MainTableViewCell.m */; };
 		D7DE9104256B8F1E006BF6AF /* Pods_TuSDKVEDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33CE4097643177DC798D02E /* Pods_TuSDKVEDemo.framework */; };
 		D7DE913C256B9E70006BF6AF /* grid.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D7DE9139256B9E6F006BF6AF /* grid.jpeg */; };
-		D7DE913D256B9E70006BF6AF /* flow.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DE913A256B9E6F006BF6AF /* flow.png */; };
 		D7DE913E256B9E70006BF6AF /* amazon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7DE913B256B9E6F006BF6AF /* amazon.jpg */; };
 		D7DE9143256B9E79006BF6AF /* c_re.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D7DE9140256B9E79006BF6AF /* c_re.mp4 */; };
 		D7DE9144256B9E79006BF6AF /* a_re.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D7DE9141256B9E79006BF6AF /* a_re.mp4 */; };
-		D7DE9145256B9E79006BF6AF /* lzbb.MOV in Resources */ = {isa = PBXBuildFile; fileRef = D7DE9142256B9E79006BF6AF /* lzbb.MOV */; };
-		D7DE9148256B9E84006BF6AF /* kawa1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D7DE9147256B9E84006BF6AF /* kawa1.mp3 */; };
 		F83A1B4125E7A39E008E9E10 /* TuTextOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = F83A1B4025E7A39E008E9E10 /* TuTextOverlayView.m */; };
 		F83A1B4925E891FC008E9E10 /* TuImageItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = F83A1B4825E891FC008E9E10 /* TuImageItemView.m */; };
 		F882E622260D842200D209C4 /* AnimationTextController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F882E621260D842200D209C4 /* AnimationTextController.swift */; };
@@ -953,12 +950,9 @@
 		D77D6B2D2498AFEF00844D76 /* MainTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
 		D77D6B302498CA9900844D76 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		D7DE9139256B9E6F006BF6AF /* grid.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grid.jpeg; sourceTree = "<group>"; };
-		D7DE913A256B9E6F006BF6AF /* flow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flow.png; sourceTree = "<group>"; };
 		D7DE913B256B9E6F006BF6AF /* amazon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amazon.jpg; sourceTree = "<group>"; };
 		D7DE9140256B9E79006BF6AF /* c_re.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = c_re.mp4; sourceTree = "<group>"; };
 		D7DE9141256B9E79006BF6AF /* a_re.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = a_re.mp4; sourceTree = "<group>"; };
-		D7DE9142256B9E79006BF6AF /* lzbb.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = lzbb.MOV; sourceTree = "<group>"; };
-		D7DE9147256B9E84006BF6AF /* kawa1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kawa1.mp3; sourceTree = "<group>"; };
 		F4B5EFA3392CFC41BB0B21A8 /* Pods-TuSDKVEDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuSDKVEDemo.debug.xcconfig"; path = "Target Support Files/Pods-TuSDKVEDemo/Pods-TuSDKVEDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		F83A1B3F25E7A39E008E9E10 /* TuTextOverlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuTextOverlayView.h; sourceTree = "<group>"; };
 		F83A1B4025E7A39E008E9E10 /* TuTextOverlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuTextOverlayView.m; sourceTree = "<group>"; };
@@ -1731,12 +1725,9 @@
 			isa = PBXGroup;
 			children = (
 				2ADA6E6425762F5300AFEA46 /* city_sunshine.mp3 */,
-				D7DE9147256B9E84006BF6AF /* kawa1.mp3 */,
 				D7DE9141256B9E79006BF6AF /* a_re.mp4 */,
 				D7DE9140256B9E79006BF6AF /* c_re.mp4 */,
-				D7DE9142256B9E79006BF6AF /* lzbb.MOV */,
 				D7DE913B256B9E6F006BF6AF /* amazon.jpg */,
-				D7DE913A256B9E6F006BF6AF /* flow.png */,
 				D7DE9139256B9E6F006BF6AF /* grid.jpeg */,
 				D77D6B1824989D7900844D76 /* Frameworks */,
 				D77D6ACE24937DB300844D76 /* Products */,
@@ -1898,13 +1889,11 @@
 				B8BF049025FF60040019980E /* demo_cover.jpg in Resources */,
 				B8071A4A256B999A009DD0E7 /* lipStick_3.jpg in Resources */,
 				B8071A80256B999A009DD0E7 /* 粗平棕b.jpg in Resources */,
-				D7DE9145256B9E79006BF6AF /* lzbb.MOV in Resources */,
 				B8071AF3256B999B009DD0E7 /* face_monster_ic_square@3x.png in Resources */,
 				B80719CB256B999A009DD0E7 /* lsq_filter_thumb_SkinPlain_1.jpg in Resources */,
 				B8071AD0256B999B009DD0E7 /* line_L.jpg in Resources */,
 				B80719F3256B999A009DD0E7 /* lsq_filter_thumb_Food_Peach_1.jpg in Resources */,
 				B8071A44256B999A009DD0E7 /* lipStick_7.jpg in Resources */,
-				D7DE913D256B9E70006BF6AF /* flow.png in Resources */,
 				B8071AB5256B999B009DD0E7 /* 圆眉棕a.jpg in Resources */,
 				B8071AD5256B999B009DD0E7 /* line_K.jpg in Resources */,
 				B80719A6256B999A009DD0E7 /* tusdk_sample_video.mov in Resources */,
@@ -1951,7 +1940,6 @@
 				B8071A70256B999A009DD0E7 /* Shadow_N.jpg in Resources */,
 				B8071A6E256B999A009DD0E7 /* Shadow_M.jpg in Resources */,
 				B8071A38256B999A009DD0E7 /* lsq_effect_thumb_Money.jpg in Resources */,
-				D7DE9148256B9E84006BF6AF /* kawa1.mp3 in Resources */,
 				B80719E6256B999A009DD0E7 /* lsq_filter_thumb_Sharp_Ash_1.jpg in Resources */,
 				B8071A64256B999A009DD0E7 /* Shadow_R.jpg in Resources */,
 				B80719BA256B999A009DD0E7 /* cosmeticCategories.json in Resources */,
@@ -2601,7 +2589,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20210315;
+				CURRENT_PROJECT_VERSION = 20210331;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9U2KRZU6GT;
@@ -2624,7 +2612,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = org.lasque.TuSDKEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2647,7 +2635,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20210315;
+				CURRENT_PROJECT_VERSION = 20210331;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9U2KRZU6GT;
@@ -2672,7 +2660,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = org.lasque.TuSDKEditor;

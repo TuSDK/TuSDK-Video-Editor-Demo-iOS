@@ -24,7 +24,7 @@ class SceneViewController: UITableViewController {
         label.numberOfLines = 0
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 13)
-        label.text = "TuSDK Video Editor SDK 1.0.1-\(bundleVersion)\n@2021 TUTUCLOUD.COM"
+        label.text = "TuSDK Video Editor SDK 1.0.2-\(bundleVersion)\n@2021 TUTUCLOUD.COM"
         tableFooterView.addSubview(label)
         tableView.tableFooterView = tableFooterView
         /// 清空存储素材临时文件
