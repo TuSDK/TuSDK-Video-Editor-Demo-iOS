@@ -14,7 +14,7 @@
 #import "TuTextOverlayView.h"
 #import <Bugly/Bugly.h>
 #ifdef DEBUG
-//#import <DoraemonKit/DoraemonManager.h>
+#import <DoraemonKit/DoraemonManager.h>
 #endif
 @interface AppDelegate ()
 
@@ -49,7 +49,7 @@
     [Bugly startWithAppId:@"5dd19afc0a"];
     
 #ifdef DEBUG
-//    [[DoraemonManager shareInstance] install];
+    [[DoraemonManager shareInstance] install];
 #endif
     return YES;
 }

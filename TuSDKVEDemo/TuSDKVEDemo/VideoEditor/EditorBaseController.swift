@@ -210,7 +210,7 @@ extension EditorBaseController: TUPPlayerDelegate {
     }
     @objc private func enterBackFromFront() {
         pause()
-        viewModel.resetProducer()
+        viewModel.resetProducer(isCancel: true)
     }
     
 }

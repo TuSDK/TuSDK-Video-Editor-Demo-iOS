@@ -59,7 +59,8 @@ class TuFileManager: NSObject {
         let path = TuFileManager.createURL(state: state, name: name).path
         remove(path: path)
     }
-    class func remove(path: String) {
+    class func remove(path: String?) {
+        guard let path = path else { return }
         if FileManager.default.fileExists(atPath: path) {
             try? FileManager.default.removeItem(atPath: path)
         }

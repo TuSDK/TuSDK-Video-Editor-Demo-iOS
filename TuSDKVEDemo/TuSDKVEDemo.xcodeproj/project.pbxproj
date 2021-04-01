@@ -78,12 +78,12 @@
 		2AF02DBB256F5EE50068D677 /* EditorAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF02DBA256F5EE50068D677 /* EditorAdapter.swift */; };
 		2AF02DBE256F7CF70068D677 /* SourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF02DBD256F7CF70068D677 /* SourceViewModel.swift */; };
 		2AF02DC52570AAC70068D677 /* SliderBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF02DC42570AAC70068D677 /* SliderBarView.swift */; };
-		A694B79326137498006FB99C /* TuSDKPulse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A694B78E261373CD006FB99C /* TuSDKPulse.framework */; };
-		A694B79426137498006FB99C /* TuSDKPulse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A694B78E261373CD006FB99C /* TuSDKPulse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A694B79526137498006FB99C /* TuSDKPulseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A694B78F261373CD006FB99C /* TuSDKPulseCore.framework */; };
-		A694B79626137498006FB99C /* TuSDKPulseCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A694B78F261373CD006FB99C /* TuSDKPulseCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A694B79726137498006FB99C /* TuSDKPulseEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A694B78D261373CD006FB99C /* TuSDKPulseEditor.framework */; };
-		A694B79826137498006FB99C /* TuSDKPulseEditor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A694B78D261373CD006FB99C /* TuSDKPulseEditor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A694B80F261512FA006FB99C /* TuSDKPulse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A694B80A261512C2006FB99C /* TuSDKPulse.framework */; };
+		A694B810261512FA006FB99C /* TuSDKPulse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A694B80A261512C2006FB99C /* TuSDKPulse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A694B811261512FB006FB99C /* TuSDKPulseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A694B80B261512C2006FB99C /* TuSDKPulseCore.framework */; };
+		A694B812261512FB006FB99C /* TuSDKPulseCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A694B80B261512C2006FB99C /* TuSDKPulseCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A694B813261512FC006FB99C /* TuSDKPulseEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A694B809261512C2006FB99C /* TuSDKPulseEditor.framework */; };
+		A694B814261512FC006FB99C /* TuSDKPulseEditor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A694B809261512C2006FB99C /* TuSDKPulseEditor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B80719A4256B999A009DD0E7 /* sound_cat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B807182A256B9998009DD0E7 /* sound_cat.mp3 */; };
 		B80719A5256B999A009DD0E7 /* sound_relieve.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B807182B256B9998009DD0E7 /* sound_relieve.mp3 */; };
 		B80719A6256B999A009DD0E7 /* tusdk_sample_video.mov in Resources */ = {isa = PBXBuildFile; fileRef = B807182C256B9998009DD0E7 /* tusdk_sample_video.mov */; };
@@ -432,7 +432,7 @@
 		B8071AFF256B999B009DD0E7 /* lsq_filter_thumb_USComics_Video.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B80719A3256B999A009DD0E7 /* lsq_filter_thumb_USComics_Video.jpg */; };
 		B80B602D25AB50E000C302F4 /* UIAlertController+TuTapDismiss.m in Sources */ = {isa = PBXBuildFile; fileRef = B80B602C25AB50E000C302F4 /* UIAlertController+TuTapDismiss.m */; };
 		B80B605225AC2C5800C302F4 /* SourceHanSansSC-Normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B80B605125AC2C5700C302F4 /* SourceHanSansSC-Normal.ttf */; };
-		B8BF049025FF60040019980E /* cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8BF048F25FF60040019980E /* cover.jpg */; };
+		B8BF049025FF60040019980E /* demo_cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8BF048F25FF60040019980E /* demo_cover.jpg */; };
 		B8FD8D932599090A00D4BB1F /* lovely_piano_song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8FD8D8D2599090A00D4BB1F /* lovely_piano_song.mp3 */; };
 		B8FD8D942599090A00D4BB1F /* rush.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8FD8D8E2599090A00D4BB1F /* rush.mp3 */; };
 		B8FD8D952599090A00D4BB1F /* city_sunshine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8FD8D8F2599090A00D4BB1F /* city_sunshine.mp3 */; };
@@ -477,9 +477,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A694B79426137498006FB99C /* TuSDKPulse.framework in Embed Frameworks */,
-				A694B79826137498006FB99C /* TuSDKPulseEditor.framework in Embed Frameworks */,
-				A694B79626137498006FB99C /* TuSDKPulseCore.framework in Embed Frameworks */,
+				A694B810261512FA006FB99C /* TuSDKPulse.framework in Embed Frameworks */,
+				A694B814261512FC006FB99C /* TuSDKPulseEditor.framework in Embed Frameworks */,
+				A694B812261512FB006FB99C /* TuSDKPulseCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,9 +547,6 @@
 		2AAD76B025FF78070041D099 /* DraftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftModel.swift; sourceTree = "<group>"; };
 		2AAD76B225FF79F60041D099 /* DraftManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftManager.swift; sourceTree = "<group>"; };
 		2AAE87192605B5470064B0B7 /* TuSDKVEDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TuSDKVEDemo-Bridging-Header.h"; sourceTree = "<group>"; };
-		2AC47AE22600868900F119A2 /* TuSDKPulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TuSDKPulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2AC47AE52600868F00F119A2 /* TuSDKPulseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TuSDKPulseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2AC47AE82600869500F119A2 /* TuSDKPulseEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TuSDKPulseEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC47AFE2600CEC600F119A2 /* StitchingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StitchingController.swift; sourceTree = "<group>"; };
 		2AC47B002601CD5D00F119A2 /* VideoSegmentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSegmentationController.swift; sourceTree = "<group>"; };
 		2AC47B032601D7DD00F119A2 /* ClipsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipsTableView.swift; sourceTree = "<group>"; };
@@ -567,9 +564,9 @@
 		2AF02DBD256F7CF70068D677 /* SourceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewModel.swift; sourceTree = "<group>"; };
 		2AF02DC42570AAC70068D677 /* SliderBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderBarView.swift; sourceTree = "<group>"; };
 		66758B4BE5F7E4DC176D3150 /* Pods-TuSDKVEDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuSDKVEDemo.release.xcconfig"; path = "Target Support Files/Pods-TuSDKVEDemo/Pods-TuSDKVEDemo.release.xcconfig"; sourceTree = "<group>"; };
-		A694B78D261373CD006FB99C /* TuSDKPulseEditor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKPulseEditor.framework; sourceTree = "<group>"; };
-		A694B78E261373CD006FB99C /* TuSDKPulse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKPulse.framework; sourceTree = "<group>"; };
-		A694B78F261373CD006FB99C /* TuSDKPulseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKPulseCore.framework; sourceTree = "<group>"; };
+		A694B809261512C2006FB99C /* TuSDKPulseEditor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKPulseEditor.framework; sourceTree = "<group>"; };
+		A694B80A261512C2006FB99C /* TuSDKPulse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKPulse.framework; sourceTree = "<group>"; };
+		A694B80B261512C2006FB99C /* TuSDKPulseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKPulseCore.framework; sourceTree = "<group>"; };
 		B807182A256B9998009DD0E7 /* sound_cat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_cat.mp3; sourceTree = "<group>"; };
 		B807182B256B9998009DD0E7 /* sound_relieve.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_relieve.mp3; sourceTree = "<group>"; };
 		B807182C256B9998009DD0E7 /* tusdk_sample_video.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = tusdk_sample_video.mov; sourceTree = "<group>"; };
@@ -925,10 +922,7 @@
 		B80B602B25AB50E000C302F4 /* UIAlertController+TuTapDismiss.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+TuTapDismiss.h"; sourceTree = "<group>"; };
 		B80B602C25AB50E000C302F4 /* UIAlertController+TuTapDismiss.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+TuTapDismiss.m"; sourceTree = "<group>"; };
 		B80B605125AC2C5700C302F4 /* SourceHanSansSC-Normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSansSC-Normal.ttf"; sourceTree = "<group>"; };
-		B8BF048F25FF60040019980E /* cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cover.jpg; sourceTree = "<group>"; };
-		B8BF049125FF775E0019980E /* TuSDKPulse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TuSDKPulse.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/TuSDKVEDemo-dxgybgmvzoggllgcsarvqlifwttn/Build/Products/Debug-iphoneos/TuSDKPulse.framework"; sourceTree = "<group>"; };
-		B8BF049325FF77640019980E /* TuSDKPulseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TuSDKPulseCore.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/TuSDKVEDemo-dxgybgmvzoggllgcsarvqlifwttn/Build/Products/Debug-iphoneos/TuSDKPulseCore.framework"; sourceTree = "<group>"; };
-		B8BF049525FF77670019980E /* TuSDKPulseEditor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TuSDKPulseEditor.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/TuSDKVEDemo-dxgybgmvzoggllgcsarvqlifwttn/Build/Products/Debug-iphoneos/TuSDKPulseEditor.framework"; sourceTree = "<group>"; };
+		B8BF048F25FF60040019980E /* demo_cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo_cover.jpg; sourceTree = "<group>"; };
 		B8FD8D8D2599090A00D4BB1F /* lovely_piano_song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lovely_piano_song.mp3; sourceTree = "<group>"; };
 		B8FD8D8E2599090A00D4BB1F /* rush.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rush.mp3; sourceTree = "<group>"; };
 		B8FD8D8F2599090A00D4BB1F /* city_sunshine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_sunshine.mp3; sourceTree = "<group>"; };
@@ -978,10 +972,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A694B79326137498006FB99C /* TuSDKPulse.framework in Frameworks */,
-				A694B79726137498006FB99C /* TuSDKPulseEditor.framework in Frameworks */,
+				A694B80F261512FA006FB99C /* TuSDKPulse.framework in Frameworks */,
+				A694B813261512FC006FB99C /* TuSDKPulseEditor.framework in Frameworks */,
+				A694B811261512FB006FB99C /* TuSDKPulseCore.framework in Frameworks */,
 				D7DE9104256B8F1E006BF6AF /* Pods_TuSDKVEDemo.framework in Frameworks */,
-				A694B79526137498006FB99C /* TuSDKPulseCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1177,12 +1171,12 @@
 			path = ../Pods;
 			sourceTree = "<group>";
 		};
-		A694B78C261373CD006FB99C /* TuSDKFrameWork */ = {
+		A694B808261512C2006FB99C /* TuSDKFrameWork */ = {
 			isa = PBXGroup;
 			children = (
-				A694B78D261373CD006FB99C /* TuSDKPulseEditor.framework */,
-				A694B78E261373CD006FB99C /* TuSDKPulse.framework */,
-				A694B78F261373CD006FB99C /* TuSDKPulseCore.framework */,
+				A694B809261512C2006FB99C /* TuSDKPulseEditor.framework */,
+				A694B80A261512C2006FB99C /* TuSDKPulse.framework */,
+				A694B80B261512C2006FB99C /* TuSDKPulseCore.framework */,
 			);
 			path = TuSDKFrameWork;
 			sourceTree = "<group>";
@@ -1190,7 +1184,7 @@
 		B8071828256B9998009DD0E7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A694B78C261373CD006FB99C /* TuSDKFrameWork */,
+				A694B808261512C2006FB99C /* TuSDKFrameWork */,
 				D776054625C6AA000056BA7B /* TuSDKPulse.bundle */,
 				B8071829256B9998009DD0E7 /* AVSamples */,
 				B8071835256B9998009DD0E7 /* Localized */,
@@ -1230,7 +1224,6 @@
 		B8071843256B9998009DD0E7 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				B8BF048F25FF60040019980E /* cover.jpg */,
 				B80B605125AC2C5700C302F4 /* SourceHanSansSC-Normal.ttf */,
 				B8FD8D8C2599090A00D4BB1F /* audio */,
 				B8071844256B9998009DD0E7 /* sample_watermark.png */,
@@ -1775,6 +1768,7 @@
 				2AAE87192605B5470064B0B7 /* TuSDKVEDemo-Bridging-Header.h */,
 				D77D6AE124937DB600844D76 /* Info.plist */,
 				D77D6ADE24937DB600844D76 /* LaunchScreen.storyboard */,
+				B8BF048F25FF60040019980E /* demo_cover.jpg */,
 				D77D6AE224937DB600844D76 /* main.m */,
 				D77D6AD924937DB300844D76 /* Main.storyboard */,
 				D77D6B2C2498AFEF00844D76 /* MainTableViewCell.h */,
@@ -1790,12 +1784,6 @@
 		D77D6B1824989D7900844D76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2AC47AE82600869500F119A2 /* TuSDKPulseEditor.framework */,
-				2AC47AE52600868F00F119A2 /* TuSDKPulseCore.framework */,
-				2AC47AE22600868900F119A2 /* TuSDKPulse.framework */,
-				B8BF049525FF77670019980E /* TuSDKPulseEditor.framework */,
-				B8BF049325FF77640019980E /* TuSDKPulseCore.framework */,
-				B8BF049125FF775E0019980E /* TuSDKPulse.framework */,
 				D77D6B302498CA9900844D76 /* CoreMedia.framework */,
 				D77D6B282498A4C700844D76 /* libc++.tbd */,
 				D77D6B272498A4B300844D76 /* libc++.1.tbd */,
@@ -1907,7 +1895,7 @@
 				B80719C3256B999A009DD0E7 /* lsq_effect_thumb_LiveSignal01.gif in Resources */,
 				B80719B7256B999A009DD0E7 /* video_camera_focus_finish@2x.png in Resources */,
 				B80719F7256B999A009DD0E7 /* lsq_filter_thumb_Food_Lime_1.jpg in Resources */,
-				B8BF049025FF60040019980E /* cover.jpg in Resources */,
+				B8BF049025FF60040019980E /* demo_cover.jpg in Resources */,
 				B8071A4A256B999A009DD0E7 /* lipStick_3.jpg in Resources */,
 				B8071A80256B999A009DD0E7 /* 粗平棕b.jpg in Resources */,
 				D7DE9145256B9E79006BF6AF /* lzbb.MOV in Resources */,
@@ -2613,7 +2601,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20210320;
+				CURRENT_PROJECT_VERSION = 20210315;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9U2KRZU6GT;
@@ -2636,7 +2624,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.1;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = org.lasque.TuSDKEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2659,7 +2647,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20210320;
+				CURRENT_PROJECT_VERSION = 20210315;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9U2KRZU6GT;
@@ -2684,7 +2672,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = org.lasque.TuSDKEditor;

@@ -534,6 +534,7 @@ extension TextEditorViewController {
             self.removeTextView()
         }
         
+        barView.multiBetweenThumbs(distance: minTimeInterval/Float(videoDuration))
         contentView.addSubview(barView)
         barView.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()

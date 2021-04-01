@@ -40,6 +40,7 @@ class EditorViewModel: NSObject {
     
     var producer: TUPVEditorProducer?
     var saveVideoURL: URL?
+    private var producerIsCancel = false
     /// 草稿箱初始化
     init(scene: Navigator.Scene, draft path: String) {
         self.state = .draft
@@ -165,6 +166,7 @@ extension EditorViewModel: TUPProducerDelegate {
             producer.start()
             
             self.producer = producer
+            self.producerIsCancel = false
             self.saveVideoURL = sandboxURL
         }
     }
@@ -175,11 +177,16 @@ extension EditorViewModel: TUPProducerDelegate {
                 SVProgressHUD.showProgress(Float(ts)/Float(self.editor.getDuration()))
             }
         case .END:
-            producer?.close()
+            if producerIsCancel {
+                removeTempFile()
+                SVProgressHUD.dismiss()
+                return
+            }
             ImagePicker.saveVideo(saveVideoURL) {[weak self] (success, msg) in
                 guard let `self` = self else { return }
                 NotificationCenter.default.post(name: .init("saveAlbumSuccess"), object: nil)
                 SVProgressHUD.showSuccess(success, text: msg)
+                self.removeTempFile()
                 self.resetProducer()
             }
         default:
@@ -187,11 +194,15 @@ extension EditorViewModel: TUPProducerDelegate {
         }
     }
     
-    func resetProducer() {
+    func resetProducer(isCancel: Bool = false) {
         guard let _ = producer else { return }
+        producerIsCancel = isCancel
         producer?.close()
         editor.resetProducer()
         producer = nil
+    }
+    func removeTempFile() {
+        TuFileManager.remove(path: saveVideoURL?.path)
         saveVideoURL = nil
     }
 }
