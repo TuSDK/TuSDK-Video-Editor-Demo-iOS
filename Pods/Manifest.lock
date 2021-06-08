@@ -2,9 +2,9 @@ PODS:
   - AvailableHapticFeedback (1.0.2)
   - Bugly (2.5.71)
   - ColorSlider (4.4)
+  - FCFileManager (1.0.20)
   - Gifu (3.3)
   - HandyJSON (5.0.2)
-  - MJExtension (3.2.4)
   - MultiSlider (1.11.2):
     - AvailableHapticFeedback
     - SweeterSwift
@@ -19,9 +19,9 @@ PODS:
 DEPENDENCIES:
   - Bugly
   - ColorSlider (from `https://github.com/TintGit/ColorSlider.git`, tag `4.4`)
+  - FCFileManager
   - Gifu (= 3.3)
   - HandyJSON (~> 5.0.2)
-  - MJExtension
   - MultiSlider (= 1.11.2)
   - RSKGrowingTextView (= 6.0.3)
   - SnapKit (= 4.2.0)
@@ -32,9 +32,9 @@ SPEC REPOS:
   trunk:
     - AvailableHapticFeedback
     - Bugly
+    - FCFileManager
     - Gifu
     - HandyJSON
-    - MJExtension
     - MultiSlider
     - RSKGrowingTextView
     - RSKPlaceholderTextView
@@ -57,9 +57,9 @@ SPEC CHECKSUMS:
   AvailableHapticFeedback: 9b21b9f6d3e4566015988b5de35b40abefe6c09a
   Bugly: fd066c75c4a0eca1440f9b6a84bd37d51bfc85ac
   ColorSlider: d4bdb56d2a8197e6a24b8e4672e9c81157f60e4d
+  FCFileManager: e0f73316e6aa2eb04d2ff4caa75fe7df1ae44270
   Gifu: 97c2a3c3865fbc834ab13f797e2e8e7729a1853c
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
-  MJExtension: 88e0900751b6cac8de1cf724ca9838a0b28d5acb
   MultiSlider: 944d00877d371bbb5ce0a512fec517de87958775
   RSKGrowingTextView: 0718482ee121892b1eb9fe72e9eebd3ef46b81f0
   RSKPlaceholderTextView: fc8c8932546298ec9d5e5572284aa42adb87b066
@@ -68,6 +68,6 @@ SPEC CHECKSUMS:
   SweeterSwift: 8a90cf3156f5a1b6f39785c479369a16633b5ea9
   TZImagePickerController: 7fd9702897ef8c0b7c951e5463f4bcf398296f9e
 
-PODFILE CHECKSUM: 6775f4a7f5317e5a27ea665475249039307dd514
+PODFILE CHECKSUM: 2fffb3b6995701914a509c54023e50e601aaf7bb
 
 COCOAPODS: 1.10.1

@@ -115,9 +115,11 @@ class ImageStickerEditorViewController: EditorViewController {
     
     var titlesToggle = [true, true, true, true,false]
     
-    var blendItems:[(String, String, Bool)] = [(TUPVEditorLayerBlendMode_None,"无",true),(TUPVEditorLayerBlendMode_Normal,"正常",false),
+    var blendItems:[(String, String, Bool)] = [(TUPVEditorLayerBlendMode_None,"无",true),
+                                               (TUPVEditorLayerBlendMode_Normal,"正常",false),
+                                               (TUPVEditorLayerBlendMode_Overlay,"叠加",false),
                                                (TUPVEditorLayerBlendMode_Add, "相加", false),
-                                               (TUPVEditorLayerBlendMode_Substract, "减去", false),
+                                               (TUPVEditorLayerBlendMode_Subtract, "减去", false),
                                                (TUPVEditorLayerBlendMode_Negation, "反色", false),
                                                (TUPVEditorLayerBlendMode_Average, "均值", false),
                                                (TUPVEditorLayerBlendMode_Multiply,"正片叠底", false),
@@ -125,9 +127,10 @@ class ImageStickerEditorViewController: EditorViewController {
                                                (TUPVEditorLayerBlendMode_Screen, "滤色", false),
                                                (TUPVEditorLayerBlendMode_Softlight, "柔光", false),
                                                (TUPVEditorLayerBlendMode_Hardlight, "强光", false),
+                                               (TUPVEditorLayerBlendMode_Linearlight,"线性光",false),
+                                               (TUPVEditorLayerBlendMode_Pinlight,"点亮",false),
                                                (TUPVEditorLayerBlendMode_Lighten, "变亮",false),
                                                (TUPVEditorLayerBlendMode_Darken,"变暗", false),
-                                               (TUPVEditorLayerBlendMode_Reflect, "反射", false),
                                                (TUPVEditorLayerBlendMode_Exclusion, "排除", false)]
     
     

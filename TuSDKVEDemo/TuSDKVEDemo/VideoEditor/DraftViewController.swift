@@ -56,7 +56,7 @@ class DraftViewController: UIViewController, UITableViewDataSource, UITableViewD
         let item = items[indexPath.row]
         guard let scene = Navigator.Scene.init(rawValue: item.scene) else { return }
         let draftPath = DraftManager.shared.path(filename: item.fileName)
-         if scene == .image {
+         if scene == .pip {
             self.navigationController?.pushViewController(ImageStickerEditorViewController(scene: scene, draftPath: draftPath), animated: true)
         } else {
             Navigator.shared.show(segue: scene, draft: draftPath, sender: self)

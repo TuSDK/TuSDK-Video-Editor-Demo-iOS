@@ -72,7 +72,7 @@ class SceneCollectionViewCell: UICollectionViewCell {
         didSet {
             guard let item = item else { return }
             iconView.alpha = item.isSelected ? 0.4 : 1
-            if let url =  Bundle.main.url(forResource: "lsq_effect_thumb_\(item.code)", withExtension: "gif") {
+            if let url = Bundle.main.url(forResource: "lsq_effect_thumb_\(item.code)", withExtension: "gif") {
                 iconView.animate(withGIFURL:url)
                 titleLabel.text = Bundle.main.localizedString(forKey: "lsq_filter_\(item.code)", value: "", table: "TuSDKConstants")
             } 

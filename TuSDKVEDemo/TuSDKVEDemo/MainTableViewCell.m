@@ -17,7 +17,6 @@
 
 - (void) setText:(NSString *)text
 {
-    
     if (!_textView) {
         //self.backgroundColor = UIColor.blueColor;
         

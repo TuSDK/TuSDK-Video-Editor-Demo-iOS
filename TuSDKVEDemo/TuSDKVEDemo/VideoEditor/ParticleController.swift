@@ -39,13 +39,9 @@ class ParticleController: EditorBaseController {
             effects.append(effect)
             
             let index = effects.count + defaultEffectsCount + 200
-            printLog(index)
             if viewModel.clipItems[0].videoClip.effects().getEffect(index) == nil {
-                printLog("add")
                 viewModel.clipItems[0].videoClip.effects().add(effect, at: index)
             }
-            
-            printLog(viewModel.clipItems[0].videoClip.effects().getAllEffects().count)
             viewModel.build()
         }
         func move(posX: CGFloat, posY: CGFloat) {

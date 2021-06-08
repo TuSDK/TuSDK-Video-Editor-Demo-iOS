@@ -11,52 +11,34 @@ import UIKit
 class TransformController: EditorBaseController {
 
     class TransformItem {
-        var rorate = TUPVETransformEffect_MODE_None
-        var ver = TUPVETransformEffect_MODE_None
-        var hor = TUPVETransformEffect_MODE_None
-        var rorateEffect: TUPVEditorEffect
-        var verEffect: TUPVEditorEffect
-        var horEffect: TUPVEditorEffect
-        let rorateIndex = 3000
-        let verIndex = 3001
-        let horIndex = 3002
+        var mode = TUPVETransformEffect_MODE_None
         
+        var effect: TUPVEditorEffect
+        let rorateIndex = 3000
+        var transfer = TUPVETransformEffect_ModeTransfer()
         init(viewModel: EditorViewModel) {
             if viewModel.state == .resource {
                 let config = TUPConfig()
-                rorateEffect = TUPVEditorEffect(viewModel.ctx, withType: TUPVETransformEffect_TYPE_NAME)
-                verEffect = TUPVEditorEffect(viewModel.ctx, withType: TUPVETransformEffect_TYPE_NAME)
-                horEffect = TUPVEditorEffect(viewModel.ctx, withType: TUPVETransformEffect_TYPE_NAME)
+                effect = TUPVEditorEffect(viewModel.ctx, withType: TUPVETransformEffect_TYPE_NAME)
+                
                 
                 config.setString(TUPVETransformEffect_MODE_None, forKey: TUPVETransformEffect_CONFIG_MODE)
-                rorateEffect.setConfig(config)
-                verEffect.setConfig(config)
-                horEffect.setConfig(config)
-                viewModel.clipItems[0].videoClip.effects().add(rorateEffect, at: rorateIndex)
-                viewModel.clipItems[0].videoClip.effects().add(verEffect, at: verIndex)
-                viewModel.clipItems[0].videoClip.effects().add(horEffect, at: horIndex)
+                effect.setConfig(config)
+                
+                viewModel.clipItems[0].videoClip.effects().add(effect, at: rorateIndex)
             } else {
-                rorateEffect = viewModel.clipItems[0].videoClip.effects().getEffect(rorateIndex)!
-                verEffect = viewModel.clipItems[0].videoClip.effects().getEffect(verIndex)!
-                horEffect = viewModel.clipItems[0].videoClip.effects().getEffect(horIndex)!
-                rorate = rorateEffect.getConfig().getString(TUPVETransformEffect_CONFIG_MODE, or: TUPVETransformEffect_MODE_None)
-                ver = verEffect.getConfig().getString(TUPVETransformEffect_CONFIG_MODE, or: TUPVETransformEffect_MODE_None)
-                hor = horEffect.getConfig().getString(TUPVETransformEffect_CONFIG_MODE, or: TUPVETransformEffect_MODE_None)
+                effect = viewModel.clipItems[0].videoClip.effects().getEffect(rorateIndex)!
+                
+                mode = effect.getConfig().getString(TUPVETransformEffect_CONFIG_MODE, or: TUPVETransformEffect_MODE_None)
+                transfer = TUPVETransformEffect_ModeTransfer(mode)
 
             }
             
         }
-        func editor(isFlip: Bool) {
-            let config = TUPConfig()
-            if isFlip {
-                config.setString(ver, forKey: TUPVETransformEffect_CONFIG_MODE)
-                verEffect.setConfig(config)
-                config.setString(hor, forKey: TUPVETransformEffect_CONFIG_MODE)
-                horEffect.setConfig(config)
-            } else {
-                config.setString(rorate, forKey: TUPVETransformEffect_CONFIG_MODE)
-                rorateEffect.setConfig(config)
-            }
+        func editor() {
+            let config = effect.getConfig()
+            config.setString(mode, forKey: TUPVETransformEffect_CONFIG_MODE)
+            effect.setConfig(config)
         }
     }
     var videoItem: TransformItem!
@@ -69,13 +51,13 @@ class TransformController: EditorBaseController {
 
         setupView()
     }
-    func editor(isFlip: Bool) {
+    func editor() {
         fetchLock()
         defer {
             fetchUnlock()
-            player.previewFrame(currentTs)
+            previewFrame()
         }
-        videoItem.editor(isFlip: isFlip)
+        videoItem.editor()
         viewModel.build()
     }
 }
@@ -129,33 +111,15 @@ extension TransformController {
         }
     }
     @objc private func rorateAction(_ sender : UIButton) {
-        if videoItem.rorate == TUPVETransformEffect_MODE_None {
-            videoItem.rorate = TUPVETransformEffect_MODE_K90
-        }
-        else if videoItem.rorate == TUPVETransformEffect_MODE_K90 {
-            videoItem.rorate = TUPVETransformEffect_MODE_K180
-        }
-        else if videoItem.rorate == TUPVETransformEffect_MODE_K180 {
-            videoItem.rorate = TUPVETransformEffect_MODE_K270
-        } else {
-            videoItem.rorate = TUPVETransformEffect_MODE_None
-        }
-        editor(isFlip: false)
+        videoItem.mode = videoItem.transfer.applyRotateCW()
+        editor()
     }
     @objc private func verticalAction(_ sender : UIButton) {
-        if videoItem.ver == TUPVETransformEffect_MODE_None {
-            videoItem.ver = TUPVETransformEffect_MODE_VFlip
-        } else {
-            videoItem.ver = TUPVETransformEffect_MODE_None
-        }
-        editor(isFlip: true)
+        videoItem.mode = videoItem.transfer.applyFlip()
+        editor()
     }
     @objc private func horizontalAction(_ sender : UIButton) {
-        if videoItem.hor == TUPVETransformEffect_MODE_None {
-            videoItem.hor = TUPVETransformEffect_MODE_HFlip
-        } else {
-            videoItem.hor = TUPVETransformEffect_MODE_None
-        }
-        editor(isFlip: true)
+        videoItem.mode = videoItem.transfer.applyMirror()
+        editor()
     }
 }

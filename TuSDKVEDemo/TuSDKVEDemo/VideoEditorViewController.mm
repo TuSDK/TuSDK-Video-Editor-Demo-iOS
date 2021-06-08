@@ -277,8 +277,8 @@
 
 - (void) editorTest_1;
 {
-    NSURL* url = [[NSBundle mainBundle] URLForResource:@"a_re" withExtension:@"mp4"];
-    NSURL* url2 = [[NSBundle mainBundle] URLForResource:@"c_re" withExtension:@"mp4"];
+    NSURL* url = [[NSBundle mainBundle] URLForResource:@"" withExtension:@"mp4"];
+    NSURL* url2 = [[NSBundle mainBundle] URLForResource:@"" withExtension:@"mp4"];
     
     NSURL* imurl = [[NSBundle mainBundle] URLForResource:@"grid" withExtension:@"jpeg"];
 
@@ -391,8 +391,8 @@
 {
     
     TUPStreamInfo* si = 0;
-    NSURL* url = [[NSBundle mainBundle] URLForResource:@"a_re" withExtension:@"mp4"];
-    NSURL* url2 = [[NSBundle mainBundle] URLForResource:@"c_re" withExtension:@"mp4"];
+    NSURL* url = [[NSBundle mainBundle] URLForResource:@"" withExtension:@"mp4"];
+    NSURL* url2 = [[NSBundle mainBundle] URLForResource:@"" withExtension:@"mp4"];
     
     NSURL* imurl = [[NSBundle mainBundle] URLForResource:@"grid" withExtension:@"jpeg"];
 
@@ -682,8 +682,8 @@
 
 - (void) editorTest_2;
 {
-    NSURL* url = [[NSBundle mainBundle] URLForResource:@"a_re" withExtension:@"mp4"];
-    NSURL* url2 = [[NSBundle mainBundle] URLForResource:@"c_re" withExtension:@"mp4"];
+    NSURL* url = [[NSBundle mainBundle] URLForResource:@"" withExtension:@"mp4"];
+    NSURL* url2 = [[NSBundle mainBundle] URLForResource:@"" withExtension:@"mp4"];
 
     NSURL* imurl = [[NSBundle mainBundle] URLForResource:@"amazon" withExtension:@"jpg"];
 
@@ -874,8 +874,8 @@
 
 - (void) editorTest_xx;
 {
-    NSURL* url = [[NSBundle mainBundle] URLForResource:@"a_re" withExtension:@"mp4"];
-    NSURL* url2 = [[NSBundle mainBundle] URLForResource:@"c_re" withExtension:@"mp4"];
+    NSURL* url = [[NSBundle mainBundle] URLForResource:@"" withExtension:@"mp4"];
+    NSURL* url2 = [[NSBundle mainBundle] URLForResource:@"" withExtension:@"mp4"];
     
     NSURL* imurl = [[NSBundle mainBundle] URLForResource:@"grid" withExtension:@"jpeg"];
 

@@ -28,7 +28,7 @@ class RepeatController: EditorBaseController {
         init(viewModel: EditorViewModel) {
             self.viewModel = viewModel
             if viewModel.state == .resource {
-                duration = viewModel.originalDuration
+                duration = Float(viewModel.clipItems[0].duration())
                 config.setNumber(NSNumber(value: 0), forKey: TUPVERepeatEffect_CONFIG_BEGIN)
                 config.setNumber(NSNumber(value: duration), forKey: TUPVERepeatEffect_CONFIG_END)
                 config.setNumber(NSNumber(value: multiple), forKey: TUPVERepeatEffect_CONFIG_REPEAT_COUNT)
@@ -69,6 +69,9 @@ class RepeatController: EditorBaseController {
         setupView()
     }
     private func editor() {
+        if self.videoItem.begin >= self.videoItem.end {
+            return
+        }
         fetchLock()
         defer {
             fetchUnlockToSeekTime(Int(videoItem.duration * videoItem.begin), autoPlay: true)
@@ -107,7 +110,6 @@ extension RepeatController {
         countBarView.slider.minimumValue = 1
         countBarView.slider.isContinuous = false
         countBarView.slider.value = videoItem.multiple
-        //countBarView.multiBetweenThumbs(distance: minTimeInterval/videoItem.duration)
         contentView.addSubview(countBarView)
         countBarView.snp.makeConstraints { (make) in
             make.left.equalToSuperview()
@@ -127,9 +129,7 @@ extension RepeatController {
             guard let `self` = self else { return }
             self.videoItem.multiple = value
             self.updateText()
-            if self.videoItem.begin != self.videoItem.end {
-                self.editor()
-            }
+            self.editor()
         }
     }
     func updateText() {

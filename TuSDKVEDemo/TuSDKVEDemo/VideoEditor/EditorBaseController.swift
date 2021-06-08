@@ -52,7 +52,10 @@ class EditorBaseController: UIViewController {
     lazy var interactionRect: CGRect = {
         return displayView.getInteractionRect(viewModel.videoNaturalSize)
     }()
-    internal let effectIndex: Int = 3000
+    lazy var naturalRatio: CGFloat = {
+        return interactionRect.height / viewModel.videoNaturalSize.height
+    }()
+    internal var effectIndex: Int = 3000
    
     private var isSaveToDraft = false
     override func viewDidLoad() {
@@ -61,7 +64,7 @@ class EditorBaseController: UIViewController {
         setupPlayer()
         // 添加后台、前台切换的通知
         NotificationCenter.default.addObserver(self, selector: #selector(enterBackFromFront), name: UIApplication.willResignActiveNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(saveAlbumSuccessAction), name: .init("saveAlbumSuccess"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(saveAlbumFinishedAction), name: .init("saveAlbumFinished"), object: nil)
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -87,6 +90,8 @@ class EditorBaseController: UIViewController {
 extension EditorBaseController {
     private func setupView() {
         view.backgroundColor = .black
+        controlView.backgroundColor = .black
+        contentView.backgroundColor = .black
         title = viewModel.scene.rawValue
         SVProgressHUD.dismiss()
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
@@ -109,7 +114,9 @@ extension EditorBaseController {
             guard let `self` = self else { return }
             let ts = Int(progress * self.playerDuration)
             self.controlView.durationLabel.text = "\(ts.formatTime())/\(Int(self.playerDuration).formatTime())"
-            self.player.previewFrame(Int(progress * self.playerDuration))
+            let pts = Int(progress * self.playerDuration)
+            self.player.previewFrame(pts)
+            self.currentTs = pts
         }
         controlView.seekCompleted = {[weak self] progress in
             guard let `self` = self else { return }
@@ -153,7 +160,7 @@ extension EditorBaseController: TUPPlayerDelegate {
             break
         }
         // 文字特效通知
-        if viewModel.scene == .text || viewModel.scene == .image {
+        if viewModel.scene == .text || viewModel.scene == .pip {
             NotificationCenter.default.post(name: NSNotification.Name.init("EditorTimeChangeNotification"), object: ts)
             if state == .DO_PLAY {
                 NotificationCenter.default.post(name: NSNotification.Name.init("EditorDoPlayNotification"), object: ts)
@@ -161,15 +168,14 @@ extension EditorBaseController: TUPPlayerDelegate {
         }
     }
     internal func seek(_ pts: Int) {
-        var pts = pts
-        if Int(playerDuration) - pts < 200 {
-            pts = Int(playerDuration) - 200
-        }
+        currentTs = pts
         player.previewFrame(pts)
         player.seek(to: pts)
         controlView.progress(current: pts, duration: playerDuration)
     }
-    
+    internal func seekCurrent() {
+        seek(currentTs)
+    }
     internal func pause() {
         DispatchQueue.main.async {
             self.player.pause()
@@ -205,6 +211,10 @@ extension EditorBaseController: TUPPlayerDelegate {
             player.previewFrame(currentTs)
         }
     }
+    func previewFrame(_ pts: Int? = nil) {
+        let pts = pts ?? currentTs
+        player.previewFrame(pts)
+    }
     private func playToggle() {
         isPlaying ? pause() : play()
     }
@@ -232,7 +242,7 @@ extension EditorBaseController {
             alertController.alertTapDismiss()
         }
     }
-    @objc func saveAlbumSuccessAction() {
+    @objc func saveAlbumFinishedAction() {
         seek(currentTs)
     }
 }

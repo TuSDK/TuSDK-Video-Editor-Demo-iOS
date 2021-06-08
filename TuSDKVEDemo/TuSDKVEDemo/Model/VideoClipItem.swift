@@ -62,14 +62,18 @@ class VideoClipItem {
     }
     /// 素材时长
     func originalDuration() -> Int {
-        if source.state == .image {
-            return imageClipDuration
-        }
-        let streams = TUPMediaInspector.shared().inspect(source.path().absoluteString).streams
-        var duration = 0
-        for item in streams {
-            duration = max(Int(item.duration), duration)
-        }
-        return duration
+//        if source.state == .image {
+//            return imageClipDuration
+//        }
+//        let streams = TUPMediaInspector.shared().inspect(source.path().absoluteString).streams
+//        var duration = 0
+//        for item in streams {
+//            duration = max(Int(item.duration), duration)
+//        }
+        return Int(videoClip.getOriginStreamInfo()?.duration ?? 0)
     }
+//    func xxDuration() -> Int {
+//        let frame = ceil(Float(originalDuration()) / (1000.0/framerate))
+//        return Int(ceil(frame * (1000.0/framerate)))
+//    }
 }

@@ -69,10 +69,10 @@ class SliderBarView: UIView {
         return item
     }()
     
-    init(title: String, state: SliderBarView.State = .native) {
+    init(title: String, state: SliderBarView.State = .native, titleWidth: CGFloat = 70) {
         self.state = state
         super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.width(), height: 50))
-        titleLabel.frame = CGRect(x: 10, y: 0, width: 70, height: 50)
+        titleLabel.frame = CGRect(x: 10, y: 0, width: titleWidth, height: 50)
         titleLabel.textColor = .white
         titleLabel.font = .systemFont(ofSize: 13)
         titleLabel.adjustsFontSizeToFitWidth = true
@@ -84,21 +84,21 @@ class SliderBarView: UIView {
         case .native:
             addSubview(slider)
             slider.snp.makeConstraints { (make) in
-                make.left.equalTo(90)
+                make.left.equalTo(titleWidth + 20)
                 make.right.equalTo(-30)
                 make.top.bottom.equalToSuperview()
             }
         case .multi:
             addSubview(multiSlider)
             multiSlider.snp.makeConstraints { (make) in
-                make.left.equalTo(90)
+                make.left.equalTo(titleWidth + 20)
                 make.right.equalTo(-30)
                 make.top.bottom.equalToSuperview()
             }
         case .color:
             addSubview(colorSlider)
             colorSlider.snp.makeConstraints { (make) in
-                make.left.equalTo(90)
+                make.left.equalTo(titleWidth + 20)
                 make.right.equalTo(-30)
                 make.centerY.equalToSuperview()
                 make.height.equalTo(10)

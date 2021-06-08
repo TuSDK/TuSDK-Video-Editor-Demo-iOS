@@ -177,9 +177,9 @@ code_sign_if_enabled() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AvailableHapticFeedback/AvailableHapticFeedback.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ColorSlider/ColorSlider.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FCFileManager/FCFileManager.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Gifu/Gifu.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MultiSlider/MultiSlider.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RSKGrowingTextView/RSKGrowingTextView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RSKPlaceholderTextView/RSKPlaceholderTextView.framework"
@@ -191,9 +191,9 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AvailableHapticFeedback/AvailableHapticFeedback.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ColorSlider/ColorSlider.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FCFileManager/FCFileManager.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Gifu/Gifu.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MultiSlider/MultiSlider.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RSKGrowingTextView/RSKGrowingTextView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RSKPlaceholderTextView/RSKPlaceholderTextView.framework"

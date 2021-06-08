@@ -55,7 +55,7 @@ extension StitchingController {
         viewModel.clipItems.remove(at: index)
         viewModel.build()
         reloadData()
-        if viewModel.scene != .cut {
+        if viewModel.scene != .segment {
             DraftManager.shared.clearSandboxVideo(clipItem: clipItem)
         }
     }

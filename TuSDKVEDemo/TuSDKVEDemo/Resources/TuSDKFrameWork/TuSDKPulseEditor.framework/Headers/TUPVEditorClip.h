@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class TUPVEditorClip;
 
 
+
 @interface TUPVEditorClip : TUPBase {
     
 @package
@@ -57,6 +58,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 - (TUPStreamInfo* _Nullable) getStreamInfo;
+
+- (TUPStreamInfo* _Nullable) getOriginStreamInfo;
+
 
 - (NSString*) getType;
 

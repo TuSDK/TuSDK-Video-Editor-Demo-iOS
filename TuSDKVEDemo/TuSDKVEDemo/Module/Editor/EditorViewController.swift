@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 import SVProgressHUD
-import MJExtension
+
 @_exported import TuSDKPulse
 @_exported import TuSDKPulseEditor
 
@@ -334,7 +334,7 @@ extension EditorViewController: TUPPlayerDelegate {
         }
         
         // 画中画通知
-        if scene == .image {
+        if scene == .pip {
             NotificationCenter.default.post(name: NSNotification.Name.init("ImageEditorTimeChangeNotification"), object: ts)
 
             if state == .DO_PLAY {

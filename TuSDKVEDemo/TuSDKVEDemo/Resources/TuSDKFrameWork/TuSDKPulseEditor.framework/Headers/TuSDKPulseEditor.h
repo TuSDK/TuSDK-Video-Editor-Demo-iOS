@@ -38,3 +38,7 @@
 #import <TuSDKPulseEditor/TUPVETusdkSceneEffect.h>
 #import <TuSDKPulseEditor/TUPVETusdkMVEffect.h>
 #import <TuSDKPulseEditor/TUPVETusdkParticleEffect.h>
+#import <TuSDKPulseEditor/TUPVEBubbleTextClip.h>
+#import <TuSDKPulseEditor/TUPVEGraffitiClip.h>
+#import <TuSDKPulseEditor/TUPVEFreezeEffect.h>
+#import <TuSDKPulseEditor/TUPVEMosaicEffect.h>

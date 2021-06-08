@@ -6,11 +6,15 @@
 	<dict>
 		<key>Headers/TUPVEAnimationTextClip.h</key>
 		<data>
-		OZ4KCrIUhQuBUohNC4bBIOZ2ZwE=
+		0EgNzalsalCthKDQVDhf1O7zKWo=
+		</data>
+		<key>Headers/TUPVEBubbleTextClip.h</key>
+		<data>
+		cMEYU1imS/pTGhX124ouv6VABTc=
 		</data>
 		<key>Headers/TUPVECanvasResizeEffect.h</key>
 		<data>
-		Un5TYuoj/Oomez+YjNKKuhWQgQ0=
+		5Esz3IKfA9FyBC9eWaZwYzmDbSk=
 		</data>
 		<key>Headers/TUPVEColorAdjustEffect.h</key>
 		<data>
@@ -24,9 +28,21 @@
 		<data>
 		roT0+8JQyU6jOLpGemfPw1b+KqU=
 		</data>
+		<key>Headers/TUPVEFreezeEffect.h</key>
+		<data>
+		H/7prypZdQOSUh5GZSAQCpDfCgA=
+		</data>
+		<key>Headers/TUPVEGraffitiClip.h</key>
+		<data>
+		m0fPXyIR6lg69grM0LBMaADXptA=
+		</data>
 		<key>Headers/TUPVEImageClip.h</key>
 		<data>
 		RAOIU+K6YF08CNYHVCUqMXsj028=
+		</data>
+		<key>Headers/TUPVEMosaicEffect.h</key>
+		<data>
+		p2eXvaWnlSM18v5hQxlm7A+GYJ8=
 		</data>
 		<key>Headers/TUPVEPitchEffect.h</key>
 		<data>
@@ -54,7 +70,7 @@
 		</data>
 		<key>Headers/TUPVETransformEffect.h</key>
 		<data>
-		21EXumBIe3fv/HuGFK45IcCvSJ4=
+		WFeNKgfKft1R3+Z2Y6dUTfrBY6s=
 		</data>
 		<key>Headers/TUPVETrimEffect.h</key>
 		<data>
@@ -82,7 +98,7 @@
 		</data>
 		<key>Headers/TUPVEditorClip.h</key>
 		<data>
-		XZ8WBY2tuMO71WjzNPxMnKzsb4Q=
+		h7sdejNHuP03AKJO+BtR6AqBcyw=
 		</data>
 		<key>Headers/TUPVEditorClipLayer.h</key>
 		<data>
@@ -102,7 +118,7 @@
 		</data>
 		<key>Headers/TUPVEditorLayer.h</key>
 		<data>
-		j6Zvh0yFYqHDVBGcBAgP71PtW9s=
+		YzF6PjnSP8Tkm+z8lymFcOrUeCY=
 		</data>
 		<key>Headers/TUPVEditorModel.h</key>
 		<data>
@@ -110,11 +126,11 @@
 		</data>
 		<key>Headers/TuSDKPulseEditor.h</key>
 		<data>
-		7Um8ufjm5EYZep5tXtbL6FTGvWg=
+		64hJvqxs/C9BK9r/7nO+SVIus+g=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		NA8/JG3CVRpZHkeduzF1BGsmCwc=
+		17389ljH37qoNhSR7DePBtx+anE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -127,22 +143,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			OZ4KCrIUhQuBUohNC4bBIOZ2ZwE=
+			0EgNzalsalCthKDQVDhf1O7zKWo=
 			</data>
 			<key>hash2</key>
 			<data>
-			MDNrvNhZ9UjU+Ft7F4n7pSSCFRQzyr9Z3MtJP67TMQc=
+			1eo6qpeo5nb20V//FhHB4K7+lu5Y2d7mAzC3PtN0aq0=
+			</data>
+		</dict>
+		<key>Headers/TUPVEBubbleTextClip.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			cMEYU1imS/pTGhX124ouv6VABTc=
+			</data>
+			<key>hash2</key>
+			<data>
+			JGy3mXGqppaUlWvjwEAebvocICD4RB6nfQxtN80tbaQ=
 			</data>
 		</dict>
 		<key>Headers/TUPVECanvasResizeEffect.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Un5TYuoj/Oomez+YjNKKuhWQgQ0=
+			5Esz3IKfA9FyBC9eWaZwYzmDbSk=
 			</data>
 			<key>hash2</key>
 			<data>
-			+A0u4ltihk5h1c06uDdSFO+wiIPFK+jiAzg62TatH4A=
+			CMiZ7n3KsPnDImtFN/fFLnxUavGhwwyOM+fjMaGQklM=
 			</data>
 		</dict>
 		<key>Headers/TUPVEColorAdjustEffect.h</key>
@@ -178,6 +205,28 @@
 			BhyUsNb3gwq2fXFuK0mPydOGHOMb2NBnXUHGmHj8zO0=
 			</data>
 		</dict>
+		<key>Headers/TUPVEFreezeEffect.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			H/7prypZdQOSUh5GZSAQCpDfCgA=
+			</data>
+			<key>hash2</key>
+			<data>
+			9wJ+DmpQ/db6YaFLUVgbwrDEDayzbmVt+l56pZ6T5Ig=
+			</data>
+		</dict>
+		<key>Headers/TUPVEGraffitiClip.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			m0fPXyIR6lg69grM0LBMaADXptA=
+			</data>
+			<key>hash2</key>
+			<data>
+			v8aXSyHFJVH28r9q0bvOyj7ZoBQoAUj3mHpjJQBHi/8=
+			</data>
+		</dict>
 		<key>Headers/TUPVEImageClip.h</key>
 		<dict>
 			<key>hash</key>
@@ -187,6 +236,17 @@
 			<key>hash2</key>
 			<data>
 			db6WjbSlzGB7au1Ei3x/vtNBeKk7SbBjaIVeiINsxMk=
+			</data>
+		</dict>
+		<key>Headers/TUPVEMosaicEffect.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			p2eXvaWnlSM18v5hQxlm7A+GYJ8=
+			</data>
+			<key>hash2</key>
+			<data>
+			ZQyOPZwOiO1D89RQXxV2Zve/VO75tlIfsr37TEd7k5E=
 			</data>
 		</dict>
 		<key>Headers/TUPVEPitchEffect.h</key>
@@ -259,11 +319,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			21EXumBIe3fv/HuGFK45IcCvSJ4=
+			WFeNKgfKft1R3+Z2Y6dUTfrBY6s=
 			</data>
 			<key>hash2</key>
 			<data>
-			bjQOF9tXF+diug8kTZ6BHTfjP3wX0K52K6/JYjmzihw=
+			nkct4sifL+PlTHIKS9u6efuPV5A8BSO/rnBfGajuEto=
 			</data>
 		</dict>
 		<key>Headers/TUPVETrimEffect.h</key>
@@ -336,11 +396,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XZ8WBY2tuMO71WjzNPxMnKzsb4Q=
+			h7sdejNHuP03AKJO+BtR6AqBcyw=
 			</data>
 			<key>hash2</key>
 			<data>
-			otTCBHDZJ966LCusTll3A1sOldtmsyoedvInmb3hCMs=
+			Ifvc0y4ZqefRwW0gEqtjCj1Tu9pt5z5kb5B4N78OfSM=
 			</data>
 		</dict>
 		<key>Headers/TUPVEditorClipLayer.h</key>
@@ -391,11 +451,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			j6Zvh0yFYqHDVBGcBAgP71PtW9s=
+			YzF6PjnSP8Tkm+z8lymFcOrUeCY=
 			</data>
 			<key>hash2</key>
 			<data>
-			5eOiAj91m6hX5HUBKcH6cbSMmfa5wbeyuiB10dAxofo=
+			yNE8We6qfK9VxJFM34h/4J4pMGpQknhxGzQF8MoodcY=
 			</data>
 		</dict>
 		<key>Headers/TUPVEditorModel.h</key>
@@ -413,11 +473,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			7Um8ufjm5EYZep5tXtbL6FTGvWg=
+			64hJvqxs/C9BK9r/7nO+SVIus+g=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ta4/0DJ/R6pjduQ9+U22EU3XasY7nKfExmHyzuseeaA=
+			4NiOlcp5CIiz099zUN/Cj/bhGaznDFKcmI4DpI8SdLU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

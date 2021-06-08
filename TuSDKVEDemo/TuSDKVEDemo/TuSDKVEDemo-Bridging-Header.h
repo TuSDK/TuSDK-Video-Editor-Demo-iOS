@@ -16,4 +16,6 @@
 #import "TuTextItemView.h"
 #import "UIAlertController+TuTapDismiss.h"
 #import <TZImagePickerController/TZImagePickerController.h>
+#import "TTStickerDisplayView.h"
 #endif /* TuSDKVEDemo_Bridging_Header_h */
+

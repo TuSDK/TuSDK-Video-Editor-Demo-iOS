@@ -42,7 +42,8 @@ FOUNDATION_EXPORT NSString *const TUPVECanvasResizeEffect_PROP_INTERACTION_INFO;
 
 typedef NS_ENUM(NSInteger, TUPVECanvasResizeEffect_BackgroundType) {
     TUPVECanvasResizeEffect_BackgroundType_Color,
-    TUPVECanvasResizeEffect_BackgroundType_Blur
+    TUPVECanvasResizeEffect_BackgroundType_Blur,
+    TUPVECanvasResizeEffect_BackgroundType_Image
 };
 
 
@@ -51,6 +52,7 @@ typedef NS_ENUM(NSInteger, TUPVECanvasResizeEffect_BackgroundType) {
 
 @property(nonatomic) TUPVECanvasResizeEffect_BackgroundType type;
 @property(nonatomic) UIColor* color;
+@property(nonatomic) NSString* image;
 @property(nonatomic) double blurStrength;
 @property(nonatomic) double panX;
 @property(nonatomic) double panY;

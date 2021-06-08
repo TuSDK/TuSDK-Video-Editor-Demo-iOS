@@ -204,24 +204,7 @@ extension EditorAdapter {
         build()
     }
     
-    /// 文字特效
-    public func textSticker(item: TextEditorViewController.TextViewModel, begin: Float, end: Float) {
-        guard let totalDuration = beginTotalDuration else { return }
-        
-        let clipConfig = TUPConfig()
-
-        clipConfig.setNumber(NSNumber(value: Int(Float(totalDuration) * (end - begin))), forKey: TUPVEText2DClip_CONFIG_DURATION)
-        item.textClip!.setConfig(clipConfig)
-        
-        let layerConfig = TUPConfig()
-        layerConfig.setNumber(NSNumber(value: Int(Float(totalDuration) * begin)), forKey: TUPVEditorLayer_CONFIG_START_POS)
-        item.textLayer!.add(item.textClip!, at: 500)
-        item.textLayer!.setConfig(layerConfig)
-        
-        videoComp.add(item.textLayer!, at: item.index)
-        
-        build()
-    }
+    
     
     ///保存草稿箱
     public func saveToDraft(path: String)

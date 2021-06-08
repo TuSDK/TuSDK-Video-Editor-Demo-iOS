@@ -27,8 +27,9 @@ FOUNDATION_EXPORT NSString *const TUPVEditorLayer_CONFIG_BLEND_MODE;
 FOUNDATION_EXPORT NSString *const TUPVEditorLayerBlendMode_None;
 FOUNDATION_EXPORT NSString *const TUPVEditorLayerBlendMode_Default;
 FOUNDATION_EXPORT NSString *const TUPVEditorLayerBlendMode_Normal;
+FOUNDATION_EXPORT NSString *const TUPVEditorLayerBlendMode_Overlay;
 FOUNDATION_EXPORT NSString *const TUPVEditorLayerBlendMode_Add;
-FOUNDATION_EXPORT NSString *const TUPVEditorLayerBlendMode_Substract;
+FOUNDATION_EXPORT NSString *const TUPVEditorLayerBlendMode_Subtract;
 FOUNDATION_EXPORT NSString *const TUPVEditorLayerBlendMode_Negation;
 FOUNDATION_EXPORT NSString *const TUPVEditorLayerBlendMode_Average;
 FOUNDATION_EXPORT NSString *const TUPVEditorLayerBlendMode_Multiply;
@@ -36,9 +37,11 @@ FOUNDATION_EXPORT NSString *const TUPVEditorLayerBlendMode_Difference;
 FOUNDATION_EXPORT NSString *const TUPVEditorLayerBlendMode_Screen;
 FOUNDATION_EXPORT NSString *const TUPVEditorLayerBlendMode_Softlight;
 FOUNDATION_EXPORT NSString *const TUPVEditorLayerBlendMode_Hardlight;
+FOUNDATION_EXPORT NSString *const TUPVEditorLayerBlendMode_Linearlight;
+FOUNDATION_EXPORT NSString *const TUPVEditorLayerBlendMode_Pinlight;
 FOUNDATION_EXPORT NSString *const TUPVEditorLayerBlendMode_Lighten;
 FOUNDATION_EXPORT NSString *const TUPVEditorLayerBlendMode_Darken;
-FOUNDATION_EXPORT NSString *const TUPVEditorLayerBlendMode_Reflect;
+//FOUNDATION_EXPORT NSString *const TUPVEditorLayerBlendMode_Reflect;
 FOUNDATION_EXPORT NSString *const TUPVEditorLayerBlendMode_Exclusion;
 
 
@@ -102,6 +105,8 @@ FOUNDATION_EXPORT NSString *const TUPVEditorLayerBlendMode_Exclusion;
 - (void) deactivate;
 
 - (TUPStreamInfo*  _Nullable) getStreamInfo;
+//- (TUPStreamInfo*  _Nullable) getOriginStreamInfo;
+
 
 - (NSString*) getType;
 

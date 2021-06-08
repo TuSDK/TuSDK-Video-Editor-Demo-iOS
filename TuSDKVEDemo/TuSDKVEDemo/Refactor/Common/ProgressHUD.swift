@@ -29,4 +29,9 @@ class ProgressHUD: NSObject {
             SVProgressHUD.showSuccess(withStatus: message)
         }
     }
+    class func dismiss() {
+        DispatchQueue.main.async {
+            SVProgressHUD.dismiss()
+        }
+    }
 }

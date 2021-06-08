@@ -65,7 +65,7 @@ class MovieCutController: EditorBaseController {
             make.top.equalTo(30)
         }
         let barView = SliderBarView(title: "起止位置", state: .multi)
-        barView.multiBetweenThumbs(distance: minTimeInterval/viewModel.originalDuration)
+        barView.multiBetweenThumbs(distance: minTimeInterval * 10 / viewModel.originalDuration)
         barView.multiSlider.value = [CGFloat(videoItem.begin), CGFloat(videoItem.end)]
         contentView.addSubview(barView)
         barView.snp.makeConstraints { (make) in

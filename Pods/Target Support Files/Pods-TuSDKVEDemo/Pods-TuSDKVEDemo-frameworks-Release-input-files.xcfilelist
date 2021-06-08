@@ -1,9 +1,9 @@
 ${PODS_ROOT}/Target Support Files/Pods-TuSDKVEDemo/Pods-TuSDKVEDemo-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AvailableHapticFeedback/AvailableHapticFeedback.framework
 ${BUILT_PRODUCTS_DIR}/ColorSlider/ColorSlider.framework
+${BUILT_PRODUCTS_DIR}/FCFileManager/FCFileManager.framework
 ${BUILT_PRODUCTS_DIR}/Gifu/Gifu.framework
 ${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework
-${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework
 ${BUILT_PRODUCTS_DIR}/MultiSlider/MultiSlider.framework
 ${BUILT_PRODUCTS_DIR}/RSKGrowingTextView/RSKGrowingTextView.framework
 ${BUILT_PRODUCTS_DIR}/RSKPlaceholderTextView/RSKPlaceholderTextView.framework

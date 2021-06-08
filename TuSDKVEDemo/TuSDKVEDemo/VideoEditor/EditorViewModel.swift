@@ -12,16 +12,17 @@ import TuSDKPulseEditor
 import SVProgressHUD
 import HandyJSON
 
-
 // 最小时间间隔ms
 let minTimeInterval: Float = 100
+let framerate: Float = 25
+let editorVideoSize = CGSize(width: 800, height: 800)
 class EditorViewModel: NSObject {
     
     public let scene: Navigator.Scene
     public let state: EditorState
     public let editor = TUPVEditor()
     /// 视频尺寸
-    public let videoNaturalSize = CGSize(width: 800, height: 800)
+    public let videoNaturalSize = editorVideoSize
     /// 是否构造过
     public var isBuilt = false
     /// 视频原始时长(ms)
@@ -49,7 +50,7 @@ class EditorViewModel: NSObject {
         setupDraft(path)
     }
     /// 资源文件初始化
-    init(scene: Navigator.Scene, sources: [ ResourceModel]) {
+    init(scene: Navigator.Scene, sources: [ResourceModel]) {
         self.state = .resource
         self.scene = scene
         super.init()
@@ -89,13 +90,14 @@ extension EditorViewModel {
         let editorConfig = TUPVEditor_Config()
         editorConfig.width = Int(videoNaturalSize.width)
         editorConfig.height = Int(videoNaturalSize.height)
+        //editorConfig.framerate = Double(framerate)
         editor.create(with: editorConfig)
         for (index, item) in sources.enumerated() {
             let clipItem = VideoClipItem(ctx: ctx, source: item, index: index)
             /// 拼接
             let appendEffect = TUPVEditorEffect(ctx, withType: TUPVECanvasResizeEffect_TYPE_NAME)
             var appendEffectIndex = clipItem.index
-            if scene == .videoColor { // CanvasResizeEffect 需添加 ColorAdjustEffect 之后
+            if scene == .color { // CanvasResizeEffect 需添加 ColorAdjustEffect 之后
                 appendEffectIndex = clipItem.index + 4000
             }
             clipItem.videoClip.effects().add(appendEffect, at: appendEffectIndex)
@@ -171,10 +173,13 @@ extension EditorViewModel: TUPProducerDelegate {
         }
     }
     func onProducerEvent(_ state: TUPProducerState, withTimestamp ts: Int) {
+        
         switch state {
         case .DO_START, .WRITING:
             DispatchQueue.main.async {
-                SVProgressHUD.showProgress(Float(ts)/Float(self.editor.getDuration()))
+                if !self.producerIsCancel, state != .END {
+                    SVProgressHUD.showProgress(Float(ts)/Float(self.editor.getDuration()))
+                }
             }
         case .END:
             if producerIsCancel {
@@ -184,7 +189,6 @@ extension EditorViewModel: TUPProducerDelegate {
             }
             ImagePicker.saveVideo(saveVideoURL) {[weak self] (success, msg) in
                 guard let `self` = self else { return }
-                NotificationCenter.default.post(name: .init("saveAlbumSuccess"), object: nil)
                 SVProgressHUD.showSuccess(success, text: msg)
                 self.removeTempFile()
                 self.resetProducer()
@@ -204,6 +208,7 @@ extension EditorViewModel: TUPProducerDelegate {
     func removeTempFile() {
         TuFileManager.remove(path: saveVideoURL?.path)
         saveVideoURL = nil
+        NotificationCenter.default.post(name: .init("saveAlbumFinished"), object: nil)
     }
 }
 

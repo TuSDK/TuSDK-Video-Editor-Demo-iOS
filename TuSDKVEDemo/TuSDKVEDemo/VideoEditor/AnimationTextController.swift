@@ -8,637 +8,316 @@
 
 import UIKit
 import RSKGrowingTextView
-
-class AnimationTextController: EditorBaseController {
-    
+let defaultText = "请输入文字"
+class AnimationTextController: EditorStickerController {
     class TextItem {
-        static var ModelIndex : Int = 1100
+        let index: Int
+        let clip: TUPVEditorClip
+        var clipLayer: TUPVEditorClipLayer
         
-        var index: Int                      // 索引
-        var vid: Int                        // 唯一标识
-        var blendMode: String?              // 混合模式
-        var startTs : Int = 0                  // 起始时间
-        var endTs : Int = 0                    // 结束时间
-        var alphaValue : Float = 1.0        // 文字透明度
-        var blendValue : Float = 1.0        // 混合模式
-        var textColor : UIColor = .white    // 文字颜色
-        
-        
-        var textClip: TUPVEditorClip?
-        var textLayer: TUPVEditorClipLayer?
         var builder = TUPVEAnimationTextClip_PropertyBuilder()
-        
-        
-        init(ctx: TUPVEditorCtx) {
-            
-            index = TextItem.ModelIndex
-            vid = index
-            TextItem.ModelIndex += 1
-            
-            textLayer = TUPVEditorClipLayer(forVideo: ctx)
-            textClip = TUPVEditorClip(ctx, withType: TUPVEAnimationTextClip_TYPE_NAME)
-            builder.holder.rotation = 0
-            builder.holder.text = "动画文字test123"
-            builder.holder.strokeWidth = 0
-            builder.holder.alignment = .alignmentType_LEFT
-            builder.holder.fillColor = .white
-            builder.holder.strokeColor = .clear
-            builder.holder.font = Bundle.main.path(forResource: "SourceHanSansSC-Normal", ofType: "ttf")!
-            
-            builder.holder.startTs = 0
-            builder.holder.endTs = 10000
-            
-            builder.holder.inTs = 0
-            builder.holder.outTs = 5000
+        var overlayBuilder = TUPVEditorLayer_OverlayPropertyBuilder()
+        var math = Math()
+        struct Math {
+            var scale: Float = 1
+            var start: Int = 0
+            var duration: Int = 0
+            var blend: String?
         }
-        
-        init(idx : Int){
-            index = idx
-            vid = idx
-            TextItem.ModelIndex += idx
+        init(index: Int, ctx: TUPVEditorCtx) {
+            self.index = index
+            self.clipLayer = TUPVEditorClipLayer(forVideo: ctx)
+            self.clip = TUPVEditorClip(ctx, withType: TUPVEAnimationTextClip_TYPE_NAME)
+            builder.holder.text = defaultText
+            let marshalStr = TUPPathMarshal.marshalPath(Bundle.main.path(forResource: "SourceHanSansSC-Normal", ofType: "ttf")!)
+            builder.holder.fonts = [marshalStr]
         }
-        
+        init(index: Int, clipLayer: TUPVEditorClipLayer, clip: TUPVEditorClip) {
+            self.index = index
+            self.clipLayer = clipLayer
+            self.clip = clip
+        }
+        func update(start: Int, duration: Int) {
+            math.start = start
+            math.duration = duration
+            let clipConfig = clip.getConfig()
+            clipConfig.setIntNumber(duration, forKey: TUPVEAnimationTextClip_CONFIG_DURATION)
+            clip.setConfig(clipConfig)
+            if clipLayer.getClip(200) == nil {
+                clipLayer.add(clip, at: 200)
+            }
+            let layerConfig = clipLayer.getConfig()
+            layerConfig.setIntNumber(start, forKey: TUPVEditorLayer_CONFIG_START_POS)
+            clipLayer.setConfig(layerConfig)
+        }
+        func updateProperty() {
+            clip.setProperty(builder.makeProperty(), forKey: TUPVEAnimationTextClip_PROP_PARAM)
+        }
+        func updateOverlayProperty() {
+            clipLayer.setProperty(overlayBuilder.makeProperty(), forKey: TUPVEditorLayer_PROP_OVERLAY)
+        }
+        func update(blend mode: String) {
+            math.blend = mode
+            let blendConfig = clipLayer.getConfig()
+            blendConfig.setString(mode, forKey: TUPVEditorLayer_CONFIG_BLEND_MODE)
+            clipLayer.setConfig(blendConfig)
+        }
+        func info() -> TUPVEAnimationTextClip_InteractionInfo? {
+            guard let infoProperty = clip.getProperty(TUPVEAnimationTextClip_PROP_INTERACTION_INFO) else { return nil }
+            return TUPVEAnimationTextClip_InteractionInfo(infoProperty)
+        }
     }
-    
-    // 文字item控制view
-    private let overlayView = TuTextOverlayView(frame: CGRect(x: 0, y: 0, width: UIScreen.width(), height: UIScreen.width()))
-    
-    // 文字属性view
-    private let tableView = UITableView()
-    
-    // 文本输入view
-    lazy var textView: RSKGrowingTextView = {
-        let item = RSKGrowingTextView()
-        item.maximumNumberOfLines = 3
-        item.minimumNumberOfLines = 1
-        //item.returnKeyType = .done
-        
-        item.growingTextViewDelegate = self
-        item.font = .systemFont(ofSize: 17)
-        let contentView = UIView(frame: UIScreen.main.bounds)
-        contentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(textDismissAction)))
-        view.addSubview(contentView)
+    var sourceItems: [TTTextSourceItem] = TTTextSourceItem.all()
+    private var stickerTable:[Int: TextItem] = [:]
+    var currentItem: TextItem?
+    let sliderView = SliderBarView(title: "文字起止位置", state: .multi)
+    var collectionView: UICollectionView!
+    lazy var paramView: TTTextParamView = {
+        let item = TTTextParamView(frame: CGRect(x: 0, y: collectionView.frame.minY, width: UIScreen.width, height: contentView.frame.height - collectionView.frame.minY))
+        item.setup(count: sourceItems.count - 1)
         contentView.addSubview(item)
-        item.snp.makeConstraints { (make) in
-            make.left.right.equalToSuperview()
-            make.bottom.equalToSuperview()
-        }
+        item.delegate = self
+        item.isHidden = true
         return item
     }()
-    
-    // 时间轴view
-    lazy var barView : SliderBarView = {
-        let barView = SliderBarView(title: "文字起止位置", state: .multi)
-        barView.multiSlider.value = [0, 0]
-        barView.isUserInteractionEnabled = false
-        return barView
-    }()
-    
-    // 所有创建的文字view数组
-    var viewItems: [TextItem] = []
-    
-    // 当前选中文字view
-    var currentItem: TextItem?
-    
-    var videoDuration: Int = 0
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
+        if viewModel.state == .draft, stickerTable.keys.count > 0 {
+            for sticker in stickerTable {
+                updateStickerView(item: sticker.value, isInitialize: true, isDraft: true)
+            }
+        }
+    }
+    override var currentTs: Int {
+        didSet {
+            /// 当前进度不在贴纸时间范围内
+            guard let item = currentItem, !durationIsValid(item: item) else { return }
+            DispatchQueue.main.async {
+                self.setupItem(current: nil)
+            }
+        }
+    }
     override init(viewModel: EditorViewModel) {
         super.init(viewModel: viewModel)
-        videoDuration = viewModel.clipItems[0].originalDuration()
         if viewModel.state == .draft {
-            for item in viewModel.editor.videoComposition().getAllLayers() {
-                guard item.key.intValue != viewModel.mainLayerIndex else {continue}
-                if let layer = item.value as? TUPVEditorClipLayer {
-                    for (_,clip) in layer.getAllClips() {
-                        guard clip.getType() == TUPVEAnimationTextClip_TYPE_NAME else {continue}
-                        var builder = TUPVEAnimationTextClip_PropertyBuilder()
-                        if let prop = clip.getProperty(TUPVEAnimationTextClip_PROP_PARAM) {
-                            let holder = TUPVEAnimationTextClip_PropertyHolder(property: prop)
-                            builder = TUPVEAnimationTextClip_PropertyBuilder(holder: holder)
-                        }
-                        var blendStrength :Float = 1
-                        if let prop = layer.getProperty(TUPVEditorLayer_PROP_OVERLAY) {
-                            let holder = TUPVEditorLayer_OverlayPropertyHolder(property: prop)
-                            let builder = TUPVEditorLayer_OverlayPropertyBuilder(holder: holder)
-                            blendStrength = builder.holder.blendStrength
-                        }
-                        
-                        let blendMode = layer.getConfig().getString(TUPVEditorLayer_CONFIG_BLEND_MODE, or: "")
-
-                        var startTs = layer.getConfig().getIntNumber(TUPVEditorLayer_CONFIG_START_POS, or: 0)
-                        let duration = Int(clip.getStreamInfo()!.duration)
-                        
-                        let item = TextItem(idx: item.key.intValue)
-                        item.blendMode = blendMode
-                        item.blendValue = blendStrength
-                        item.startTs = startTs
-                        item.endTs = startTs + duration
-                        
-                        item.textLayer = layer
-                        item.textClip = clip
-                        item.builder = builder
-                        item.alphaValue = Float(builder.holder.fillColor.rgba.alpha)
-                        
-                        item.textColor = builder.holder.fillColor
-                        
-                        viewItems.append(item)
-                        
+            let layers = viewModel.editor.videoComposition().getAllLayers()
+            for layerDict in layers {
+                guard let clipLayer = layerDict.value as? TUPVEditorClipLayer else { continue }
+                for clipDict in clipLayer.getAllClips() {
+                    guard clipDict.value.getType() == TUPVEAnimationTextClip_TYPE_NAME else { continue }
+                    let index = layerDict.key.intValue
+                    var builder = TUPVEAnimationTextClip_PropertyBuilder()
+                    if let prop = clipDict.value.getProperty(TUPVEAnimationTextClip_PROP_PARAM) {
+                        let holder = TUPVEAnimationTextClip_PropertyHolder(property: prop)
+                        builder = TUPVEAnimationTextClip_PropertyBuilder(holder: holder)
                     }
+                    let blendMode = clipLayer.getConfig().getString(TUPVEditorLayer_CONFIG_BLEND_MODE, or: "xxx")
+                    var overlayBuilder = TUPVEditorLayer_OverlayPropertyBuilder()
+                    if let prop = clipLayer.getProperty(TUPVEditorLayer_PROP_OVERLAY) {
+                        let holder = TUPVEditorLayer_OverlayPropertyHolder(property: prop)
+                        overlayBuilder = TUPVEditorLayer_OverlayPropertyBuilder(holder: holder)
+                    }
+                    let startTs = clipLayer.getConfig().getIntNumber(TUPVEditorLayer_CONFIG_START_POS, or: 0)
+                    let duration = Int(clipDict.value.getStreamInfo()!.duration)
+                    let item = TextItem(index: index, clipLayer: clipLayer, clip: clipDict.value)
+                    item.math.start = startTs
+                    item.math.duration = duration
+                    item.math.scale = Float(builder.holder.fontScale)
+                    if blendMode != "xxx" {
+                        item.math.blend = blendMode
+                    }
+                    item.builder = builder
+                    item.overlayBuilder = overlayBuilder
+                    stickerTable[index] = item
+                    stickerLayerIndex = index > stickerLayerIndex ? index : stickerLayerIndex
                 }
             }
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupView()
-        registerNotification()
-        
-        for item in viewItems {
-            
-            if let info = textStickerUpdateProperty(item: item) {
-                let rect = CGRect(x:CGFloat(info.posX), y:CGFloat(info.posY), width: CGFloat(info.width), height: CGFloat(info.height))
-                           
-                overlayView.createView(item.vid,startTs:item.startTs,endTs:item.endTs,rect:rect,rotation:info.rotation)
-
-            }
-        }
-        
-    }
-    
-    deinit {
-        printLog("deinit")
-    }
 }
 
 extension AnimationTextController {
-    /// 文字特效
-    func textSticker(item: TextItem, startTs: Int, endTs: Int) {
-        
-        let clipConfig = TUPConfig()
-        
-        clipConfig.setNumber(NSNumber(value: endTs - startTs), forKey: TUPVEText2DClip_CONFIG_DURATION)
-        item.textClip!.setConfig(clipConfig)
-        
-        let layerConfig = TUPConfig()
-        layerConfig.setNumber(NSNumber(value: startTs), forKey: TUPVEditorLayer_CONFIG_START_POS)
-        item.textLayer!.add(item.textClip!, at: 500)
-        item.textLayer!.setConfig(layerConfig)
-        
-        viewModel.editor.videoComposition().add(item.textLayer!, at: item.index)
-        
-        viewModel.build()
-    }
-    
-    /// 移除文字
-    func textSticker(remove item: TextItem) {
-        viewModel.editor.videoComposition().deleteLayer(at: item.index)
-        viewModel.build()
-    }
-    
-    /// 文字编辑
-    func textStickerUpdateProperty(item: TextItem) -> TUPVEAnimationTextClip_InteractionInfo? {
-        item.textClip!.setProperty(item.builder.makeProperty(), forKey: TUPVEAnimationTextClip_PROP_PARAM)
-        guard let resultProperty = item.textClip!.getProperty(TUPVEAnimationTextClip_PROP_INTERACTION_INFO) else { return  nil}
-        return TUPVEAnimationTextClip_InteractionInfo(resultProperty)
-    }
-    /// 文字起止时间
-    func textStickerUpdateDuration(item: TextItem, begin: Float, end: Float) {
-        let config = TUPConfig()
-        config.setNumber(NSNumber(value: Int(Float(videoDuration) * begin)), forKey: TUPVEditorLayer_CONFIG_START_POS)
-        viewModel.editor.videoComposition().getLayer(item.index)?.setConfig(config)
-        let textClipConfig = TUPConfig()
-        textClipConfig.setNumber(NSNumber(value: Int(Float(videoDuration) * (end - begin))), forKey: "duration")
-        item.textClip!.setConfig(textClipConfig)
-        viewModel.build()
-    }
-    /// 混合模式
-    func textStrickerBlend(item: TextItem) {
-        let config = TUPConfig()
-        config.setString(item.blendMode!, forKey: TUPVEditorLayer_CONFIG_BLEND_MODE)
-        viewModel.editor.videoComposition().getLayer(item.index)?.setConfig(config)
-        viewModel.build()
-    }
-    /// 混合强度
-    func textStrickerUpdateBlend(item: TextItem, value: Float) {
-        let builder = TUPVEditorLayer_OverlayPropertyBuilder()
-        builder.holder.blendStrength = value
-        viewModel.editor.videoComposition().getLayer(item.index)?.setProperty(builder.makeProperty(), forKey: TUPVEditorLayer_PROP_OVERLAY)
-    }
-}
-
-extension AnimationTextController: TuTextOverlayViewDelegate {
-    
-    /**
-     *  创建文字view
-     */
-    private func initializeTextSticker() {
-        
+    func addItem() {
         fetchLock()
-        defer {
-            fetchUnlock(autoPlay: false)
+        stickerLayerIndex += 1
+        let item = TextItem(index: stickerLayerIndex, ctx: viewModel.ctx)
+        item.update(start: currentTs, duration: viewModel.getDuration())
+        viewModel.editor.videoComposition().add(item.clipLayer, at: item.index)
+        viewModel.build()
+        fetchUnlock()
+        // 数据源
+        stickerTable[item.index] = item
+        setupItem(current: item)
+        // 添加贴纸
+        updateStickerView(item: item, isInitialize: true)
+    }
+    func setupItem(current item: TextItem?) {
+        if item == nil, let currentItem = currentItem {
+            stickerDisplayView.updateItemView(currentItem.index, selected: false)
         }
-        
-        let videoItem = TextItem(ctx: viewModel.ctx)
-        videoItem.startTs = Int(controlView.currentProg() * Float(videoDuration))
-        videoItem.endTs = videoDuration
-        viewItems.append(videoItem)
-        currentItem = videoItem
-        
-        textSticker(item: videoItem, startTs: videoItem.startTs, endTs: videoItem.endTs)
-        overlayView.createView(videoItem.vid,startTs:videoItem.startTs,endTs:videoItem.endTs)
-        
-        openBarView()
-        tableView.reloadData()
-        
-    }
-    
-    /**
-     *  删除文字view
-     */
-    private func removeTextView() {
-        guard let curItem = self.currentItem else {return}
-        fetchLock()
-        
-        textSticker(remove: curItem)
-        
-        if let index = viewItems.firstIndex(where: { item -> Bool in
-            return item.vid == curItem.vid
-        }){
-            viewItems.remove(at: index)
-        }
-        
-        fetchUnlock(autoPlay: false)
-        
-        self.player.seek(to: self.currentTs)
-        self.player.previewFrame(self.currentTs)
-        
-        currentItem = nil
-        
-        cancelBarView()
-        
-        tableView.reloadData()
-        
-    }
-    
-    /**
-     *  设置当前选中item状态
-     *
-     *  @param vid 唯一标识
-     */
-    func onSelectItem(_ vid: Int){
-        // 便利所有文字view,把“选择”状态的view设置给currentItem
-        for (_,item) in viewItems.enumerated() {
-            if item.vid == vid {
-                currentItem = item
-                openBarView()
-                tableView.reloadData()
-                // 暂停播放
-                pause()
-            }
-        }
-    }
-    
-    /**
-     *  未选中状态
-     *
-     */
-    func onUnSelected() {
-        
-        currentItem = nil
-        
-        cancelBarView()
-        
-        tableView.reloadData()
-    }
-    
-    /**
-     *  更新文字属性
-     *
-     *  @param builder 数据
-     */
-    func updatePropBuilder(_ vid:Int, info: TuTextItemInfo) {
-        
-        guard let curItem = currentItem else {return};
-        
-        if info.type ==  TuTextItemView_TransformType(rawValue: 1){// 平移
-            curItem.builder.holder.posX = Double(info.pos.x)
-            curItem.builder.holder.posY = Double(info.pos.y)
-        }else if info.type ==  TuTextItemView_TransformType(rawValue: 2){// 缩放
-            curItem.builder.holder.fontScale = Double(info.scale)
-        }else if info.type ==  TuTextItemView_TransformType(rawValue: 3){// 旋转
-            curItem.builder.holder.rotation = Int32(info.rotation)
-        }
-        updateTextView()
-    }
-    
-    /**
-     *  获取当前预览进度
-     *
-     *  @param builder 数据
-     */
-    func presentProgress() -> Int {
-        return Int(controlView.currentProg() * Float(videoDuration))
-    }
-    
-    
-    @objc private func paramChangeNotification(_ notification: Notification) {
-        guard let builder = notification.object as? TUPVEAnimationTextClip_PropertyBuilder else { return }
-        currentItem?.builder.holder.textScaleX  = builder.holder.textScaleX
-        currentItem?.builder.holder.textScaleY  = builder.holder.textScaleY
-        currentItem?.builder.holder.strokeColor = builder.holder.strokeColor
-        currentItem?.builder.holder.strokeWidth = builder.holder.strokeWidth
-        currentItem?.builder.holder.fillColor   = builder.holder.fillColor
-        currentItem?.builder.holder.alignment   = builder.holder.alignment
-        updateTextView()
-    }
-    
-    @objc private func paramValueChangeNotification(_ notification: Notification) {
-        guard let item = notification.object as? TextItem else { return }
         currentItem = item
-        updateBlend(value: currentItem!.blendValue)
+        paramView.update(textItem: item)
+        updateSliderView()
     }
-    
-    @objc private func paramOrderChangeNotification(_ notification: Notification) {
-        guard let item = currentItem else {return}
-        updateTextContent(String(item.builder.holder.text.reversed()))
-    }
-    
-    @objc private func paramBlendChangeNotification(_ notification: Notification) {
-        guard let mode = notification.object as? String else { return }
-        self.updateBlend(mode: mode)
-    }
-    
-    /**
-     *  预览播放通知
-     *
-     *  @param notification
-     */
-    @objc private func doPlayNotification(_ notification: Notification) {
-        //guard let time = notification.object as? Int else { return }
-        
-        DispatchQueue.main.async {
-            if let item = self.currentItem {
-                self.overlayView.presentview(item.vid,show:false)
-            }
-            
-            self.cancelBarView()
-            self.currentItem = nil
-            self.tableView.reloadData()
+    /// 添加/更新贴纸
+    func updateStickerView(item: TextItem, isInitialize: Bool = false, isDraft: Bool = false) {
+        if !isDraft { // 草稿箱初始化不需要更新
+            item.updateProperty()
         }
-        
-    }
-    
-    /**
-     *  播放进度通知
-     *
-     *  @param notification
-     */
-    @objc private func timeChangeNotification(_ notification: Notification) {
-        guard let time = notification.object as? Int else { return }
-        
-        guard let item = currentItem  else { return }
-        
-        if time < item.startTs || time > item.endTs {
-            DispatchQueue.main.async {
-                self.overlayView.presentview(item.vid,show:false)
-                self.currentItem = nil
-                self.cancelBarView()
-                self.tableView.reloadData()
-            }
+        player.previewFrame(currentTs)
+        guard let info = item.info() else { return }
+        let rect = stickerFrame(info: info)
+        if isInitialize {
+            stickerDisplayView.addItemView(item.index, frame: rect, angle: CGFloat(info.rotation), multi: nil, isSelected: isDraft ? false : true)
+        } else {
+            stickerDisplayView.updateItemView(item.index, frame: rect, angle: CGFloat(info.rotation))
         }
     }
-    
-    /**
-     *  更新文本
-     *
-     *  @param title 文本
-     */
-    private func updateTextContent(_ title: String) {
-        currentItem?.builder.holder.text = title
-        updateTextView()
-    }
-    
-    /**
-     *  更新文字view
-     */
-    private func updateTextView() {
+    func updateProperty() {
         guard let item = currentItem else { return }
-        
-        guard let info = textStickerUpdateProperty(item: item) else { return }
-        
-        let rect = CGRect(x:CGFloat(info.posX), y:CGFloat(info.posY), width: CGFloat(info.width), height: CGFloat(info.height))
-        
-        overlayView.redraw(item.vid,rect:rect,rotation:info.rotation)
-        
+        item.updateProperty()
         player.previewFrame(currentTs)
     }
-    
-    private func updateBlend(mode: String) {
-        guard let currentItem = currentItem else { return }
-        
-        currentItem.blendMode = mode
-        fetchLock()
-        
-        textStrickerBlend(item: currentItem)
-        
-        fetchUnlock(autoPlay: false)
-        
-        player.seek(to: currentTs)
-        
-        player.previewFrame(currentTs)
-    }
-    private func updateBlend(value: Float) {
-        guard let currentItem = currentItem else { return }
-        
-        fetchLock()
-        
-        textStrickerUpdateBlend(item: currentItem, value: value)
-        
-        fetchUnlock(autoPlay: false)
-        
-        player.seek(to: currentTs)
-        
-        player.previewFrame(currentTs)
-    }
-    
-    /**
-     *  更新文字显示时间轴
-     *
-     *  @param begin 起始时间点
-     *  @param end   结束时间点
-     */
-    private func updateDuration(begin: Float, end: Float) {
+    /// 更新时长
+    func updateItem(begin: Float, end: Float) {
         guard let item = currentItem else { return }
-        
+        let start = Int(begin * viewModel.originalDuration)
+        let duration = Int((end - begin) * viewModel.originalDuration)
         fetchLock()
-        
-        textStickerUpdateDuration(item: item, begin: begin, end: end)
-        
-        fetchUnlock(autoPlay: false)
-        
-        item.startTs = Int(begin * Float(videoDuration))
-        item.endTs = Int(end * Float(videoDuration))
-        
-        overlayView.setTimeline(item.vid, startTs:item.startTs, endTs:item.endTs)
-        seek(Int(begin * Float(viewModel.getDuration())))
-        
+        item.update(start: start, duration: duration)
+        fetchUnlock()
+        seek(start)
+        NotificationCenter.default.post(name: .init(rawValue: "TextUpdateDuration"), object: (start, duration))
     }
-    
+    /// 贴纸 坐标
+    func stickerFrame(info: TUPVEAnimationTextClip_InteractionInfo) -> CGRect {
+        stickerFrame(posX: CGFloat(info.posX), posY: CGFloat(info.posY), width: CGFloat(info.width), height: CGFloat(info.height))
+    }
+    /// 贴纸 时间是否有效
+    func durationIsValid(item: TextItem?) -> Bool {
+        guard let item = item else { return false }
+        return (currentTs >= item.math.start && currentTs <= (item.math.start + item.math.duration))
+    }
 }
-extension AnimationTextController {
+extension AnimationTextController: TTStickerDisplayDelegate {
+    func displayView(_ displayView: TTStickerDisplayView, index: Int, position: CGPoint, scale: CGFloat, rotation: CGFloat) {
+        guard let item = currentItem, item.index == index else { return }
+        item.builder.holder.posX = Double((displayView.frame.width * position.x - interactionRect.origin.x) / interactionRect.width)
+        item.builder.holder.posY = Double((displayView.frame.height * position.y - interactionRect.origin.y) / interactionRect.height)
+        item.builder.holder.fontScale = Double(scale) * Double(item.math.scale)
+        item.builder.holder.rotation = Int32(rotation)
+        updateStickerView(item: item)
+    }
+    func displayView(_ displayView: TTStickerDisplayView, didSelectItemAt index: Int) -> Bool {
+        guard let item = stickerTable[index] else { return false }
+        let durationValid = durationIsValid(item: item)
+        if durationValid {
+            if currentItem?.index != item.index {
+                setupItem(current: item)
+            }
+            pause()
+        }
+        return durationValid
+    }
+    func displayView(_ displayView: TTStickerDisplayView, didEditItemAt index: Int) {
+        guard let item = currentItem, item.index == index else { return }
+        textInputView.show()
+        textInputView.textDidChange = {[weak self] text in
+            guard let `self` = self else { return }
+            var title = text.trimmingCharacters(in: .whitespaces)
+            if title.count == 0 {
+                title = defaultText
+            }
+            item.builder.holder.text = title
+            self.updateStickerView(item: item)
+        }
+    }
+    func displayViewCancelSelect(_ displayView: TTStickerDisplayView) {
+        setupItem(current: nil)
+    }
+    func displayView(_ displayView: TTStickerDisplayView, didRemovedItemAt index: Int) {
+        removeStickerItem(index)
+        stickerTable.removeValue(forKey: index)
+        setupItem(current: nil)
+    }
+}
+extension AnimationTextController: UICollectionViewDataSource, UICollectionViewDelegate {
     func setupView() {
+        stickerDisplayView.delegate = self
         
-        overlayView.delegate = self
-        overlayView.interactionRect = interactionRect
-        overlayView.interactionRatio = viewModel.videoNaturalSize.height / interactionRect.height
-        displayView.insertSubview(overlayView,belowSubview:controlView)
-        overlayView.editBlock = {[weak self] in
+        sliderView.multiBetweenThumbs(distance: minTimeInterval * 10 / viewModel.originalDuration)
+        updateSliderView()
+        contentView.addSubview(sliderView)
+        sliderView.multiDragEndedCompleted = {[weak self] begin, end in
             guard let `self` = self else { return }
-            self.textView.text = self.currentItem?.builder.holder.text
-            self.textView.superview?.isHidden = false
-            self.textView.becomeFirstResponder()
+            self.updateItem(begin: begin, end: end)
         }
-        overlayView.closeBlock = {[weak self] in
-            guard let `self` = self else { return }
-            self.removeTextView()
-        }
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.itemSize = CGSize(width: 75, height: 75)
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: sliderView.frame.maxY + 10, width: UIScreen.width, height: 110), collectionViewLayout: flowLayout)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(TTCollectionViewvalue1Cell.self, forCellWithReuseIdentifier: "ReuseIdentifier")
+        collectionView.showsHorizontalScrollIndicator = false
+        contentView.addSubview(collectionView)
         
-        contentView.addSubview(barView)
-        barView.snp.makeConstraints { (make) in
-            make.left.right.equalToSuperview()
-            make.top.equalTo(15)
-            make.height.equalTo(60)
+    }
+    func updateSliderView() {
+        if let item = currentItem {
+            sliderView.multiSlider.value = [CGFloat(Float(item.math.start)/viewModel.originalDuration),CGFloat(Float(item.math.start+item.math.duration)/viewModel.originalDuration)]
+            sliderView.isUserInteractionEnabled = true
+        } else {
+            sliderView.multiSlider.value = [0, 0]
+            sliderView.isUserInteractionEnabled = false
         }
-        barView.multiDragEndedCompleted = {[weak self] begin,end in
-            guard let `self` = self else { return }
-            self.updateDuration(begin: begin, end: end)
-        }
-        
-        tableView.backgroundColor = .black
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.showsVerticalScrollIndicator = false
-        tableView.separatorStyle = .none
-        tableView.register(TextEditorParamCell.self, forCellReuseIdentifier: "TextEditorParamCell")
-        contentView.addSubview(tableView)
-        tableView.snp.makeConstraints { (make) in
-            make.left.right.equalToSuperview()
-            make.top.equalTo(barView.snp_bottom)
-            make.bottom.equalTo(-CGFloat.safeBottom)
-        }
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        sourceItems.count
     }
     
-    /**
-     *  文字时间轴view，设置为不可编辑状态
-     */
-    @objc func cancelBarView() {
-        barView.multiSlider.value = [0, 0]
-        barView.isUserInteractionEnabled = false
-    }
-    
-    /**
-     *  文字时间轴view，设置为可编辑状态，
-     *   并设置当前选中的文字view
-     */
-    func openBarView() {
-        guard let item = currentItem else {
-            return
-        }
-        
-        barView.isUserInteractionEnabled = true
-        let v0 = CGFloat(item.startTs) / CGFloat(videoDuration)
-        let v1 = CGFloat(item.endTs) / CGFloat(videoDuration)
-
-        barView.multiSlider.value = [v0, v1]
-    }
-    
-}
-extension AnimationTextController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TextEditorParamCell") as! TextEditorParamCell
-        //cell.builder = currentItem?.builder
-        //cell.textItem = currentItem
-        cell.addTextEditorCompleted = {[weak self] in
-            guard let `self` = self else { return }
-            self.initializeTextSticker()
-            
-        }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReuseIdentifier", for: indexPath) as! TTCollectionViewvalue1Cell
+        cell.item = sourceItems[indexPath.row]
         return cell
     }
-}
-
-extension AnimationTextController: RSKGrowingTextViewDelegate {
-    func registerNotification(){
-        NotificationCenter.default.addObserver(self, selector: #selector(paramChangeNotification(_:)), name: NSNotification.Name.init("TextEditorParamChangeNotification"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(paramValueChangeNotification(_:)), name: NSNotification.Name.init("TextEditorParamVlaueChangeNotification"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(paramOrderChangeNotification(_:)), name: NSNotification.Name.init("TextEditorParamOrderNotification"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(paramBlendChangeNotification(_:)), name: NSNotification.Name.init("TextEditorParamBlendChangeNotification"), object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyBoardWillShow(_ :)),
-                                               name: UIResponder.keyboardWillShowNotification,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(timeChangeNotification(_:)), name: NSNotification.Name.init("TextEditorTimeChangeNotification"), object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(doPlayNotification(_:)), name: NSNotification.Name.init("TextEditorDoPlayNotification"), object: nil)
-        
-        
-    }
-    //MARK:键盘通知相关操作
-    @objc func keyBoardWillShow(_ notification:Notification){
-        DispatchQueue.main.async {
-            let user_info = notification.userInfo
-            let keyboardRect = (user_info?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-            let keyboardHeight = keyboardRect.height
-            self.textView.snp.updateConstraints { (make) in
-                make.bottom.equalTo(-keyboardHeight)
-            }
-            //动画
-            UIView.animate(withDuration: 0.3) {
-                self.view.layoutIfNeeded()
-            }
-        }
-    }
-    @objc private func textDismissAction() {
-        textView.resignFirstResponder()
-        textView.superview?.isHidden = true
-    }
-    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
-        if textView.text == "动画文字" {
-            textView.text = ""
-            updateTextContent(textView.text)
-        }
-        return true
-    }
     
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text == "" {
-            textView.text = "动画文字"
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.item == 0 {
+            addItem()
+        } else {
+            guard let _ = currentItem else { return }
+            collectionView.isHidden = true
+            pause()
+            paramView.show(state: sourceItems[indexPath.row].state, index: indexPath.row - 1)
         }
-        updateTextContent(textView.text)
-        
-    }
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        let textArray = textView.text.components(separatedBy: CharacterSet.whitespaces)
-        let inputText = textArray.joined()
-        updateTextContent(inputText)
-        return true
-    }
-    func textViewDidChange(_ textView: UITextView) {
-        //        let inputText = textView.text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        let textArray = textView.text.components(separatedBy: CharacterSet.whitespaces)
-        let inputText = textArray.joined()
-        updateTextContent(inputText)
     }
 }
-
-
-
-
+extension AnimationTextController: TTTextParamViewDelegate {
+    func paramView(_ paramView: TTTextParamView, update index: Int) {
+        guard let item = self.currentItem, item.index == index else { return }
+        pause()
+        updateProperty()
+    }
+    func paramView(_ paramView: TTTextParamView, updateFrame index: Int) {
+        guard let item = self.currentItem, item.index == index else { return }
+        updateStickerView(item: item)
+    }
+    func paramView(_ paramView: TTTextParamView, blend mode: String) {
+        guard let item = self.currentItem else { return }
+        fetchLock()
+        item.update(blend: mode)
+        fetchUnlock()
+        previewFrame()
+    }
+    func paramView(_ paramView: TTTextParamView, updateOverlay index: Int) {
+        guard let item = self.currentItem, item.index == index else { return }
+        pause()
+        item.updateOverlayProperty()
+        previewFrame()
+    }
+    func didHiddenParamView(_ paramView: TTTextParamView) {
+        collectionView.isHidden = false
+    }
+}
