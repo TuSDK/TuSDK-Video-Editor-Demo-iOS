@@ -1,4 +1,4 @@
-# TuSDK-Video-Editor Release Notes for 1.0.2
+# TuSDK-Video-Editor Release Notes for 1.0.3
 
 
 
