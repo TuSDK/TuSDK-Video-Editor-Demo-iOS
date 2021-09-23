@@ -1,0 +1,6 @@
+${PODS_ROOT}/Target Support Files/AudioKit/AudioKit-xcframeworks.sh
+${PODS_ROOT}/AudioKit/CAudioKit.xcframework
+${PODS_ROOT}/AudioKit/AudioKit.xcframework
+${PODS_ROOT}/AudioKit/STK.xcframework
+${PODS_ROOT}/AudioKit/soundpipe.xcframework
+${PODS_ROOT}/AudioKit/sporth.xcframework

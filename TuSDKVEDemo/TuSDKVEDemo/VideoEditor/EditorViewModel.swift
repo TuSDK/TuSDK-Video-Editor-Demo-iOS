@@ -100,7 +100,10 @@ extension EditorViewModel {
             if scene == .color { // CanvasResizeEffect 需添加 ColorAdjustEffect 之后
                 appendEffectIndex = clipItem.index + 4000
             }
-            clipItem.videoClip.effects().add(appendEffect, at: appendEffectIndex)
+            if scene != .matte {
+                clipItem.videoClip.effects().add(appendEffect, at: appendEffectIndex)
+            }
+            
             mainAudioLayer.add(clipItem.audioClip, at: clipItem.index)
             mainVideoLayer.add(clipItem.videoClip, at: clipItem.index)
             clipItems.append(clipItem)

@@ -15,16 +15,24 @@ class SceneViewController: UITableViewController {
         super.viewDidLoad()
         title = "涂图"
         
+        
         tableView.rowHeight = 56
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        //获取版本信息
         let bundleVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
+        let bundleShortVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: date)
+        
         let tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.width(), height: 40))
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: UIScreen.width(), height: 40))
         label.textColor = .black
         label.numberOfLines = 0
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 13)
-        label.text = "TuSDK Video Editor SDK 1.0.1-\(bundleVersion)\n@2021 TUTUCLOUD.COM"
+        label.text = "TuSDK Video Editor SDK \(bundleShortVersion)-\(bundleVersion)\n@\(year) TUTUCLOUD.COM"
         tableFooterView.addSubview(label)
         tableView.tableFooterView = tableFooterView
         /// 清空存储素材临时文件

@@ -1,6 +1,8 @@
 
 workspace 'TuSDKVEDemo'
 
+platform :ios, '11.0'
+
 target 'TuSDKVEDemo' do
    project 'TuSDKVEDemo/TuSDKVEDemo.xcodeproj'
    workspace 'TuSDKVEDemo'
@@ -19,4 +21,7 @@ target 'TuSDKVEDemo' do
    pod 'HandyJSON', '~> 5.0.2'
    pod 'Bugly'
    pod 'FCFileManager'
+   pod 'Alamofire'
+   pod 'AudioKit'
+   
 end

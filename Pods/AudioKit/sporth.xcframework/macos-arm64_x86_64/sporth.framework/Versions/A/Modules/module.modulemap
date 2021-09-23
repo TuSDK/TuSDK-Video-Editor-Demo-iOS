@@ -1,0 +1,6 @@
+framework module sporth {
+  umbrella header "sporth.h"
+
+  export *
+  module * { export * }
+}

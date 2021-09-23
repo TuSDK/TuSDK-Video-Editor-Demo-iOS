@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -128,6 +128,12 @@
 		2A515508265BAAAC009381C0 /* lsq_anitext_thumb_85.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2A5154B2265BAAAB009381C0 /* lsq_anitext_thumb_85.gif */; };
 		2A515509265BAAAC009381C0 /* lsq_anitext_thumb_33.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2A5154B3265BAAAB009381C0 /* lsq_anitext_thumb_33.gif */; };
 		2A51550A265BAAAC009381C0 /* lsq_anitext_thumb_2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2A5154B4265BAAAB009381C0 /* lsq_anitext_thumb_2.gif */; };
+		2A5E376726C1168100909F90 /* AudioFadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5E376626C1168100909F90 /* AudioFadeController.swift */; };
+		2A5E376926C3A90E00909F90 /* MatteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5E376826C3A90E00909F90 /* MatteController.swift */; };
+		2A5E376C26C3B1A300909F90 /* TTMatteDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5E376B26C3B1A300909F90 /* TTMatteDisplayView.m */; };
+		2A5E37EB26C4BFB700909F90 /* UIView+Hotspot.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5E37EA26C4BFB700909F90 /* UIView+Hotspot.m */; };
+		2A5E37F726CB5D6500909F90 /* TTMatteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5E37F626CB5D6500909F90 /* TTMatteModel.swift */; };
+		2A5E37F926CB704700909F90 /* TTMatteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5E37F826CB704700909F90 /* TTMatteView.swift */; };
 		2A6521C125FA12B80069B79F /* EditorDraftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6521C025FA12B80069B79F /* EditorDraftModel.swift */; };
 		2A6521C325FA1B650069B79F /* DraftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6521C225FA1B650069B79F /* DraftViewController.swift */; };
 		2A6521C525FA349C0069B79F /* ParticleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6521C425FA349C0069B79F /* ParticleController.swift */; };
@@ -172,7 +178,6 @@
 		2AC47B042601D7DD00F119A2 /* ClipsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC47B032601D7DD00F119A2 /* ClipsTableView.swift */; };
 		2AC47B062601EC5400F119A2 /* VideoAudioMixController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC47B052601EC5400F119A2 /* VideoAudioMixController.swift */; };
 		2ADA6E552575E01D00AFEA46 /* VEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ADA6E542575E01D00AFEA46 /* VEManager.m */; };
-		2ADA6E6525762F5300AFEA46 /* city_sunshine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2ADA6E6425762F5300AFEA46 /* city_sunshine.mp3 */; };
 		2AF02CF3256CA23E0068D677 /* SceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF02CF2256CA23E0068D677 /* SceneViewController.swift */; };
 		2AF02CF6256CAC400068D677 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF02CF5256CAC400068D677 /* EditorViewController.swift */; };
 		2AF02CFD256CB29F0068D677 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF02CFC256CB29F0068D677 /* Navigator.swift */; };
@@ -182,12 +187,18 @@
 		2AF02DBB256F5EE50068D677 /* EditorAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF02DBA256F5EE50068D677 /* EditorAdapter.swift */; };
 		2AF02DBE256F7CF70068D677 /* SourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF02DBD256F7CF70068D677 /* SourceViewModel.swift */; };
 		2AF02DC52570AAC70068D677 /* SliderBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF02DC42570AAC70068D677 /* SliderBarView.swift */; };
-		A6B4204E266F0664002F7DCA /* TuSDKPulse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B42049266F053A002F7DCA /* TuSDKPulse.framework */; };
-		A6B4204F266F0664002F7DCA /* TuSDKPulse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A6B42049266F053A002F7DCA /* TuSDKPulse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A6B42050266F0664002F7DCA /* TuSDKPulseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B4204A266F053A002F7DCA /* TuSDKPulseCore.framework */; };
-		A6B42051266F0664002F7DCA /* TuSDKPulseCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A6B4204A266F053A002F7DCA /* TuSDKPulseCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A6B42052266F0665002F7DCA /* TuSDKPulseEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B42048266F053A002F7DCA /* TuSDKPulseEditor.framework */; };
-		A6B42053266F0665002F7DCA /* TuSDKPulseEditor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A6B42048266F053A002F7DCA /* TuSDKPulseEditor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A606B78426E0C57500214078 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77D6B252498A49F00844D76 /* AVFoundation.framework */; };
+		A65C2BBF26FC1E9800D18E16 /* TuSDKPulse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A65C2BBA26FC1E7B00D18E16 /* TuSDKPulse.framework */; platformFilter = ios; };
+		A65C2BC026FC1E9800D18E16 /* TuSDKPulse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A65C2BBA26FC1E7B00D18E16 /* TuSDKPulse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A65C2BC126FC1E9800D18E16 /* TuSDKPulseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A65C2BBB26FC1E7B00D18E16 /* TuSDKPulseCore.framework */; platformFilter = ios; };
+		A65C2BC226FC1E9800D18E16 /* TuSDKPulseCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A65C2BBB26FC1E7B00D18E16 /* TuSDKPulseCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A65C2BC326FC1E9800D18E16 /* TuSDKPulseEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A65C2BB926FC1E7B00D18E16 /* TuSDKPulseEditor.framework */; };
+		A65C2BC426FC1E9800D18E16 /* TuSDKPulseEditor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A65C2BB926FC1E7B00D18E16 /* TuSDKPulseEditor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A678519826F66D850047A0AD /* XBEchoCancellation.m in Sources */ = {isa = PBXBuildFile; fileRef = A678519726F66D850047A0AD /* XBEchoCancellation.m */; };
+		A69DC85926CA100A008773F7 /* TimbreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69DC85826CA100A008773F7 /* TimbreController.swift */; };
+		A69DC86026CBBC2B008773F7 /* AudioQueuePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A69DC85F26CBBC2B008773F7 /* AudioQueuePlayer.m */; };
+		A69DC86126CBBC87008773F7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77D6B212498A27D00844D76 /* AudioToolbox.framework */; };
+		A69F9CC426F2211A000756BC /* TTSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69F9CC326F2211A000756BC /* TTSViewController.swift */; };
 		B80719A4256B999A009DD0E7 /* sound_cat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B807182A256B9998009DD0E7 /* sound_cat.mp3 */; };
 		B80719A5256B999A009DD0E7 /* sound_relieve.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B807182B256B9998009DD0E7 /* sound_relieve.mp3 */; };
 		B80719A8256B999A009DD0E7 /* sound_oldmovie.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B807182E256B9998009DD0E7 /* sound_oldmovie.mp3 */; };
@@ -325,9 +336,6 @@
 		D77D6B2B2498AF0E00844D76 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D6B2A2498AF0E00844D76 /* MainViewController.m */; };
 		D77D6B2E2498AFEF00844D76 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D6B2D2498AFEF00844D76 /* MainTableViewCell.m */; };
 		D7DE9104256B8F1E006BF6AF /* Pods_TuSDKVEDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33CE4097643177DC798D02E /* Pods_TuSDKVEDemo.framework */; };
-		D7DE913C256B9E70006BF6AF /* grid.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D7DE9139256B9E6F006BF6AF /* grid.jpeg */; };
-		D7DE913D256B9E70006BF6AF /* flow.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DE913A256B9E6F006BF6AF /* flow.png */; };
-		D7DE913E256B9E70006BF6AF /* amazon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7DE913B256B9E6F006BF6AF /* amazon.jpg */; };
 		F83A1B4125E7A39E008E9E10 /* TuTextOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = F83A1B4025E7A39E008E9E10 /* TuTextOverlayView.m */; };
 		F83A1B4925E891FC008E9E10 /* TuImageItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = F83A1B4825E891FC008E9E10 /* TuImageItemView.m */; };
 		F882E622260D842200D209C4 /* AnimationTextController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F882E621260D842200D209C4 /* AnimationTextController.swift */; };
@@ -344,15 +352,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		2AAC047C26463FDB00A4A5F3 /* Embed Frameworks */ = {
+		A65C2BC526FC1E9800D18E16 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A6B4204F266F0664002F7DCA /* TuSDKPulse.framework in Embed Frameworks */,
-				A6B42051266F0664002F7DCA /* TuSDKPulseCore.framework in Embed Frameworks */,
-				A6B42053266F0665002F7DCA /* TuSDKPulseEditor.framework in Embed Frameworks */,
+				A65C2BC026FC1E9800D18E16 /* TuSDKPulse.framework in Embed Frameworks */,
+				A65C2BC226FC1E9800D18E16 /* TuSDKPulseCore.framework in Embed Frameworks */,
+				A65C2BC426FC1E9800D18E16 /* TuSDKPulseEditor.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,6 +491,14 @@
 		2A5154B2265BAAAB009381C0 /* lsq_anitext_thumb_85.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lsq_anitext_thumb_85.gif; sourceTree = "<group>"; };
 		2A5154B3265BAAAB009381C0 /* lsq_anitext_thumb_33.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lsq_anitext_thumb_33.gif; sourceTree = "<group>"; };
 		2A5154B4265BAAAB009381C0 /* lsq_anitext_thumb_2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lsq_anitext_thumb_2.gif; sourceTree = "<group>"; };
+		2A5E376626C1168100909F90 /* AudioFadeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFadeController.swift; sourceTree = "<group>"; };
+		2A5E376826C3A90E00909F90 /* MatteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatteController.swift; sourceTree = "<group>"; };
+		2A5E376A26C3B1A300909F90 /* TTMatteDisplayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTMatteDisplayView.h; sourceTree = "<group>"; };
+		2A5E376B26C3B1A300909F90 /* TTMatteDisplayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTMatteDisplayView.m; sourceTree = "<group>"; };
+		2A5E37E926C4BFB700909F90 /* UIView+Hotspot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Hotspot.h"; sourceTree = "<group>"; };
+		2A5E37EA26C4BFB700909F90 /* UIView+Hotspot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Hotspot.m"; sourceTree = "<group>"; };
+		2A5E37F626CB5D6500909F90 /* TTMatteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMatteModel.swift; sourceTree = "<group>"; };
+		2A5E37F826CB704700909F90 /* TTMatteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTMatteView.swift; sourceTree = "<group>"; };
 		2A6521C025FA12B80069B79F /* EditorDraftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorDraftModel.swift; sourceTree = "<group>"; };
 		2A6521C225FA1B650069B79F /* DraftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftViewController.swift; sourceTree = "<group>"; };
 		2A6521C425FA349C0069B79F /* ParticleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleController.swift; sourceTree = "<group>"; };
@@ -532,7 +548,6 @@
 		2AC47B052601EC5400F119A2 /* VideoAudioMixController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAudioMixController.swift; sourceTree = "<group>"; };
 		2ADA6E532575E01D00AFEA46 /* VEManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VEManager.h; sourceTree = "<group>"; };
 		2ADA6E542575E01D00AFEA46 /* VEManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VEManager.m; sourceTree = "<group>"; };
-		2ADA6E6425762F5300AFEA46 /* city_sunshine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_sunshine.mp3; sourceTree = "<group>"; };
 		2AF02CF2256CA23E0068D677 /* SceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneViewController.swift; sourceTree = "<group>"; };
 		2AF02CF5256CAC400068D677 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		2AF02CFC256CB29F0068D677 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
@@ -543,9 +558,15 @@
 		2AF02DBD256F7CF70068D677 /* SourceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewModel.swift; sourceTree = "<group>"; };
 		2AF02DC42570AAC70068D677 /* SliderBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderBarView.swift; sourceTree = "<group>"; };
 		66758B4BE5F7E4DC176D3150 /* Pods-TuSDKVEDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuSDKVEDemo.release.xcconfig"; path = "Target Support Files/Pods-TuSDKVEDemo/Pods-TuSDKVEDemo.release.xcconfig"; sourceTree = "<group>"; };
-		A6B42048266F053A002F7DCA /* TuSDKPulseEditor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKPulseEditor.framework; sourceTree = "<group>"; };
-		A6B42049266F053A002F7DCA /* TuSDKPulse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKPulse.framework; sourceTree = "<group>"; };
-		A6B4204A266F053A002F7DCA /* TuSDKPulseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKPulseCore.framework; sourceTree = "<group>"; };
+		A65C2BB926FC1E7B00D18E16 /* TuSDKPulseEditor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKPulseEditor.framework; sourceTree = "<group>"; };
+		A65C2BBA26FC1E7B00D18E16 /* TuSDKPulse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKPulse.framework; sourceTree = "<group>"; };
+		A65C2BBB26FC1E7B00D18E16 /* TuSDKPulseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKPulseCore.framework; sourceTree = "<group>"; };
+		A678519626F66D850047A0AD /* XBEchoCancellation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBEchoCancellation.h; sourceTree = "<group>"; };
+		A678519726F66D850047A0AD /* XBEchoCancellation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBEchoCancellation.m; sourceTree = "<group>"; };
+		A69DC85826CA100A008773F7 /* TimbreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimbreController.swift; sourceTree = "<group>"; };
+		A69DC85E26CBBC2B008773F7 /* AudioQueuePlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AudioQueuePlayer.h; path = TuSDKVEDemo/Module/AudioQueuePlayer.h; sourceTree = SOURCE_ROOT; };
+		A69DC85F26CBBC2B008773F7 /* AudioQueuePlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AudioQueuePlayer.m; path = TuSDKVEDemo/Module/AudioQueuePlayer.m; sourceTree = SOURCE_ROOT; };
+		A69F9CC326F2211A000756BC /* TTSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSViewController.swift; sourceTree = "<group>"; };
 		B807182A256B9998009DD0E7 /* sound_cat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_cat.mp3; sourceTree = "<group>"; };
 		B807182B256B9998009DD0E7 /* sound_relieve.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_relieve.mp3; sourceTree = "<group>"; };
 		B807182E256B9998009DD0E7 /* sound_oldmovie.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_oldmovie.mp3; sourceTree = "<group>"; };
@@ -704,9 +725,6 @@
 		D77D6B2C2498AFEF00844D76 /* MainTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
 		D77D6B2D2498AFEF00844D76 /* MainTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
 		D77D6B302498CA9900844D76 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		D7DE9139256B9E6F006BF6AF /* grid.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grid.jpeg; sourceTree = "<group>"; };
-		D7DE913A256B9E6F006BF6AF /* flow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flow.png; sourceTree = "<group>"; };
-		D7DE913B256B9E6F006BF6AF /* amazon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amazon.jpg; sourceTree = "<group>"; };
 		F4B5EFA3392CFC41BB0B21A8 /* Pods-TuSDKVEDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuSDKVEDemo.debug.xcconfig"; path = "Target Support Files/Pods-TuSDKVEDemo/Pods-TuSDKVEDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		F83A1B3F25E7A39E008E9E10 /* TuTextOverlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuTextOverlayView.h; sourceTree = "<group>"; };
 		F83A1B4025E7A39E008E9E10 /* TuTextOverlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuTextOverlayView.m; sourceTree = "<group>"; };
@@ -720,10 +738,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6B4204E266F0664002F7DCA /* TuSDKPulse.framework in Frameworks */,
-				A6B42052266F0665002F7DCA /* TuSDKPulseEditor.framework in Frameworks */,
+				A65C2BBF26FC1E9800D18E16 /* TuSDKPulse.framework in Frameworks */,
+				A65C2BC126FC1E9800D18E16 /* TuSDKPulseCore.framework in Frameworks */,
+				A606B78426E0C57500214078 /* AVFoundation.framework in Frameworks */,
+				A69DC86126CBBC87008773F7 /* AudioToolbox.framework in Frameworks */,
 				D7DE9104256B8F1E006BF6AF /* Pods_TuSDKVEDemo.framework in Frameworks */,
-				A6B42050266F0664002F7DCA /* TuSDKPulseCore.framework in Frameworks */,
+				A65C2BC326FC1E9800D18E16 /* TuSDKPulseEditor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -794,6 +814,7 @@
 				2A17B21926021FD200149546 /* CropController.swift */,
 				2A17B21B2602EE7C00149546 /* ColorAdjustController.swift */,
 				2A17B21D260334B900149546 /* AudioMixController.swift */,
+				2A5E376626C1168100909F90 /* AudioFadeController.swift */,
 				2A17B2322604567200149546 /* ReverseController.swift */,
 				2A17B2302604561F00149546 /* SlowController.swift */,
 				2A17B234260456AB00149546 /* RepeatController.swift */,
@@ -810,7 +831,10 @@
 				2AAC048126467E7500A4A5F3 /* GraffitiController.swift */,
 				2AAE8831264B73E600BAF54B /* FreezeController.swift */,
 				2A8EC7DF264CF5B700C49289 /* MosaicController.swift */,
+				2A5E376826C3A90E00909F90 /* MatteController.swift */,
 				2A6521C225FA1B650069B79F /* DraftViewController.swift */,
+				A69DC85826CA100A008773F7 /* TimbreController.swift */,
+				A69F9CC326F2211A000756BC /* TTSViewController.swift */,
 			);
 			path = VideoEditor;
 			sourceTree = "<group>";
@@ -954,6 +978,7 @@
 				2AAD76AE25FF3D830041D099 /* SourceModel.swift */,
 				2AAD76B025FF78070041D099 /* DraftModel.swift */,
 				2A91C6792660CB7600C8620C /* TTEventItem.swift */,
+				2A5E37F626CB5D6500909F90 /* TTMatteModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -966,6 +991,10 @@
 				2A153050263657690013C9BB /* TTStickerDisplayView.m */,
 				2A1530522636576A0013C9BB /* TTStickerItemView.h */,
 				2A15304F263657690013C9BB /* TTStickerItemView.m */,
+				2A5E376A26C3B1A300909F90 /* TTMatteDisplayView.h */,
+				2A5E376B26C3B1A300909F90 /* TTMatteDisplayView.m */,
+				2A5E37E926C4BFB700909F90 /* UIView+Hotspot.h */,
+				2A5E37EA26C4BFB700909F90 /* UIView+Hotspot.m */,
 				2AC47B032601D7DD00F119A2 /* ClipsTableView.swift */,
 				2A17B215260204E100149546 /* AppendEditorCell.swift */,
 				2A17B2282603518000149546 /* FilterCollectionViewCell.swift */,
@@ -978,6 +1007,7 @@
 				2A515457265B7644009381C0 /* TTTextAnimationView.swift */,
 				2ABB1488265516CA003E2C5E /* TTTextParamView.swift */,
 				2A91C6772660C52700C8620C /* TTReverseTableView.swift */,
+				2A5E37F826CB704700909F90 /* TTMatteView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -985,6 +1015,9 @@
 		2AF02CF0256CA1B60068D677 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				A678519526F66D850047A0AD /* XBEchoCancellation */,
+				A69DC85E26CBBC2B008773F7 /* AudioQueuePlayer.h */,
+				A69DC85F26CBBC2B008773F7 /* AudioQueuePlayer.m */,
 				2AF02DA8256E36FE0068D677 /* Editor */,
 				2AF02D28256E0A5E0068D677 /* View */,
 				2AF02CF2256CA23E0068D677 /* SceneViewController.swift */,
@@ -1039,20 +1072,29 @@
 			path = ../Pods;
 			sourceTree = "<group>";
 		};
-		A6B42047266F053A002F7DCA /* TuSDKFrameWork */ = {
+		A65C2BB826FC1E7B00D18E16 /* TuSDK */ = {
 			isa = PBXGroup;
 			children = (
-				A6B42048266F053A002F7DCA /* TuSDKPulseEditor.framework */,
-				A6B42049266F053A002F7DCA /* TuSDKPulse.framework */,
-				A6B4204A266F053A002F7DCA /* TuSDKPulseCore.framework */,
+				A65C2BB926FC1E7B00D18E16 /* TuSDKPulseEditor.framework */,
+				A65C2BBA26FC1E7B00D18E16 /* TuSDKPulse.framework */,
+				A65C2BBB26FC1E7B00D18E16 /* TuSDKPulseCore.framework */,
 			);
-			path = TuSDKFrameWork;
+			path = TuSDK;
+			sourceTree = "<group>";
+		};
+		A678519526F66D850047A0AD /* XBEchoCancellation */ = {
+			isa = PBXGroup;
+			children = (
+				A678519626F66D850047A0AD /* XBEchoCancellation.h */,
+				A678519726F66D850047A0AD /* XBEchoCancellation.m */,
+			);
+			path = XBEchoCancellation;
 			sourceTree = "<group>";
 		};
 		B8071828256B9998009DD0E7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A6B42047266F053A002F7DCA /* TuSDKFrameWork */,
+				A65C2BB826FC1E7B00D18E16 /* TuSDK */,
 				D776054625C6AA000056BA7B /* TuSDKPulse.bundle */,
 				B8071829256B9998009DD0E7 /* AVSamples */,
 				B8071835256B9998009DD0E7 /* Localized */,
@@ -1276,10 +1318,6 @@
 		D77D6AC424937DB300844D76 = {
 			isa = PBXGroup;
 			children = (
-				2ADA6E6425762F5300AFEA46 /* city_sunshine.mp3 */,
-				D7DE913B256B9E6F006BF6AF /* amazon.jpg */,
-				D7DE913A256B9E6F006BF6AF /* flow.png */,
-				D7DE9139256B9E6F006BF6AF /* grid.jpeg */,
 				D77D6B1824989D7900844D76 /* Frameworks */,
 				D77D6ACE24937DB300844D76 /* Products */,
 				D77D6ACF24937DB300844D76 /* TuSDKVEDemo */,
@@ -1352,13 +1390,15 @@
 				D77D6ACB24937DB300844D76 /* Resources */,
 				7690739F59631AFDA7B6F868 /* [CP] Embed Pods Frameworks */,
 				2A832476260DE0EC008F6D74 /* ShellScript */,
-				2AAC047C26463FDB00A4A5F3 /* Embed Frameworks */,
+				A65C2BC526FC1E9800D18E16 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = TuSDKVEDemo;
+			packageProductDependencies = (
+			);
 			productName = TuSDKVEDemo;
 			productReference = D77D6ACD24937DB300844D76 /* TuSDKVEDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -1411,6 +1451,8 @@
 				"zh-Hant",
 			);
 			mainGroup = D77D6AC424937DB300844D76;
+			packageReferences = (
+			);
 			productRefGroup = D77D6ACE24937DB300844D76 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1435,7 +1477,6 @@
 				B80719F7256B999A009DD0E7 /* lsq_filter_thumb_Food_Lime_1.jpg in Resources */,
 				B8BF049025FF60040019980E /* demo_cover.jpg in Resources */,
 				B80719F3256B999A009DD0E7 /* lsq_filter_thumb_Food_Peach_1.jpg in Resources */,
-				D7DE913D256B9E70006BF6AF /* flow.png in Resources */,
 				2A5154E8265BAAAC009381C0 /* lsq_anitext_thumb_39.gif in Resources */,
 				2A5154DD265BAAAC009381C0 /* lsq_anitext_thumb_59.gif in Resources */,
 				2A5154D5265BAAAC009381C0 /* lsq_anitext_thumb_41.gif in Resources */,
@@ -1535,7 +1576,6 @@
 				2A5154E1265BAAAC009381C0 /* lsq_anitext_thumb_49.gif in Resources */,
 				2A5154D8265BAAAC009381C0 /* lsq_anitext_thumb_1.gif in Resources */,
 				2A5154CA265BAAAC009381C0 /* lsq_anitext_thumb_23.gif in Resources */,
-				2ADA6E6525762F5300AFEA46 /* city_sunshine.mp3 in Resources */,
 				B8071A02256B999A009DD0E7 /* lsq_filter_thumb_Portrait_Icream_1.jpg in Resources */,
 				2A515500265BAAAC009381C0 /* lsq_anitext_thumb_54.gif in Resources */,
 				B8071A27256B999A009DD0E7 /* lsq_filter_thumb_Portrait_Desserts_1.jpg in Resources */,
@@ -1588,7 +1628,6 @@
 				B8071A3C256B999A009DD0E7 /* lsq_effect_thumb_Bubbles.jpg in Resources */,
 				B8071A3B256B999A009DD0E7 /* lsq_effect_thumb_Magic.jpg in Resources */,
 				D776054725C6AA000056BA7B /* TuSDKPulse.bundle in Resources */,
-				D7DE913E256B9E70006BF6AF /* amazon.jpg in Resources */,
 				2A5154FD265BAAAC009381C0 /* lsq_anitext_thumb_12.gif in Resources */,
 				B80719E3256B999A009DD0E7 /* lsq_filter_thumb_Sharp_Otimes_1.jpg in Resources */,
 				B8071A21256B999A009DD0E7 /* lsq_filter_thumb_Portrait_Texture_1.jpg in Resources */,
@@ -1638,7 +1677,6 @@
 				2A5154E3265BAAAC009381C0 /* lsq_anitext_thumb_66.gif in Resources */,
 				B80719EC256B999A009DD0E7 /* lsq_filter_thumb_Food_Whisky_1.jpg in Resources */,
 				2A5154C6265BAAAC009381C0 /* lsq_anitext_thumb_55.gif in Resources */,
-				D7DE913C256B9E70006BF6AF /* grid.jpeg in Resources */,
 				B80719A8256B999A009DD0E7 /* sound_oldmovie.mp3 in Resources */,
 				B80719E9256B999A009DD0E7 /* lsq_filter_thumb_Scenery_Silent_1.jpg in Resources */,
 				B8071A34256B999A009DD0E7 /* lsq_effect_thumb_Burning.jpg in Resources */,
@@ -1741,9 +1779,11 @@
 				2A17B22426034CDC00149546 /* FilterController.swift in Sources */,
 				2A13E947260B3AA500E0150A /* Router.swift in Sources */,
 				F83A1B4125E7A39E008E9E10 /* TuTextOverlayView.m in Sources */,
+				A69DC85926CA100A008773F7 /* TimbreController.swift in Sources */,
 				F882E622260D842200D209C4 /* AnimationTextController.swift in Sources */,
 				2A7E2F3E2637F4B0009A4E2F /* BubbleTextController.swift in Sources */,
 				2A13E93D260B1C3800E0150A /* JMSource.swift in Sources */,
+				2A5E376926C3A90E00909F90 /* MatteController.swift in Sources */,
 				2AC47AFF2600CEC600F119A2 /* StitchingController.swift in Sources */,
 				2A17B2372604571600149546 /* AudioPitchController.swift in Sources */,
 				2A17B22F260375DB00149546 /* TransitionsController.swift in Sources */,
@@ -1752,6 +1792,7 @@
 				D77D6AD224937DB300844D76 /* AppDelegate.m in Sources */,
 				2A6521C525FA349C0069B79F /* ParticleController.swift in Sources */,
 				2AC47B012601CD5D00F119A2 /* VideoSegmentationController.swift in Sources */,
+				A678519826F66D850047A0AD /* XBEchoCancellation.m in Sources */,
 				2AF02CFD256CB29F0068D677 /* Navigator.swift in Sources */,
 				2A17B218260219F700149546 /* SpeedController.swift in Sources */,
 				2A6B4B07257DD251006EB9F0 /* TuTextItemView.m in Sources */,
@@ -1765,12 +1806,14 @@
 				2AC47B062601EC5400F119A2 /* VideoAudioMixController.swift in Sources */,
 				2A91C67A2660CB7600C8620C /* TTEventItem.swift in Sources */,
 				2ABB1489265516CA003E2C5E /* TTTextParamView.swift in Sources */,
+				A69DC86026CBBC2B008773F7 /* AudioQueuePlayer.m in Sources */,
 				2AAC048226467E7500A4A5F3 /* GraffitiController.swift in Sources */,
 				2A13E93A260B1B0400E0150A /* Enum.swift in Sources */,
 				D77D6B2B2498AF0E00844D76 /* MainViewController.m in Sources */,
 				2A847B00258316C900789D28 /* ImageStickerEditorViewController.swift in Sources */,
 				2A832468260C387F008F6D74 /* JMDraft.swift in Sources */,
 				2AAE8832264B73E600BAF54B /* FreezeController.swift in Sources */,
+				2A5E37EB26C4BFB700909F90 /* UIView+Hotspot.m in Sources */,
 				2A17B235260456AB00149546 /* RepeatController.swift in Sources */,
 				2A7E2F4526381024009A4E2F /* TTCollectionViewCell.swift in Sources */,
 				2AF02D2A256E0AA40068D677 /* ControlPlayerView.swift in Sources */,
@@ -1788,6 +1831,7 @@
 				2AAD76AD25FF0ADE0041D099 /* VideoClipItem.swift in Sources */,
 				2A13E942260B2AD700E0150A /* EditorVideoController.swift in Sources */,
 				2A1530532636576A0013C9BB /* TTStickerItemView.m in Sources */,
+				2A5E376726C1168100909F90 /* AudioFadeController.swift in Sources */,
 				2AC47B042601D7DD00F119A2 /* ClipsTableView.swift in Sources */,
 				2AAC9F8F25F8B93F00E25AAD /* EditorBaseController.swift in Sources */,
 				2A1530612636E2880013C9BB /* TTTextInputView.swift in Sources */,
@@ -1799,14 +1843,18 @@
 				2AAD76B125FF78070041D099 /* DraftModel.swift in Sources */,
 				2ABB148B26565EC5003E2C5E /* TTColorStrengthView.swift in Sources */,
 				2ABB148F26575303003E2C5E /* TTButtonsView.swift in Sources */,
+				2A5E376C26C3B1A300909F90 /* TTMatteDisplayView.m in Sources */,
+				2A5E37F926CB704700909F90 /* TTMatteView.swift in Sources */,
 				2AF02CF3256CA23E0068D677 /* SceneViewController.swift in Sources */,
 				2A17B22D2603722A00149546 /* SceneController.swift in Sources */,
 				2A17B216260204E100149546 /* AppendEditorCell.swift in Sources */,
 				2AF02DC52570AAC70068D677 /* SliderBarView.swift in Sources */,
 				2A07078A2602047800C04D3A /* RatioController.swift in Sources */,
 				2A1530542636576A0013C9BB /* TTStickerDisplayView.m in Sources */,
+				2A5E37F726CB5D6500909F90 /* TTMatteModel.swift in Sources */,
 				2AF02DBE256F7CF70068D677 /* SourceViewModel.swift in Sources */,
 				2A153059263658410013C9BB /* TextEditorController.swift in Sources */,
+				A69F9CC426F2211A000756BC /* TTSViewController.swift in Sources */,
 				2A83246E260C96B1008F6D74 /* MovieCutEditorController.swift in Sources */,
 				2A17B22B26035CD900149546 /* MVController.swift in Sources */,
 				2A832471260DBAD2008F6D74 /* PIPEditorController.swift in Sources */,
@@ -2017,7 +2065,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20210608;
+				CURRENT_PROJECT_VERSION = 20210922;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9U2KRZU6GT;
@@ -2026,17 +2074,17 @@
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/GPUUtilization\"",
 					"$(PROJECT_DIR)/TuSDKVEDemo/Resources",
-					"$(PROJECT_DIR)/TuSDKVEDemo/Resources/TuSDKFrameWork",
+					"$(PROJECT_DIR)/TuSDKVEDemo/Resources/TuSDK",
 				);
 				GCC_PREFIX_HEADER = "";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TuSDKVEDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = org.lasque.TuSDKEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2059,7 +2107,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20210608;
+				CURRENT_PROJECT_VERSION = 20210922;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9U2KRZU6GT;
@@ -2068,19 +2116,19 @@
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/GPUUtilization\"",
 					"$(PROJECT_DIR)/TuSDKVEDemo/Resources",
-					"$(PROJECT_DIR)/TuSDKVEDemo/Resources/TuSDKFrameWork",
+					"$(PROJECT_DIR)/TuSDKVEDemo/Resources/TuSDK",
 				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PREFIX_HEADER = "";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TuSDKVEDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = org.lasque.TuSDKEditor;

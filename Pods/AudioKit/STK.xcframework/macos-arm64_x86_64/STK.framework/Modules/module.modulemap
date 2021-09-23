@@ -1,0 +1,6 @@
+framework module Stk {
+  umbrella header "Stk.h"
+
+  export *
+  module * { export * }
+}

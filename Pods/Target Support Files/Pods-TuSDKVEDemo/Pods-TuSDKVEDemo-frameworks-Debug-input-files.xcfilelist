@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-TuSDKVEDemo/Pods-TuSDKVEDemo-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/AvailableHapticFeedback/AvailableHapticFeedback.framework
 ${BUILT_PRODUCTS_DIR}/ColorSlider/ColorSlider.framework
 ${BUILT_PRODUCTS_DIR}/FCFileManager/FCFileManager.framework

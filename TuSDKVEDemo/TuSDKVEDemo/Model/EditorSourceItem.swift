@@ -12,6 +12,7 @@ class EditorSourceItem: NSObject {
     var isSelected = false
     var code: String = ""
     var name: String = ""
+    
     init(code: String, name: String, isSelected: Bool = false) {
         super.init()
         self.code = code
@@ -25,6 +26,14 @@ class EditorSourceItem: NSObject {
          EditorSourceItem(code: TUPVEPitchEffect_TYPE_Normal, name: "正常"),
          EditorSourceItem(code: TUPVEPitchEffect_TYPE_Girl, name: "女生"),
          EditorSourceItem(code: TUPVEPitchEffect_TYPE_Lolita, name: "萝莉")]
+    }
+}
+class EditorSourceImageItem: EditorSourceItem {
+    var imageName: String = ""
+    
+    init(code: String, name: String, imageName: String, isSelected: Bool = false) {
+        super.init(code: code, name: name, isSelected: isSelected)
+        self.imageName = imageName
     }
 }
 class MVSourceItem:EditorSourceItem {
@@ -332,5 +341,18 @@ class TTMosaicSourceItem: EditorSourceItem {
     class func all() -> [TTMosaicSourceItem] {
         [TTMosaicSourceItem(code: TUPVEMosaicEffect_CODE_FILL, name: "马赛克"),
          TTMosaicSourceItem(code: TUPVEMosaicEffect_CODE_ERASER, name: "橡皮擦")]
+    }
+}
+
+class TTMatteSourceItem: EditorSourceImageItem {
+    
+    class func all() -> [TTMatteSourceItem] {
+        [TTMatteSourceItem(code: "", name: "无", imageName: "mask_matte_close", isSelected: true),
+         TTMatteSourceItem(code: TUPVEMatteEffect_CONFIG_TYPE_LINEAR, name: "线性", imageName: "mask_linear_ic"),
+         TTMatteSourceItem(code: TUPVEMatteEffect_CONFIG_TYPE_MIRROR, name: "镜面", imageName: "mask_mirror_ic"),
+         TTMatteSourceItem(code: TUPVEMatteEffect_CONFIG_TYPE_CIRCLE, name: "圆形", imageName: "mask_radial_ic"),
+         TTMatteSourceItem(code: TUPVEMatteEffect_CONFIG_TYPE_RECTANGLE, name: "矩形", imageName: "mask_rectangular_ic"),
+         TTMatteSourceItem(code: TUPVEMatteEffect_CONFIG_TYPE_LOVE, name: "爱心", imageName: "mask_heart_ic"),
+         TTMatteSourceItem(code: TUPVEMatteEffect_CONFIG_TYPE_STAR, name: "星形", imageName: "mask_star_ic")]
     }
 }

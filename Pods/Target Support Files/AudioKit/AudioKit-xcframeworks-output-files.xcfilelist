@@ -1,0 +1,5 @@
+${PODS_XCFRAMEWORKS_BUILD_DIR}/AudioKit/C/CAudioKit.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/AudioKit/Core/AudioKit.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/AudioKit/STK/STK.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/AudioKit/Soundpipe/soundpipe.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/AudioKit/Sporth/sporth.framework

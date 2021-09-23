@@ -59,10 +59,21 @@ class TTCollectionViewvalue1Cell: UICollectionViewCell {
             }
         }
     }
+    var imageItem: EditorSourceImageItem? {
+        didSet {
+            if let imageItem = imageItem {
+                titleLabel.text = imageItem.name
+                iconView.image = UIImage(named: imageItem.imageName)
+                contentView.layer.borderWidth = imageItem.isSelected ? 1 : 0
+            }
+        }
+    }
     private let iconView = UIImageView()
     private let titleLabel = UILabel()
     override init(frame: CGRect) {
         super.init(frame: frame)
+        contentView.layer.borderColor = UIColor.red.cgColor
+        contentView.layer.borderWidth = 0
         titleLabel.font = .systemFont(ofSize: 13)
         titleLabel.textColor = .white
         titleLabel.textAlignment = .center

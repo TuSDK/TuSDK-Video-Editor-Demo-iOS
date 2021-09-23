@@ -1,0 +1,4 @@
+framework module AudioKit {
+  header "AudioKit-Swift.h"
+  requires objc
+}

@@ -17,5 +17,9 @@
 #import "UIAlertController+TuTapDismiss.h"
 #import <TZImagePickerController/TZImagePickerController.h>
 #import "TTStickerDisplayView.h"
+#import "AudioQueuePlayer.h"
+#import "TTMatteDisplayView.h"
+#import "UIView+Hotspot.h"
+
 #endif /* TuSDKVEDemo_Bridging_Header_h */
 

@@ -27,10 +27,13 @@ class Navigator: NSObject {
         case crop = "视频画面裁剪"
         case color = "视频颜色调整"
         case audioMix = "多音轨混合"
+        case audioFade = "音乐淡化"
         case transform = "视频变换"
         case background = "视频背景"
         case filter = "滤镜特效"
         case mv = "MV特效"
+        case timbre = "音色转换"
+        case tts = "文字转语音"
         case audioPitch = "音频变声"
         case transition = "转场特效"
         case scenario = "场景特效"
@@ -40,9 +43,11 @@ class Navigator: NSObject {
         case graffiti = "涂鸦"
         case freeze = "视频定格"
         case mosaic = "马赛克"
+        case matte = "视频蒙版"
         case draft = "草稿箱"
         
-        static var all: [Scene] = [ .cut, .segment, .video, .pictureVideo,.pictures, .media, .reverse, .slow, .repeat, .ratio, .cover, .speed, .pip, .crop , .color, .audioMix, .transform, .background, .filter, .mv, .audioPitch, .transition, .scenario, .particle, .text, .bubbleText, .graffiti, .freeze, .mosaic, .draft]
+        static var all: [Scene] = [ .cut, .segment, .video, .pictureVideo, .pictures, .media, .reverse, .slow, .repeat, .ratio, .cover, .speed, .pip, .crop, .color, .audioMix, .transform, .background, .filter, .mv, .timbre, .tts, .audioPitch, .transition, .scenario, .particle, .text, .bubbleText, .graffiti, .freeze, .mosaic, .matte, .draft]
+
     }
     let imagePicker = ImagePicker()
     public func show(segue: Scene, sender: UIViewController?) {
@@ -60,6 +65,14 @@ class Navigator: NSObject {
     public func show(segue: Scene, draft: String?, sender: UIViewController?) {
         if segue == .draft {
             sender?.navigationController?.pushViewController(DraftViewController(), animated: true)
+            return
+        }
+        if segue == .timbre {
+            sender?.navigationController?.pushViewController(TimbreController(), animated: true)
+            return
+        }
+        if segue == .tts {
+            sender?.navigationController?.pushViewController(TTSViewController(), animated: true)
             return
         }
         if let draft = draft {
@@ -82,7 +95,7 @@ class Navigator: NSObject {
                 imagePicker.maxCount = 9
                 imagePicker.minCount = 2
                 imagePicker.state = .both
-            case .cut, .segment, .reverse, .slow, .repeat, .cover, .speed, .audioPitch, .freeze:
+            case .cut, .segment, .reverse, .slow, .repeat, .cover, .speed, .audioPitch, .freeze, .audioFade, .matte:
                 imagePicker.maxCount = 1
                 imagePicker.state = .video
             default:
@@ -123,6 +136,8 @@ class Navigator: NSObject {
             return ColorAdjustController(viewModel: viewModel)
         case .audioMix:
             return AudioMixController(viewModel: viewModel)
+        case .audioFade:
+            return AudioFadeController(viewModel: viewModel)
         case .reverse:
             return ReverseController(viewModel: viewModel)
         case .slow:
@@ -155,6 +170,8 @@ class Navigator: NSObject {
             return FreezeController(viewModel: viewModel)
         case .mosaic:
             return MosaicController(viewModel: viewModel)
+        case .matte:
+            return MatteController(viewModel: viewModel)
         default:
             return EditorBaseController(viewModel: viewModel)
         }
