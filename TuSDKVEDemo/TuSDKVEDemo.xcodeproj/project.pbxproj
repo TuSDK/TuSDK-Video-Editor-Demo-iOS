@@ -188,17 +188,17 @@
 		2AF02DBE256F7CF70068D677 /* SourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF02DBD256F7CF70068D677 /* SourceViewModel.swift */; };
 		2AF02DC52570AAC70068D677 /* SliderBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF02DC42570AAC70068D677 /* SliderBarView.swift */; };
 		A606B78426E0C57500214078 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77D6B252498A49F00844D76 /* AVFoundation.framework */; };
-		A65C2BBF26FC1E9800D18E16 /* TuSDKPulse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A65C2BBA26FC1E7B00D18E16 /* TuSDKPulse.framework */; platformFilter = ios; };
-		A65C2BC026FC1E9800D18E16 /* TuSDKPulse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A65C2BBA26FC1E7B00D18E16 /* TuSDKPulse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A65C2BC126FC1E9800D18E16 /* TuSDKPulseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A65C2BBB26FC1E7B00D18E16 /* TuSDKPulseCore.framework */; platformFilter = ios; };
-		A65C2BC226FC1E9800D18E16 /* TuSDKPulseCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A65C2BBB26FC1E7B00D18E16 /* TuSDKPulseCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A65C2BC326FC1E9800D18E16 /* TuSDKPulseEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A65C2BB926FC1E7B00D18E16 /* TuSDKPulseEditor.framework */; };
-		A65C2BC426FC1E9800D18E16 /* TuSDKPulseEditor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A65C2BB926FC1E7B00D18E16 /* TuSDKPulseEditor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A678519826F66D850047A0AD /* XBEchoCancellation.m in Sources */ = {isa = PBXBuildFile; fileRef = A678519726F66D850047A0AD /* XBEchoCancellation.m */; };
 		A69DC85926CA100A008773F7 /* TimbreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69DC85826CA100A008773F7 /* TimbreController.swift */; };
 		A69DC86026CBBC2B008773F7 /* AudioQueuePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A69DC85F26CBBC2B008773F7 /* AudioQueuePlayer.m */; };
 		A69DC86126CBBC87008773F7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77D6B212498A27D00844D76 /* AudioToolbox.framework */; };
 		A69F9CC426F2211A000756BC /* TTSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69F9CC326F2211A000756BC /* TTSViewController.swift */; };
+		A6A5EDEA273A110E003AD821 /* TuSDKPulse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A5EDE5273A0F62003AD821 /* TuSDKPulse.framework */; platformFilter = ios; };
+		A6A5EDEB273A110E003AD821 /* TuSDKPulse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A6A5EDE5273A0F62003AD821 /* TuSDKPulse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A6A5EDEC273A110E003AD821 /* TuSDKPulseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A5EDE6273A0F62003AD821 /* TuSDKPulseCore.framework */; platformFilter = ios; };
+		A6A5EDED273A110E003AD821 /* TuSDKPulseCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A6A5EDE6273A0F62003AD821 /* TuSDKPulseCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A6A5EDEE273A110E003AD821 /* TuSDKPulseEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A5EDE4273A0F62003AD821 /* TuSDKPulseEditor.framework */; platformFilter = ios; };
+		A6A5EDEF273A110E003AD821 /* TuSDKPulseEditor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A6A5EDE4273A0F62003AD821 /* TuSDKPulseEditor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B80719A4256B999A009DD0E7 /* sound_cat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B807182A256B9998009DD0E7 /* sound_cat.mp3 */; };
 		B80719A5256B999A009DD0E7 /* sound_relieve.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B807182B256B9998009DD0E7 /* sound_relieve.mp3 */; };
 		B80719A8256B999A009DD0E7 /* sound_oldmovie.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B807182E256B9998009DD0E7 /* sound_oldmovie.mp3 */; };
@@ -322,10 +322,6 @@
 		B80B605225AC2C5800C302F4 /* SourceHanSansSC-Normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B80B605125AC2C5700C302F4 /* SourceHanSansSC-Normal.ttf */; };
 		B8BF049025FF60040019980E /* demo_cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8BF048F25FF60040019980E /* demo_cover.jpg */; };
 		B8FD8D932599090A00D4BB1F /* lovely_piano_song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8FD8D8D2599090A00D4BB1F /* lovely_piano_song.mp3 */; };
-		B8FD8D942599090A00D4BB1F /* rush.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8FD8D8E2599090A00D4BB1F /* rush.mp3 */; };
-		B8FD8D952599090A00D4BB1F /* city_sunshine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8FD8D8F2599090A00D4BB1F /* city_sunshine.mp3 */; };
-		B8FD8D962599090A00D4BB1F /* pickled_pink.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8FD8D902599090A00D4BB1F /* pickled_pink.mp3 */; };
-		B8FD8D972599090A00D4BB1F /* motions.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8FD8D912599090A00D4BB1F /* motions.mp3 */; };
 		B8FD8D982599090A00D4BB1F /* eye_of_forgiveness.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8FD8D922599090A00D4BB1F /* eye_of_forgiveness.mp3 */; };
 		D7287E0B24B703CB00E4FFAC /* VideoEditorViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7287E0A24B703CB00E4FFAC /* VideoEditorViewController.mm */; };
 		D776054725C6AA000056BA7B /* TuSDKPulse.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D776054625C6AA000056BA7B /* TuSDKPulse.bundle */; };
@@ -352,15 +348,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A65C2BC526FC1E9800D18E16 /* Embed Frameworks */ = {
+		2AAC047C26463FDB00A4A5F3 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A65C2BC026FC1E9800D18E16 /* TuSDKPulse.framework in Embed Frameworks */,
-				A65C2BC226FC1E9800D18E16 /* TuSDKPulseCore.framework in Embed Frameworks */,
-				A65C2BC426FC1E9800D18E16 /* TuSDKPulseEditor.framework in Embed Frameworks */,
+				A6A5EDEB273A110E003AD821 /* TuSDKPulse.framework in Embed Frameworks */,
+				A6A5EDEF273A110E003AD821 /* TuSDKPulseEditor.framework in Embed Frameworks */,
+				A6A5EDED273A110E003AD821 /* TuSDKPulseCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +396,9 @@
 		2A17B234260456AB00149546 /* RepeatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatController.swift; sourceTree = "<group>"; };
 		2A17B2362604571600149546 /* AudioPitchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPitchController.swift; sourceTree = "<group>"; };
 		2A17B238260457E900149546 /* PIPController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PIPController.swift; sourceTree = "<group>"; };
+		2A1BEB0E263C00ED000EDCCD /* TuSDKPulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TuSDKPulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A1BEB0F263C00ED000EDCCD /* TuSDKPulseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TuSDKPulseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A1BEB10263C00ED000EDCCD /* TuSDKPulseEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TuSDKPulseEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1F97662608379F00C3E272 /* CoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverController.swift; sourceTree = "<group>"; };
 		2A1F976826086EB000C3E272 /* LayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerView.swift; sourceTree = "<group>"; };
 		2A333CB525F8C1820049E610 /* EditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewModel.swift; sourceTree = "<group>"; };
@@ -558,15 +557,15 @@
 		2AF02DBD256F7CF70068D677 /* SourceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewModel.swift; sourceTree = "<group>"; };
 		2AF02DC42570AAC70068D677 /* SliderBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderBarView.swift; sourceTree = "<group>"; };
 		66758B4BE5F7E4DC176D3150 /* Pods-TuSDKVEDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuSDKVEDemo.release.xcconfig"; path = "Target Support Files/Pods-TuSDKVEDemo/Pods-TuSDKVEDemo.release.xcconfig"; sourceTree = "<group>"; };
-		A65C2BB926FC1E7B00D18E16 /* TuSDKPulseEditor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKPulseEditor.framework; sourceTree = "<group>"; };
-		A65C2BBA26FC1E7B00D18E16 /* TuSDKPulse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKPulse.framework; sourceTree = "<group>"; };
-		A65C2BBB26FC1E7B00D18E16 /* TuSDKPulseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKPulseCore.framework; sourceTree = "<group>"; };
 		A678519626F66D850047A0AD /* XBEchoCancellation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBEchoCancellation.h; sourceTree = "<group>"; };
 		A678519726F66D850047A0AD /* XBEchoCancellation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBEchoCancellation.m; sourceTree = "<group>"; };
 		A69DC85826CA100A008773F7 /* TimbreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimbreController.swift; sourceTree = "<group>"; };
 		A69DC85E26CBBC2B008773F7 /* AudioQueuePlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AudioQueuePlayer.h; path = TuSDKVEDemo/Module/AudioQueuePlayer.h; sourceTree = SOURCE_ROOT; };
 		A69DC85F26CBBC2B008773F7 /* AudioQueuePlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AudioQueuePlayer.m; path = TuSDKVEDemo/Module/AudioQueuePlayer.m; sourceTree = SOURCE_ROOT; };
 		A69F9CC326F2211A000756BC /* TTSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSViewController.swift; sourceTree = "<group>"; };
+		A6A5EDE4273A0F62003AD821 /* TuSDKPulseEditor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKPulseEditor.framework; sourceTree = "<group>"; };
+		A6A5EDE5273A0F62003AD821 /* TuSDKPulse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKPulse.framework; sourceTree = "<group>"; };
+		A6A5EDE6273A0F62003AD821 /* TuSDKPulseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKPulseCore.framework; sourceTree = "<group>"; };
 		B807182A256B9998009DD0E7 /* sound_cat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_cat.mp3; sourceTree = "<group>"; };
 		B807182B256B9998009DD0E7 /* sound_relieve.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_relieve.mp3; sourceTree = "<group>"; };
 		B807182E256B9998009DD0E7 /* sound_oldmovie.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_oldmovie.mp3; sourceTree = "<group>"; };
@@ -697,10 +696,6 @@
 		B80B605125AC2C5700C302F4 /* SourceHanSansSC-Normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSansSC-Normal.ttf"; sourceTree = "<group>"; };
 		B8BF048F25FF60040019980E /* demo_cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo_cover.jpg; sourceTree = "<group>"; };
 		B8FD8D8D2599090A00D4BB1F /* lovely_piano_song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lovely_piano_song.mp3; sourceTree = "<group>"; };
-		B8FD8D8E2599090A00D4BB1F /* rush.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rush.mp3; sourceTree = "<group>"; };
-		B8FD8D8F2599090A00D4BB1F /* city_sunshine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_sunshine.mp3; sourceTree = "<group>"; };
-		B8FD8D902599090A00D4BB1F /* pickled_pink.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pickled_pink.mp3; sourceTree = "<group>"; };
-		B8FD8D912599090A00D4BB1F /* motions.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = motions.mp3; sourceTree = "<group>"; };
 		B8FD8D922599090A00D4BB1F /* eye_of_forgiveness.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = eye_of_forgiveness.mp3; sourceTree = "<group>"; };
 		D33CE4097643177DC798D02E /* Pods_TuSDKVEDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TuSDKVEDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7287E0924B703CB00E4FFAC /* VideoEditorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoEditorViewController.h; sourceTree = "<group>"; };
@@ -738,12 +733,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A65C2BBF26FC1E9800D18E16 /* TuSDKPulse.framework in Frameworks */,
-				A65C2BC126FC1E9800D18E16 /* TuSDKPulseCore.framework in Frameworks */,
 				A606B78426E0C57500214078 /* AVFoundation.framework in Frameworks */,
+				A6A5EDEA273A110E003AD821 /* TuSDKPulse.framework in Frameworks */,
 				A69DC86126CBBC87008773F7 /* AudioToolbox.framework in Frameworks */,
 				D7DE9104256B8F1E006BF6AF /* Pods_TuSDKVEDemo.framework in Frameworks */,
-				A65C2BC326FC1E9800D18E16 /* TuSDKPulseEditor.framework in Frameworks */,
+				A6A5EDEE273A110E003AD821 /* TuSDKPulseEditor.framework in Frameworks */,
+				A6A5EDEC273A110E003AD821 /* TuSDKPulseCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1072,16 +1067,6 @@
 			path = ../Pods;
 			sourceTree = "<group>";
 		};
-		A65C2BB826FC1E7B00D18E16 /* TuSDK */ = {
-			isa = PBXGroup;
-			children = (
-				A65C2BB926FC1E7B00D18E16 /* TuSDKPulseEditor.framework */,
-				A65C2BBA26FC1E7B00D18E16 /* TuSDKPulse.framework */,
-				A65C2BBB26FC1E7B00D18E16 /* TuSDKPulseCore.framework */,
-			);
-			path = TuSDK;
-			sourceTree = "<group>";
-		};
 		A678519526F66D850047A0AD /* XBEchoCancellation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1091,10 +1076,20 @@
 			path = XBEchoCancellation;
 			sourceTree = "<group>";
 		};
+		A6A5EDE3273A0F62003AD821 /* TuSDK */ = {
+			isa = PBXGroup;
+			children = (
+				A6A5EDE4273A0F62003AD821 /* TuSDKPulseEditor.framework */,
+				A6A5EDE5273A0F62003AD821 /* TuSDKPulse.framework */,
+				A6A5EDE6273A0F62003AD821 /* TuSDKPulseCore.framework */,
+			);
+			path = TuSDK;
+			sourceTree = "<group>";
+		};
 		B8071828256B9998009DD0E7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A65C2BB826FC1E7B00D18E16 /* TuSDK */,
+				A6A5EDE3273A0F62003AD821 /* TuSDK */,
 				D776054625C6AA000056BA7B /* TuSDKPulse.bundle */,
 				B8071829256B9998009DD0E7 /* AVSamples */,
 				B8071835256B9998009DD0E7 /* Localized */,
@@ -1306,10 +1301,6 @@
 			isa = PBXGroup;
 			children = (
 				B8FD8D8D2599090A00D4BB1F /* lovely_piano_song.mp3 */,
-				B8FD8D8E2599090A00D4BB1F /* rush.mp3 */,
-				B8FD8D8F2599090A00D4BB1F /* city_sunshine.mp3 */,
-				B8FD8D902599090A00D4BB1F /* pickled_pink.mp3 */,
-				B8FD8D912599090A00D4BB1F /* motions.mp3 */,
 				B8FD8D922599090A00D4BB1F /* eye_of_forgiveness.mp3 */,
 			);
 			path = audio;
@@ -1365,6 +1356,9 @@
 		D77D6B1824989D7900844D76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2A1BEB0E263C00ED000EDCCD /* TuSDKPulse.framework */,
+				2A1BEB0F263C00ED000EDCCD /* TuSDKPulseCore.framework */,
+				2A1BEB10263C00ED000EDCCD /* TuSDKPulseEditor.framework */,
 				D77D6B302498CA9900844D76 /* CoreMedia.framework */,
 				D77D6B282498A4C700844D76 /* libc++.tbd */,
 				D77D6B272498A4B300844D76 /* libc++.1.tbd */,
@@ -1390,7 +1384,7 @@
 				D77D6ACB24937DB300844D76 /* Resources */,
 				7690739F59631AFDA7B6F868 /* [CP] Embed Pods Frameworks */,
 				2A832476260DE0EC008F6D74 /* ShellScript */,
-				A65C2BC526FC1E9800D18E16 /* Embed Frameworks */,
+				2AAC047C26463FDB00A4A5F3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1507,7 +1501,6 @@
 				B80719BF256B999A009DD0E7 /* lsq_effect_thumb_LiveSlosh01.gif in Resources */,
 				B8071A38256B999A009DD0E7 /* lsq_effect_thumb_Money.jpg in Resources */,
 				B80719E6256B999A009DD0E7 /* lsq_filter_thumb_Sharp_Ash_1.jpg in Resources */,
-				B8FD8D972599090A00D4BB1F /* motions.mp3 in Resources */,
 				B8071AFB256B999B009DD0E7 /* lsq_filter_thumb_Lightcolor_Video.jpg in Resources */,
 				B80719FB256B999A009DD0E7 /* lsq_filter_thumb_Sharp_Past_1.jpg in Resources */,
 				B8071A0E256B999A009DD0E7 /* lsq_filter_thumb_Scenery_SNight_1.jpg in Resources */,
@@ -1526,7 +1519,6 @@
 				B80719C4256B999A009DD0E7 /* lsq_effect_thumb_LiveLightning01.gif in Resources */,
 				B8071A16256B999A009DD0E7 /* lsq_filter_thumb_Scenery_Flower_1.jpg in Resources */,
 				B8071AFD256B999B009DD0E7 /* lsq_filter_thumb_Monochrome_Video.jpg in Resources */,
-				B8FD8D942599090A00D4BB1F /* rush.mp3 in Resources */,
 				B80719BB256B999A009DD0E7 /* lsq_audio_thumb_lively.jpg in Resources */,
 				B8071A08256B999A009DD0E7 /* lsq_filter_thumb_Scenery_Innocence_1.jpg in Resources */,
 				B80719E0256B999A009DD0E7 /* lsq_effect_thumb_reverse.gif in Resources */,
@@ -1587,7 +1579,6 @@
 				2A5154CE265BAAAC009381C0 /* lsq_anitext_thumb_0.png in Resources */,
 				2A5154CF265BAAAC009381C0 /* lsq_anitext_thumb_34.gif in Resources */,
 				B80719EE256B999A009DD0E7 /* lsq_filter_thumb_Portrait_Cherry_1.jpg in Resources */,
-				B8FD8D952599090A00D4BB1F /* city_sunshine.mp3 in Resources */,
 				B80719C2256B999A009DD0E7 /* lsq_effect_thumb_LiveMegrim01.gif in Resources */,
 				2A5154D7265BAAAC009381C0 /* lsq_anitext_thumb_8.gif in Resources */,
 				B8071A01256B999A009DD0E7 /* lsq_filter_thumb_Portrait_Dusk_1.jpg in Resources */,
@@ -1616,7 +1607,6 @@
 				B8071A06256B999A009DD0E7 /* lsq_filter_thumb_Portrait_Indifference_1.jpg in Resources */,
 				2A5154E4265BAAAC009381C0 /* lsq_anitext_thumb_75.gif in Resources */,
 				B80719E4256B999A009DD0E7 /* lsq_filter_thumb_Portrait_Moisten_1.jpg in Resources */,
-				B8FD8D962599090A00D4BB1F /* pickled_pink.mp3 in Resources */,
 				2A5154BF265BAAAB009381C0 /* lsq_anitext_thumb_48.gif in Resources */,
 				B8071A36256B999A009DD0E7 /* lsq_effect_thumb_Music.jpg in Resources */,
 				B80719F0256B999A009DD0E7 /* lsq_filter_thumb_Sharp_Red_1.jpg in Resources */,
@@ -2065,7 +2055,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20210922;
+				CURRENT_PROJECT_VERSION = 20211101;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9U2KRZU6GT;
@@ -2084,7 +2074,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.5;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = org.lasque.TuSDKEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2107,7 +2097,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20210922;
+				CURRENT_PROJECT_VERSION = 20211101;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9U2KRZU6GT;
@@ -2128,7 +2118,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.5;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = org.lasque.TuSDKEditor;

@@ -11,7 +11,8 @@ target 'TuSDKVEDemo' do
    inhibit_all_warnings!
 #   pod 'GPUUtilization'#, :configurations => ['Debug']
 #   pod 'DoraemonKit/Core', '~> 3.0.4', :configurations => ['Debug'] #必选
-   pod 'TZImagePickerController', '3.5.8'
+#   pod 'TZImagePickerController', '3.5.8'
+   pod 'TZImagePickerController'
    pod 'SnapKit', '4.2.0'
    pod 'MultiSlider','1.11.2'
    pod 'SVProgressHUD', '2.2.5'

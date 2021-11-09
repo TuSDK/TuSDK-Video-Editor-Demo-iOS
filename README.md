@@ -1,600 +1,257 @@
-# 涂图·视频剪辑 SDK 产品介绍
+Tusdk.VideoEditor.Demo
+======================
 
-## 概述
 
-新篇章，新起点。涂图视频剪辑 SDK（下文简称剪辑 SDK）经历了数月的研发和测试。现正式发布。
 
-有别于涂图短视频 SDK，剪辑 SDK的目标是为客户提供专业的移动端轻量化视频剪辑功能。
-在视频行业深耕十余载，涂图致力于“一行代码即可集成的理念”。剪辑 SDK力求简化客户接入流程，模块化的最新架构设计。
+## 1. Editor操作
 
-“随用随取”、“随意组合”是剪辑 SDK的特性之一。客户只需要根据自身所需要的功能进行集成，其他无用的模块无需接入节省了接入时间和包的体积。
+### 1. 从Config创建
 
-剪辑 SDK在保留了原涂图短视频 SDK的绝大部分功能基础上，以“剪辑”作为核心。实现了数十项常用的视频剪辑功能，并结合涂图的特效能力，将原有的各项特效融入其中。
+```objective-c
 
-## 功能介绍
+    //设置画布宽高
+    TUPVEditor_Config* veconfig = [[TUPVEditor_Config alloc] init];
+    veconfig.width = 600;
+    veconfig.height = 800;
 
-<table cellpadding="0" cellspacing="0"  style="width:720px;border-collapse: collapse;">
-    <thead>
-      <tr>
-        <th width="110">模块</th>
-        <th  width="110">功能点</th>
-        <th  width="400">功能介绍</th>
-        <th  width="100">版本</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr >
-            <td rowspan="7" >生成输出</td>
-            <td >设定输出的尺寸</td>
-            <td >可以设定需要输出的分辨率、码率帧率等编码属性。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>硬编码器支持</td>
-            <td >默认硬件编码器，支持切换软件编码器进行生成。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>设定视频封面</td>
-            <td >可以拖动时码线上一个位置作为视频封面（精确到帧）。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>设定视频水印</td>
-            <td >可以添加一个水印贴纸（后台生成）作为视频水印；水印位置支持自定义设置。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td >生成视频</td>
-            <td >最终打包生成视频，生成 MP4 或 MOV 视频格式。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>视频压缩</td>
-            <td >支持输出文件格式 MP4，支持输出文件码率设置，支持设置压缩比。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>视频转码功能</td>
-            <td >独立可以对视频进行转码操作，支持纯 I 帧转码。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td  rowspan="43" style="background: #ffffff;">剪辑功能</td>
-            <td>视频时间裁剪</td>
-            <td >支持根据设定的起止时间（精确到帧），进行视频时间维度的裁剪。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>视频分割</td>
-            <td >支持根据设定的时间点（精确到帧），进行视频单点分割。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>多视频拼接</td>
-            <td >支持根据导入的多个视频，按照规则进行时间维度的顺序拼接。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>图片合成视频</td>
-            <td >支持根据导入的多张图片，按照规则进行时间维度的顺序合成。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td >比例裁剪</td>
-            <td >支持设定视频比例切换，例如：16:9、1:1、4:3 等，支持自定义比例。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td >视频画面裁剪</td>
-            <td >支持视频画面中的部分区域作为输出内容，设定区域后裁剪并输出视频。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td >视频变换</td>
-            <td >支持视频的 360 度任意角度旋转；支持垂直和水平翻转（镜像）。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>视频背景（画布）</td>
-            <td >支持背景（画布）的颜色调整；支持背景（画布）设定为画面模糊，且模糊强度可调节。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td >视频线性变速</td>
-            <td >支持根据设定是播放的速率，进行视频的变速播放，且支持设定音频是否进行变调。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>视频倒放</td>
-            <td >支持根据导入的视频文件，进行视频的倒叙播放，并支持设定是否需要音频倒放。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>视频慢动作</td>
-            <td >支持设定慢动作区间和慢动作倍数，进行视频段的慢动作播放。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>视频段反复</td>
-            <td >支持设定反复区间和反复次数，进行视频段的多次播放。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>画中画</td>
-            <td >支持画中画，由图片和视频组成画中画。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>不透明度</td>
-            <td >支持设定图片或视频的不透明度。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>复制</td>
-            <td >支持视频在轨道中的复制。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>排列</td>
-            <td >支持视频或图片等的纵向排序调整，即图层调整。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>排序</td>
-            <td >支持视频的顺序调整。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>封面提取</td>
-            <td >支持从视频画面中提取帧作为视频封面，精确到帧。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>音视频混合</td>
-            <td >支持背景音乐功能，即将外部音轨混入视频当中，最终作为一个视频文件输出。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>多音轨混合</td>
-            <td >支持视频的多音轨混合处理，输入 N 个副音轨融入视频，且各音轨支持独立调节。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>音频变速</td>
-            <td >支持根据设定是播放的速率，进行音频的变速播放，且支持设定音频是否进行变调，即可以只变速不变调。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>音频拼接</td>
-            <td >支持多音频文件的拼接。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>音频裁剪</td>
-            <td >支持音频的时间维度裁剪。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>音频倒放</td>
-            <td >支持音频独立设置倒放。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>音频分割</td>
-            <td >支持根据设定的时间点，进行音频单点独立分割。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>配乐（背景音乐）</td>
-            <td >支支持背景音乐添加，支持原音、配音的强度调节。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>录音</td>
-            <td >支持音频录制，作为背景音乐混入视频。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>滤镜</td>
-            <td >多款调色、漫画滤镜，实时预览。支持不同效果参数调节。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>MV主题特效</td>
-            <td >支持添加视频 MV 特效，支持调节作用范围。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>文字特效</td>
-            <td >支持逐帧添加文字特效（精确到帧），支持颜色、不透明度、描边、背景、间距、对齐、排列、样式、字体自定义、阴影等调节。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>气泡文字</td>
-            <td >独立的文字功能，图片背景+文字组成气泡特效，支持自定义效果、调节作用范围、添加混合模式。</td>
-            <td >1.0.1（+）</td>
-        </tr>
-        <tr >
-            <td>场景特效</td>
-            <td >类“抖音”特效，支持一段视频多种场景特效拼接。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>时间特效</td>
-            <td >类“抖音”特效，反复、慢动作、逆转时光，支持调节作用范围。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>魔法效果</td>
-            <td >类“粒子特效”，支持一段视频多粒子效果叠加（精确到帧）。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>变声特效</td>
-            <td >支持录音的变音特效处理，将录音的内容进行变音等处理，萝莉、女生、大叔、怪兽 4 种特效。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>贴纸特效</td>
-            <td >支持添加静态、动态图片贴纸，支持调节作用范围（精确到帧）。支持自定义素材设计，涂图提供设计文档和上传入口。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>转场特效</td>
-            <td >支持多视频间添加转场特效，且不同视频之间支持添加不同效果。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>混合模式特效</td>
-            <td >支持视频图层间添加混合模式。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>颜色调整特效</td>
-            <td >支持视频的白平衡（色温、色调）、高亮、阴影、锐化、亮度、对比度、饱和度、曝光度调整等。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td>定格</td>
-            <td >支持选中固定帧画面，使其静止。支持自定义定格时长。</td>
-            <td >1.0.1（+）</td>
-        </tr>
-        <tr >
-            <td>涂鸦</td>
-            <td >支持在视频画面中添加涂鸦。支持自定义涂鸦的粗细、颜色，以及作用时长。</td>
-            <td >1.0.1（+）</td>
-        </tr>
-        <tr >
-            <td>马赛克</td>
-            <td >支持在视频画面中添加马赛克。支持自定义（即手绘）、规则形状（矩形）马赛克，以及作用时长。</td>
-            <td >1.0.1（+）</td>
-        </tr>
-        <tr >
-            <td>草稿箱</td>
-            <td >支持将剪辑过程中的行为结果存储在草稿箱当中。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td rowspan="4" >滤镜特效</td>
-            <td >基础滤镜</td>
-            <td >丰富的滤镜效果，包括调色等多种滤镜。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>魔法效果</td>
-            <td >类“粒子特效”，支持一段视频多粒子效果叠加（精确到帧）。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>场景特效</td>
-            <td >类“抖音”特效，支持抖动、幻觉、灵魂出窍等多种抖音特效。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>漫画滤镜</td>
-            <td >类 "iPhone" 的动漫滤镜效果，提供国漫、美漫、日漫、淡彩等效果。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td rowspan="17" >文字特效</td>
-            <td >添加多个文字</td>
-            <td >一次制作可添加多个文字特效，并支持多行文字。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>支持二次编辑</td>
-            <td >文字特效支持二次编辑。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>文字大小</td>
-            <td >支持设定文字大小。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>特效入出点设定</td>
-            <td >支持设定每一个文字特效在视频上的出现和消失时间（精确到帧）。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>特效画面位置</td>
-            <td >支持设定文字特效在画面上的显示位置。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>文字旋转</td>
-            <td >支持对文字进行 360 度旋转。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>字体颜色</td>
-            <td >支持设定文字的颜色。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>描边颜色</td>
-            <td >支持设定文字描边的颜色。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>描边宽度</td>
-            <td >支持描边的宽度调节。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>背景颜色</td>
-            <td >支持设定文字背景的颜色。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>字体对齐</td>
-            <td >多行文字支持左对齐、居中对齐、右对齐（默认左对齐）。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>文字排列</td>
-            <td >支持设定文字顺序，从左到右，从右到左。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>文字样式</td>
-            <td >支持设定下划线、加粗、斜体等处理。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>文件间距</td>
-            <td >支持对文字的行间距、字间距的调节。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>透明度调节</td>
-            <td >支持对文字、背景的透明度独立调节。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>文字动画</td>
-            <td >提供 85 款 文字专属动画，可用于出场、入场、循环、整体。支持设定持续时长。</td>
-            <td >1.0.1（+）</td>
-        </tr>
-        <tr>
-            <td>阴影</td>
-            <td >支持调节阴影的颜色、不透明度、模糊强度、模糊距离、旋转角度。</td>
-            <td >1.0.1（+）</td>
-        </tr>
-        <tr >
-            <td rowspan="5" >贴纸特效</td>
-            <td >动图贴纸</td>
-            <td >支持动图（PNG 序列帧）的贴纸添加。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>静图贴纸</td>
-            <td >支持单张 PNG 图类型的贴纸添加。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>入出点设定</td>
-            <td >支持设定每一个贴纸在视频上的出现和消失时间（精确到帧）。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>支贴纸自定义</td>
-            <td >支持用户自定义上传，提供设计规范。允许用户上传自行设计的贴纸。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>动态下载</td>
-            <td >支持贴纸在线下载。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-         <tr >
-            <td rowspan="3" >气泡文字</td>
-            <td >出入点设定</td>
-            <td >支持设定每一个文字在视频上的出现和消失时间（精确到帧）。</td>
-            <td >1.0.1（+）</td>
-        </tr>
-        <tr>
-            <td>样式自定义</td>
-            <td >用户自行设计，并通过涂图控制台上传。</td>
-            <td >1.0.1（+）</td>
-        </tr>
-        <tr>
-            <td>多种换行缩放方式</td>
-            <td >支持 2 种换行缩放逻辑，支持自动换行，支持文字根据输入内容自动缩放字号。</td>
-            <td >1.0.1（+）</td>
-        </tr>
-        <tr >
-            <td rowspan="10" >音频功能</td>
-            <td >音视频混合</td>
-            <td >支持背景音乐功能，即将外部音轨混入视频当中，最终作为一个视频文件输出。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>音频变速</td>
-            <td >支持根据设定是播放的速率，进行音频的变速播放，且支持设定音频是否进行变调，即可以只变速不变调。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>音频拼接</td>
-            <td >支持多音频文件的拼接。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>变音特效</td>
-            <td >提供多款变音特效：萝莉、女生、大叔、怪兽 4 种特效。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>音轨混合</td>
-            <td >支持多段音频的混合。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>音量调节</td>
-            <td >支持单音轨、多音轨均可以独立调节。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>音频裁剪</td>
-            <td >支持音频的时间维度裁剪。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>音频倒放</td>
-            <td >支持音频独立设置倒放。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>音频分割</td>
-            <td >支持根据设定的时间点，进行音频单点独立分割。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>入出点设定</td>
-            <td >支持设定每一个音频在视频上的出现和消失时间（精确到帧）。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td rowspan="9" >颜色调整功能</td>
-            <td >色温</td>
-            <td >支持独立调节。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>色调</td>
-            <td >支持独立调节。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>高亮</td>
-            <td >支持独立调节。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>阴影</td>
-            <td >支持独立调节。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>锐化</td>
-            <td >支持独立调节。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>亮度</td>
-            <td >支持独立调节。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>对比度</td>
-            <td >支持独立调节。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>饱和度</td>
-            <td >支持独立调节。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>曝光度</td>
-            <td >支持独立调节。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-         <tr >
-            <td rowspan="3" >混合模式功能</td>
-            <td >多种混合</td>
-            <td >支持图片、视频的任意组成的组合，即图片、视频共存时均可进行混合模式的添加。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>16 种效果</td>
-            <td >16 种不同效果，包括：正常、叠加、相加、减去、反色、均值、正片叠底、差值、滤色、柔光、强光、线性光、点亮、变亮、变暗、排除。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>强度调节</td>
-            <td >支持混合强度的调节。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td rowspan="3" >转场特效</td>
-            <td >持续时长</td>
-            <td >单个转场效果在添加时，支持自定义持续时长。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>24 种效果</td>
-            <td >24 种不同效果，包括：淡化、颜色淡化、向左擦除、向右擦除、向上擦除、向下擦除、向左滑动、向右滑动、向上滑动、向下滑动、交换、开幕、交叉缩放、交叉扭曲、风车、雷达、放大、梦境、褪去、圆圈、圆圈关闭、圆圈打开、线性模糊、爱心。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr>
-            <td>多添加方式</td>
-            <td >支持在多视频（大于 2 个）时，支持全局添加或单点添加不同效果。</td>
-            <td >1.0.0（+）</td>
-        </tr>
-        <tr >
-            <td rowspan="3" >涂鸦</td>
-            <td >出入点设定</td>
-            <td >支持设定每一个涂鸦笔触在视频上的出现和消失时间（精确到帧）。</td>
-            <td >1.0.1（+）</td>
-        </tr>
-        <tr>
-            <td>颜色</td>
-            <td >颜色支持自定义设置，RGB值。</td>
-            <td >1.0.1（+）</td>
-        </tr>
-        <tr>
-            <td>粗细</td>
-            <td >支持笔触的粗细自定义设置。</td>
-            <td >1.0.1（+）</td>
-        </tr>
-        <tr >
-            <td rowspan="2" >马赛克</td>
-            <td >出入点设定</td>
-            <td >支持设定每一个马赛克笔触在视频上的出现和消失时间（精确到帧）。</td>
-            <td >1.0.1（+）</td>
-        </tr>
-        <tr>
-            <td>形状</td>
-            <td >支持笔触形式绘制马赛克区域和形状。支持矩形框形状的马赛克绘制。</td>
-            <td >1.0.1（+）</td>
-        </tr>
-    </tbody>
-</table>
 
-## 设备及系统要求
+    TUPVEditor* editor = [[TUPVEditor alloc] init];
+    ret = [editor createWithConfig:veconfig];
 
-设备要求：搭载 Android 和 iOS 系统的手机设备
 
-系统要求：Android 5.0 和 iOS 9.0 及其以上
+```
 
-## 商务合作
+### 2. 从草稿创建
 
-电话：177-6716-7529
+```objective-c
 
-邮箱：sales@tusdk.com
+    //TUPVEditorEditorModel* model = editor.getModel;
+    //file_content,从文件读取的字符串
+    TUPVEditorEditorModel* model = [[TUPVEditorEditorModel alloc] initWithString:file_content];
+   
+    //...
+    TUPVEditor* neditor = [[TUPVEditor alloc] init];
+    ret = [neditor createWithModel:model];
 
-QQ：2969573855
 
-联系地址：浙江省杭州市西湖区 西斗门路 9号 福地创业园1号楼3楼
+```
+
+
+### 3. 释放
+
+```objective-c
+
+    [editor destroy];
+
+```
+
+### 4. 更新画布大小
+
+```objective-c
+
+    TUPVEditor_Config* oconfig = editor.getConfig;
+    oconfig.width = 1000;
+    oconfig.height = 1000;
+    ret = [editor updateWithConfig:oconfig];
+
+```
+
+### 5. 播放器
+
+
+```objective-c
+
+    // setup DisplayView
+    //TUPDisplayView* displayView
+    
+    [displayView setup:nil];
+
+    // setup player
+    TUPVEditorPlayer* player = [editor newPlayer];
+
+    ret = [player open];
+    player.delegate = self;
+
+    // 关联 DisplayView 和 Player
+    [displayView attachPlayer:player];
+
+
+    // ..............
+    // ..............
+
+
+
+    //释放顺序
+    [displayView teardown];
+    [player close];
+
+    
+
+```
+
+### 6. 文件导出
+
+```objective-c
+
+    // setup player
+    TUPVEditorProducer* producer = [editor newProducer];
+
+    ///保存路径
+    producer.savePath = outputPath;
+    ///导出状态delegate
+    producer.delegate = self;
+    //[producer setOutputConfig:ocfg];
+    ret = [producer open];
+
+    ///开始导出
+    ret = [producer start];
+
+    
+    // ..............
+    // ..............
+
+    ///取消导出
+    [producer cancel];
+
+    [producer close];
+
+```
+
+
+
+## 1. Clip
+
+```objective-c
+
+    //设置audio clip
+    TUPConfig* config = [[TUPConfig alloc] init];
+    [config setString:url2.absoluteString forKey:@"path"];
+    [config setNumber:@(20000) forKey:@"trim-duration"];
+
+    ///创建audio clip
+    TUPVEditorClip* clip0 = [[TUPVEditorClip alloc] init:ctx withType:@"a:FILE"];
+    ///设置/更新Config
+    ret = [clip0 setConfig:config];
+
+    ///激活 clip, 如果返回错误, 则表示参数/文件有错误
+    ret = clip0.activate;
+
+    ///获取音/视频流信息(宽高帧率时长/采样率通道时长...)
+    TUPStreamInfo* si = clip0.getStreamInfo;
+
+    ///添加clip到layer
+    ret = [alayer addClip:clip0 at:30];
+
+
+    ///更新config;
+    [config setNumber:@(25000) forKey:@"trim-duration"];
+    ret = [clip0 setConfig:config];
+
+```
+
+
+
+## 2. Effect
+
+```objective-c
+
+    ///创建Effect
+    TUPVEditorEffect* ee = [[TUPVEditorEffect alloc] init:ctx withType:TUPVECanvasResizeEffect_TYPE_NAME];
+    ///如果该Effect需要Config,则设置Config
+    ret = [ee setConfig:config];
+
+    ///给clip设置Effect
+    [clip.effects addEffect:ee at:111];
+    ///也可以给layer设置Effect
+    [layer.effects addEffect:ee at:111];
+
+    ///之后也可以更新Config
+    ret = [ee setConfig:config];
+
+
+```
+
+
+## 3. Layer
+
+目前只要一种Layer类型: ClipLayer, 作为clip容器, 支持转场功能
+
+```objective-c
+
+
+    ///创建layer,然后设置参数
+    TUPVEditorClipLayer* layer =  [[TUPVEditorClipLayer alloc] initForVideo:ctx];
+    TUPConfig* lconfig0 = [[TUPConfig alloc] init];
+    
+    //layer在Composition上的起始位置
+    [lconfig0 setNumber:@(2000) forKey:TUPVEditorLayer_CONFIG_START_POS];
+    //layer在Composition上的混合模式
+    [lconfig0 setString:TUPVEditorLayerBlendMode_Screen forKey:TUPVEditorLayer_CONFIG_BLEND_MODE];
+
+    layer.config = lconfig0;
+
+
+    ///添加2个clip,clip0在clip1前, 根据index从小到大排列
+    ret = [layer addClip:clip0 at:100];
+    ret = [layer addClip:clip1 at:200];
+
+
+    ///添加转场, 在index为200的clip头上添加转场
+    TUPVEditorClipLayer_Transition transition;
+    transition.duration = 2000;
+    transition.name = @"fade";
+    [layer setTransition:&transition at:200];
+
+
+    //ret = layer.activate;
+    
+
+    ///将layer添加到Composition
+    [videoComp addLayer:layer at:100];
+
+
+    ///之后也可以更新Config
+    ret = [layer setConfig:lconfig1];
+
+
+```
+
+
+## Player与Editor交互流程
+
+
+1. Lock 播放器`player.lock`
+1. 更新 Clip/Effect/Layer`[* setConfig:cfg]`
+1. 重建 Editor`editor.build`
+1. Unlock 播放器`player.unlock`
+1. 播放器 Seek`[player seek:ts]`
+
+
+
+## Property
+
+用于对Clip/Effect/Layer设置属性,
+Property与Config的不同之处在于,Config设置更新后,必须重建Editor(`editor.build`), Property设置后能立即生效
+
+
+```objectivec
+
+
+    //
+    TUPVECanvasResizeEffect_PropertyBuilder* propBuilder = [[TUPVECanvasResizeEffect_PropertyBuilder alloc] init];
+    propBuilder.color = [UIColor colorWithRed:1 green:0 blue:0 alpha:0.6];
+    propBuilder.panX = 0;
+    propBuilder.panY = 0;
+
+    TUPProperty* prop = [propBuilder makeProperty];
+    [_effect setProperty:prop forKey:TUPVECanvasResizeEffect_PROP_PARAM];
+    
+
+
+```
+
+
+## 其他说明
+
+1. 所有Editor有关的接口,强制在同一个线程里调用
+1. 

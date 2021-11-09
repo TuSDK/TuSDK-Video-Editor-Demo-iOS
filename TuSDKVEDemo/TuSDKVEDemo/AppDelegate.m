@@ -13,9 +13,9 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "TuTextOverlayView.h"
 #import <Bugly/Bugly.h>
-#ifdef DEBUG
-#import <DoraemonKit/DoraemonManager.h>
-#endif
+//#ifdef DEBUG
+//#import <DoraemonKit/DoraemonManager.h>
+//#endif
 @interface AppDelegate ()
 
 @end
@@ -48,9 +48,9 @@
     [self.window makeKeyAndVisible];
     [Bugly startWithAppId:@"5dd19afc0a"];
     
-#ifdef DEBUG
-    [[DoraemonManager shareInstance] install];
-#endif
+//#ifdef DEBUG
+//    [[DoraemonManager shareInstance] install];
+//#endif
     return YES;
 }
 
