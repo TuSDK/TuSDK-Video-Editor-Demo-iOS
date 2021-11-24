@@ -4,10 +4,6 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>.DS_Store</key>
-		<data>
-		dKfyIaOk+dt+uRj2+HWz/npj4P0=
-		</data>
 		<key>Headers/TUPVEAnimationTextClip.h</key>
 		<data>
 		0EgNzalsalCthKDQVDhf1O7zKWo=
@@ -142,7 +138,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		/xmUMWXG1WTJaVSsM7/u04dQCfc=
+		rXPviKLwvCUCnT3LkNCYzyVPszM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>

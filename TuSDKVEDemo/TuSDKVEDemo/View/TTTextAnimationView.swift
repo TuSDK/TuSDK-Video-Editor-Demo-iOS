@@ -94,6 +94,7 @@ class TTTextAnimationView: UIView, UICollectionViewDataSource, UICollectionViewD
         collectionView = UICollectionView(frame: CGRect(x: 0, y: btnsView.frame.height + 10, width: frame.width, height: 75), collectionViewLayout: flowLayout)
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.backgroundColor = .black
         collectionView.register(TTCollectionViewGIFCell.self, forCellWithReuseIdentifier: "ReuseIdentifier")
         addSubview(collectionView)
         

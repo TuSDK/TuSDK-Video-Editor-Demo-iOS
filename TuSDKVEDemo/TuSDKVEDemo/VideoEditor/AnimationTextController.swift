@@ -259,6 +259,7 @@ extension AnimationTextController: UICollectionViewDataSource, UICollectionViewD
         collectionView = UICollectionView(frame: CGRect(x: 0, y: sliderView.frame.maxY + 10, width: UIScreen.width, height: 110), collectionViewLayout: flowLayout)
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.backgroundColor = .black
         collectionView.register(TTCollectionViewvalue1Cell.self, forCellWithReuseIdentifier: "ReuseIdentifier")
         collectionView.showsHorizontalScrollIndicator = false
         contentView.addSubview(collectionView)

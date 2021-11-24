@@ -81,6 +81,7 @@ class SceneController: EditorBaseController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.backgroundColor = .black
         collectionView.register(SceneCollectionViewCell.self, forCellWithReuseIdentifier: "ReuseIdentifier")
         return collectionView
     }()

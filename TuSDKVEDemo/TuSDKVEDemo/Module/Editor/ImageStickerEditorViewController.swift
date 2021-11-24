@@ -970,6 +970,7 @@ extension ImageStickerEditorViewController {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView!.delegate = self
         collectionView!.dataSource = self
+        collectionView!.backgroundColor = .black
         collectionView!.register(PresentListCell.self, forCellWithReuseIdentifier: "ReuseIdentifier")
         blendView.addSubview(collectionView!)
         collectionView!.snp.makeConstraints { (make) in

@@ -103,6 +103,7 @@ extension TransitionsController: UICollectionViewDataSource, UICollectionViewDel
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.backgroundColor = .black
         collectionView.register(PresentCollectionViewCell.self, forCellWithReuseIdentifier: "ReuseIdentifier")
         contentView.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in

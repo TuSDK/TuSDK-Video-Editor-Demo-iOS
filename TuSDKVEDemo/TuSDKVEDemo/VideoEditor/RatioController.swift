@@ -56,6 +56,7 @@ extension RatioController: UICollectionViewDataSource, UICollectionViewDelegate 
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.backgroundColor = .black
         collectionView.register(RatioCell.self, forCellWithReuseIdentifier: "ReuseIdentifier")
         contentView.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in

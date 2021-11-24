@@ -116,6 +116,7 @@ class MatteController: EditorBaseController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.backgroundColor = .black
         collectionView.register(TTCollectionViewvalue1Cell.self, forCellWithReuseIdentifier: "ReuseIdentifier")
         contentView.addSubview(collectionView)
         self.collectionView = collectionView
