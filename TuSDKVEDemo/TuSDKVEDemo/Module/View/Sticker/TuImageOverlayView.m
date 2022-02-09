@@ -7,7 +7,7 @@
 //
 
 #import "TuImageOverlayView.h"
-#import <TuSDKPulseCore/TuSDKPulseCore.h>
+#import "TuSDKPulseCore.h"
 
 @interface TuImageOverlayView()<TuImageItemViewDelegate>
 

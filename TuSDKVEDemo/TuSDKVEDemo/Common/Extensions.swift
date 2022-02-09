@@ -8,7 +8,6 @@
 
 import UIKit
 import SVProgressHUD
-import TuSDKPulseCore
 
 func printLog<T>(_ message: T,
                     file: String = #file,

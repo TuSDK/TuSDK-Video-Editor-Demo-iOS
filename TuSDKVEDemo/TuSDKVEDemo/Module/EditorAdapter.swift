@@ -8,8 +8,6 @@
 
 import UIKit
 import SVProgressHUD
-import TuSDKPulse
-import TuSDKPulseEditor
 class EditorAdapter: NSObject, TUPVEditorEditorModelEditorDelegate {
    
     

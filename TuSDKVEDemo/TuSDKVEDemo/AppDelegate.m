@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import <TuSDKPulseCore/TuSDKPulseCore.h>
-#import <TuSDKPulse/TUPEngine.h>
+#import "TuSDKPulseCore.h"
+#import "TuSDKPulse.h"
 #import <TuSDKVEDemo-Swift.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "TuTextOverlayView.h"

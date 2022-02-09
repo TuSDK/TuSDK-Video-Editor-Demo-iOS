@@ -9,9 +9,9 @@
 #import "VideoEditorViewController.h"
 #include <string>
 //#import <TuSDKPulseVEditor/test_Layer.h>
-#import <TuSDKPulseEditor/TuSDKPulseEditor.h>
-#import <TuSDKPulseCore/TuSDKPulseCore.h>
-#import <TuSDKPulse/TuSDKpulse.h>
+#import "TuSDKPulseEditor.h"
+#import "TuSDKPulseCore.h"
+#import "TuSDKpulse.h"
 
 #define ASSERT(b, msg) if (!(b)) {NSLog(@"ASSERT (%s) failure!! \n\t\tFILE:%s:%d // %@", #b, __FILE__, __LINE__, @msg); abort();}
 

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import TuSDKPulse
 class BubbleTextController: EditorStickerController {
 
     enum BubbleEvents: String {

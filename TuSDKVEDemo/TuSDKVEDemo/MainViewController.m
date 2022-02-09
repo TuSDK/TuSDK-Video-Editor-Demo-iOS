@@ -10,7 +10,7 @@
 
 #import "MainTableViewCell.h"
 
-#import <TuSDKPulse/TUPEngine.h>
+#import "TuSDKPulse.h"
 
 
 @interface MainViewController () {

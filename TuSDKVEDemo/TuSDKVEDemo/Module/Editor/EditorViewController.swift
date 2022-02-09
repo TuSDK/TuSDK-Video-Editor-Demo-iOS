@@ -10,10 +10,6 @@ import UIKit
 import SnapKit
 import SVProgressHUD
 
-@_exported import TuSDKPulse
-@_exported import TuSDKPulseEditor
-
-
 class EditorViewController: UIViewController {
     
     enum Math {

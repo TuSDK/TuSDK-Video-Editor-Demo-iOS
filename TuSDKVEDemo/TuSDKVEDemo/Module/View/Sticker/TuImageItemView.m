@@ -7,7 +7,7 @@
 //
 
 #import "TuImageItemView.h"
-#import <TuSDKPulseCore/TuSDKPulseCore.h>
+#import "TuSDKPulseCore.h"
 
 @implementation TuImageItemInfo
 

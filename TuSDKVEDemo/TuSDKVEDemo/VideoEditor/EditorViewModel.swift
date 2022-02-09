@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import TuSDKPulse
-import TuSDKPulseEditor
 import SVProgressHUD
 import HandyJSON
 

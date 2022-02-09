@@ -7,7 +7,7 @@
 //
 
 #import "TuTextOverlayView.h"
-#import <TuSDKPulseCore/TuSDKPulseCore.h>
+#import "TuSDKPulseCore.h"
 
 @interface TuTextOverlayView()<TuTextItemViewDelegate>
 

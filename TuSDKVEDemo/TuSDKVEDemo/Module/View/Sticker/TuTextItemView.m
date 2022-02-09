@@ -7,7 +7,7 @@
 //
 
 #import "TuTextItemView.h"
-#import <TuSDKPulseCore/TuSDKPulseCore.h>
+#import "TuSDKPulseCore.h"
 
 @implementation TuTextItemInfo
 

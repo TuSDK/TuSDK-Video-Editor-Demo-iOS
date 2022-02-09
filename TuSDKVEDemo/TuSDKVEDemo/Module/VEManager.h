@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <TuSDKPulseEditor/TuSDKPulseEditor.h>
-#import <TuSDKPulseCore/TuSDKPulseCore.h>
+#import "TuSDKPulseEditor.h"
+#import "TuSDKPulseCore.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface VEManager : NSObject

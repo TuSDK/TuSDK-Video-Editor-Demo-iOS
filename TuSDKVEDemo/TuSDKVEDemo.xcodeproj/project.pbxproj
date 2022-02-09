@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -39,6 +39,10 @@
 		2A17B239260457EA00149546 /* PIPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A17B238260457E900149546 /* PIPController.swift */; };
 		2A1F9767260837A000C3E272 /* CoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F97662608379F00C3E272 /* CoverController.swift */; };
 		2A1F976926086EB000C3E272 /* LayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F976826086EB000C3E272 /* LayerView.swift */; };
+		2A27721027B3737A00A064F7 /* TuSDKPulseEditor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A27720F27B3737A00A064F7 /* TuSDKPulseEditor.a */; };
+		2A27728A27B3738400A064F7 /* TuSDKPulse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A27722627B3738200A064F7 /* TuSDKPulse.a */; };
+		2A27728B27B3738400A064F7 /* TuSDKPulseCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A27722827B3738300A064F7 /* TuSDKPulseCore.a */; };
+		2A27744E27B3963800A064F7 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A27744B27B395F200A064F7 /* libresolv.9.tbd */; };
 		2A333CB625F8C1820049E610 /* EditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A333CB525F8C1820049E610 /* EditorViewModel.swift */; };
 		2A333CB825F9E5E70049E610 /* MovieCutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A333CB725F9E5E70049E610 /* MovieCutController.swift */; };
 		2A515458265B7644009381C0 /* TTTextAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A515457265B7644009381C0 /* TTTextAnimationView.swift */; };
@@ -193,12 +197,6 @@
 		A69DC86026CBBC2B008773F7 /* AudioQueuePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A69DC85F26CBBC2B008773F7 /* AudioQueuePlayer.m */; };
 		A69DC86126CBBC87008773F7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77D6B212498A27D00844D76 /* AudioToolbox.framework */; };
 		A69F9CC426F2211A000756BC /* TTSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69F9CC326F2211A000756BC /* TTSViewController.swift */; };
-		A6A5EDEA273A110E003AD821 /* TuSDKPulse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A5EDE5273A0F62003AD821 /* TuSDKPulse.framework */; platformFilter = ios; };
-		A6A5EDEB273A110E003AD821 /* TuSDKPulse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A6A5EDE5273A0F62003AD821 /* TuSDKPulse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A6A5EDEC273A110E003AD821 /* TuSDKPulseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A5EDE6273A0F62003AD821 /* TuSDKPulseCore.framework */; platformFilter = ios; };
-		A6A5EDED273A110E003AD821 /* TuSDKPulseCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A6A5EDE6273A0F62003AD821 /* TuSDKPulseCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A6A5EDEE273A110E003AD821 /* TuSDKPulseEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A5EDE4273A0F62003AD821 /* TuSDKPulseEditor.framework */; platformFilter = ios; };
-		A6A5EDEF273A110E003AD821 /* TuSDKPulseEditor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A6A5EDE4273A0F62003AD821 /* TuSDKPulseEditor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B80719A4256B999A009DD0E7 /* sound_cat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B807182A256B9998009DD0E7 /* sound_cat.mp3 */; };
 		B80719A5256B999A009DD0E7 /* sound_relieve.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B807182B256B9998009DD0E7 /* sound_relieve.mp3 */; };
 		B80719A8256B999A009DD0E7 /* sound_oldmovie.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B807182E256B9998009DD0E7 /* sound_oldmovie.mp3 */; };
@@ -354,9 +352,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A6A5EDEB273A110E003AD821 /* TuSDKPulse.framework in Embed Frameworks */,
-				A6A5EDEF273A110E003AD821 /* TuSDKPulseEditor.framework in Embed Frameworks */,
-				A6A5EDED273A110E003AD821 /* TuSDKPulseCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +396,149 @@
 		2A1BEB10263C00ED000EDCCD /* TuSDKPulseEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TuSDKPulseEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1F97662608379F00C3E272 /* CoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverController.swift; sourceTree = "<group>"; };
 		2A1F976826086EB000C3E272 /* LayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerView.swift; sourceTree = "<group>"; };
+		2A2771ED27B3737A00A064F7 /* TUPVECropEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVECropEffect.h; sourceTree = "<group>"; };
+		2A2771EE27B3737A00A064F7 /* TUPVEFadeEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVEFadeEffect.h; sourceTree = "<group>"; };
+		2A2771EF27B3737A00A064F7 /* TUPVEGraffitiClip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVEGraffitiClip.h; sourceTree = "<group>"; };
+		2A2771F027B3737A00A064F7 /* TUPVEColorAdjustEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVEColorAdjustEffect.h; sourceTree = "<group>"; };
+		2A2771F127B3737A00A064F7 /* TUPVEStretchEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVEStretchEffect.h; sourceTree = "<group>"; };
+		2A2771F227B3737A00A064F7 /* TUPVEMatteEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVEMatteEffect.h; sourceTree = "<group>"; };
+		2A2771F327B3737A00A064F7 /* TUPTimeRemappingEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPTimeRemappingEffect.h; sourceTree = "<group>"; };
+		2A2771F427B3737A00A064F7 /* TUPVEditorComposition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVEditorComposition.h; sourceTree = "<group>"; };
+		2A2771F527B3737A00A064F7 /* TUPVETransformEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVETransformEffect.h; sourceTree = "<group>"; };
+		2A2771F627B3737A00A064F7 /* TUPVEFreezeEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVEFreezeEffect.h; sourceTree = "<group>"; };
+		2A2771F727B3737A00A064F7 /* TUPVERepeatEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVERepeatEffect.h; sourceTree = "<group>"; };
+		2A2771F827B3737A00A064F7 /* TUPVESilenceClip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVESilenceClip.h; sourceTree = "<group>"; };
+		2A2771F927B3737A00A064F7 /* TUPVEditorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVEditorModel.h; sourceTree = "<group>"; };
+		2A2771FA27B3737A00A064F7 /* TUPVETusdkParticleEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVETusdkParticleEffect.h; sourceTree = "<group>"; };
+		2A2771FB27B3737A00A064F7 /* TUPVEBubbleTextClip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVEBubbleTextClip.h; sourceTree = "<group>"; };
+		2A2771FC27B3737A00A064F7 /* TUPVEText2DClip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVEText2DClip.h; sourceTree = "<group>"; };
+		2A2771FD27B3737A00A064F7 /* TUPVETusdkMVEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVETusdkMVEffect.h; sourceTree = "<group>"; };
+		2A2771FE27B3737A00A064F7 /* TUPVEditorLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVEditorLayer.h; sourceTree = "<group>"; };
+		2A2771FF27B3737A00A064F7 /* TuSDKPulseEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuSDKPulseEditor.h; sourceTree = "<group>"; };
+		2A27720027B3737A00A064F7 /* TUPVEMosaicEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVEMosaicEffect.h; sourceTree = "<group>"; };
+		2A27720127B3737A00A064F7 /* TUPVETusdkFilterEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVETusdkFilterEffect.h; sourceTree = "<group>"; };
+		2A27720227B3737A00A064F7 /* TUPVEditorClipLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVEditorClipLayer.h; sourceTree = "<group>"; };
+		2A27720327B3737A00A064F7 /* TUPVEditorClip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVEditorClip.h; sourceTree = "<group>"; };
+		2A27720427B3737A00A064F7 /* TUPVEFileClip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVEFileClip.h; sourceTree = "<group>"; };
+		2A27720527B3737A00A064F7 /* TUPVEAnimationTextClip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVEAnimationTextClip.h; sourceTree = "<group>"; };
+		2A27720627B3737A00A064F7 /* TUPVETrimEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVETrimEffect.h; sourceTree = "<group>"; };
+		2A27720727B3737A00A064F7 /* TUPVEditorEditorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVEditorEditorModel.h; sourceTree = "<group>"; };
+		2A27720827B3737A00A064F7 /* TUPVERepeatEffectV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVERepeatEffectV2.h; sourceTree = "<group>"; };
+		2A27720927B3737A00A064F7 /* TUPVECanvasResizeEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVECanvasResizeEffect.h; sourceTree = "<group>"; };
+		2A27720A27B3737A00A064F7 /* TUPVEditorEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVEditorEffect.h; sourceTree = "<group>"; };
+		2A27720B27B3737A00A064F7 /* TUPVEImageClip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVEImageClip.h; sourceTree = "<group>"; };
+		2A27720C27B3737A00A064F7 /* TUPVEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVEditor.h; sourceTree = "<group>"; };
+		2A27720D27B3737A00A064F7 /* TUPVEPitchEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVEPitchEffect.h; sourceTree = "<group>"; };
+		2A27720E27B3737A00A064F7 /* TUPVETusdkSceneEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVETusdkSceneEffect.h; sourceTree = "<group>"; };
+		2A27720F27B3737A00A064F7 /* TuSDKPulseEditor.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = TuSDKPulseEditor.a; sourceTree = "<group>"; };
+		2A27721327B3738200A064F7 /* TUPMediaInspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPMediaInspector.h; sourceTree = "<group>"; };
+		2A27721427B3738200A064F7 /* TUPPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPPlayer.h; sourceTree = "<group>"; };
+		2A27721527B3738200A064F7 /* TUPPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPPermission.h; sourceTree = "<group>"; };
+		2A27721627B3738200A064F7 /* TUPConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPConfig.h; sourceTree = "<group>"; };
+		2A27721727B3738200A064F7 /* TUPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPUtils.h; sourceTree = "<group>"; };
+		2A27721827B3738200A064F7 /* TUPPathMarshal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPPathMarshal.h; sourceTree = "<group>"; };
+		2A27721927B3738200A064F7 /* TUPEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPEngine.h; sourceTree = "<group>"; };
+		2A27721A27B3738200A064F7 /* TUPDispatchQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPDispatchQueue.h; sourceTree = "<group>"; };
+		2A27721B27B3738200A064F7 /* TUPVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVideoPlayer.h; sourceTree = "<group>"; };
+		2A27721C27B3738200A064F7 /* TUPProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPProperty.h; sourceTree = "<group>"; };
+		2A27721D27B3738200A064F7 /* TUPTranscoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPTranscoder.h; sourceTree = "<group>"; };
+		2A27721E27B3738200A064F7 /* TUPBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPBase.h; sourceTree = "<group>"; };
+		2A27721F27B3738200A064F7 /* TUPDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPDisplayView.h; sourceTree = "<group>"; };
+		2A27722027B3738200A064F7 /* TUPVideoPreprocessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPVideoPreprocessor.h; sourceTree = "<group>"; };
+		2A27722127B3738200A064F7 /* TUPProducer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPProducer.h; sourceTree = "<group>"; };
+		2A27722227B3738200A064F7 /* TUPThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPThread.h; sourceTree = "<group>"; };
+		2A27722327B3738200A064F7 /* TuSDKPulse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuSDKPulse.h; sourceTree = "<group>"; };
+		2A27722427B3738200A064F7 /* TUPStreamInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPStreamInfo.h; sourceTree = "<group>"; };
+		2A27722527B3738200A064F7 /* TUPThumbnailMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPThumbnailMaker.h; sourceTree = "<group>"; };
+		2A27722627B3738200A064F7 /* TuSDKPulse.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = TuSDKPulse.a; sourceTree = "<group>"; };
+		2A27722827B3738300A064F7 /* TuSDKPulseCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = TuSDKPulseCore.a; sourceTree = "<group>"; };
+		2A27722A27B3738300A064F7 /* TuSDKPulseCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuSDKPulseCore.h; sourceTree = "<group>"; };
+		2A27722C27B3738300A064F7 /* TuResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuResult.h; sourceTree = "<group>"; };
+		2A27722D27B3738300A064F7 /* TuTSFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuTSFileManager.h; sourceTree = "<group>"; };
+		2A27722E27B3738300A064F7 /* TuTSLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuTSLog.h; sourceTree = "<group>"; };
+		2A27722F27B3738300A064F7 /* TuTSBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuTSBundle.h; sourceTree = "<group>"; };
+		2A27723027B3738300A064F7 /* TuTSKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuTSKeychainUtils.h; sourceTree = "<group>"; };
+		2A27723127B3738300A064F7 /* TuTSDeviceSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuTSDeviceSettings.h; sourceTree = "<group>"; };
+		2A27723227B3738300A064F7 /* TuTSMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuTSMath.h; sourceTree = "<group>"; };
+		2A27723327B3738300A064F7 /* TuThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuThread.h; sourceTree = "<group>"; };
+		2A27723427B3738300A064F7 /* TuTSByte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuTSByte.h; sourceTree = "<group>"; };
+		2A27723627B3738300A064F7 /* TuTSImage+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TuTSImage+Extend.h"; sourceTree = "<group>"; };
+		2A27723727B3738300A064F7 /* TuTSScreen+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TuTSScreen+Extend.h"; sourceTree = "<group>"; };
+		2A27723827B3738300A064F7 /* TuICView+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TuICView+Extend.h"; sourceTree = "<group>"; };
+		2A27723927B3738300A064F7 /* TuTSAVAudioPlayer+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TuTSAVAudioPlayer+Extend.h"; sourceTree = "<group>"; };
+		2A27723A27B3738300A064F7 /* TuTSCATransition+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TuTSCATransition+Extend.h"; sourceTree = "<group>"; };
+		2A27723B27B3738300A064F7 /* TuTSDate+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TuTSDate+Extend.h"; sourceTree = "<group>"; };
+		2A27723C27B3738300A064F7 /* TuTSNSDictionary+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TuTSNSDictionary+Extend.h"; sourceTree = "<group>"; };
+		2A27723D27B3738300A064F7 /* TuTSALAssetsGrouped+CreateTimeDesc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TuTSALAssetsGrouped+CreateTimeDesc.h"; sourceTree = "<group>"; };
+		2A27723E27B3738300A064F7 /* TuTSNSArray+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TuTSNSArray+Extend.h"; sourceTree = "<group>"; };
+		2A27723F27B3738300A064F7 /* TuTSPHAssets+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TuTSPHAssets+Extend.h"; sourceTree = "<group>"; };
+		2A27724027B3738300A064F7 /* TuTSNSData+ImageExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TuTSNSData+ImageExtend.h"; sourceTree = "<group>"; };
+		2A27724127B3738300A064F7 /* TuTSNSMutableDictionary+ImageMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TuTSNSMutableDictionary+ImageMetadata.h"; sourceTree = "<group>"; };
+		2A27724227B3738300A064F7 /* TuTSAVCaptureDevice+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TuTSAVCaptureDevice+Extend.h"; sourceTree = "<group>"; };
+		2A27724327B3738300A064F7 /* TuTSALAssets+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TuTSALAssets+Extend.h"; sourceTree = "<group>"; };
+		2A27724427B3738300A064F7 /* TuTSString+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TuTSString+Extend.h"; sourceTree = "<group>"; };
+		2A27724527B3738300A064F7 /* TuTSNSUserDefaults+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TuTSNSUserDefaults+Extend.h"; sourceTree = "<group>"; };
+		2A27724627B3738300A064F7 /* TuTSNSData+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TuTSNSData+Extend.h"; sourceTree = "<group>"; };
+		2A27724727B3738300A064F7 /* TuTSUIColor+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TuTSUIColor+Extend.h"; sourceTree = "<group>"; };
+		2A27724827B3738300A064F7 /* TuTSDevice+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TuTSDevice+Extend.h"; sourceTree = "<group>"; };
+		2A27724A27B3738300A064F7 /* TuTSVolumeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuTSVolumeButton.h; sourceTree = "<group>"; };
+		2A27724B27B3738300A064F7 /* TuTSAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuTSAnimation.h; sourceTree = "<group>"; };
+		2A27724C27B3738300A064F7 /* TuTSMotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuTSMotion.h; sourceTree = "<group>"; };
+		2A27724D27B3738300A064F7 /* TuRatioType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuRatioType.h; sourceTree = "<group>"; };
+		2A27724E27B3738300A064F7 /* TuAOCellGridViewAlgorithmic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuAOCellGridViewAlgorithmic.h; sourceTree = "<group>"; };
+		2A27724F27B3738300A064F7 /* TuLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuLocation.h; sourceTree = "<group>"; };
+		2A27725027B3738300A064F7 /* TuWaterMarkOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuWaterMarkOption.h; sourceTree = "<group>"; };
+		2A27725127B3738300A064F7 /* TuRegionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuRegionHandler.h; sourceTree = "<group>"; };
+		2A27725227B3738300A064F7 /* TuTSAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuTSAsset.h; sourceTree = "<group>"; };
+		2A27725427B3738300A064F7 /* TuStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuStatistics.h; sourceTree = "<group>"; };
+		2A27725527B3738300A064F7 /* TuAOFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuAOFile.h; sourceTree = "<group>"; };
+		2A27725627B3738300A064F7 /* TuAOValid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuAOValid.h; sourceTree = "<group>"; };
+		2A27725727B3738300A064F7 /* TuAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuAuth.h; sourceTree = "<group>"; };
+		2A27725A27B3738300A064F7 /* TuStickerCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuStickerCategory.h; sourceTree = "<group>"; };
+		2A27725B27B3738300A064F7 /* TuStickerLocalPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuStickerLocalPackage.h; sourceTree = "<group>"; };
+		2A27725C27B3738300A064F7 /* TuStickerAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuStickerAdapter.h; sourceTree = "<group>"; };
+		2A27725D27B3738300A064F7 /* TuStickerGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuStickerGroup.h; sourceTree = "<group>"; };
+		2A27725E27B3738300A064F7 /* TuSticker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuSticker.h; sourceTree = "<group>"; };
+		2A27725F27B3738300A064F7 /* TuOnlineStickerDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuOnlineStickerDownloader.h; sourceTree = "<group>"; };
+		2A27726027B3738300A064F7 /* TuStickerText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuStickerText.h; sourceTree = "<group>"; };
+		2A27726227B3738300A064F7 /* TuBrushGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuBrushGroup.h; sourceTree = "<group>"; };
+		2A27726327B3738300A064F7 /* TuBrushLocalPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuBrushLocalPackage.h; sourceTree = "<group>"; };
+		2A27726427B3738300A064F7 /* TuBrushManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuBrushManager.h; sourceTree = "<group>"; };
+		2A27726527B3738300A064F7 /* TuBrushAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuBrushAdapter.h; sourceTree = "<group>"; };
+		2A27726627B3738300A064F7 /* TuBrushSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuBrushSize.h; sourceTree = "<group>"; };
+		2A27726727B3738300A064F7 /* TuBrush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuBrush.h; sourceTree = "<group>"; };
+		2A27726927B3738300A064F7 /* TuFilterAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuFilterAdapter.h; sourceTree = "<group>"; };
+		2A27726A27B3738300A064F7 /* TuFilterOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuFilterOption.h; sourceTree = "<group>"; };
+		2A27726B27B3738300A064F7 /* TuFilterLocalPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuFilterLocalPackage.h; sourceTree = "<group>"; };
+		2A27726C27B3738300A064F7 /* TuFilterUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuFilterUtils.h; sourceTree = "<group>"; };
+		2A27726D27B3738300A064F7 /* TuFilterParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuFilterParameter.h; sourceTree = "<group>"; };
+		2A27726E27B3738300A064F7 /* TuFilterGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuFilterGroup.h; sourceTree = "<group>"; };
+		2A27727027B3738300A064F7 /* TuNKImageColorArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuNKImageColorArgument.h; sourceTree = "<group>"; };
+		2A27727127B3738300A064F7 /* TuNKNetworkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuNKNetworkEngine.h; sourceTree = "<group>"; };
+		2A27727227B3738300A064F7 /* TuNKImageAutoColorAnalysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuNKImageAutoColorAnalysis.h; sourceTree = "<group>"; };
+		2A27727327B3738300A064F7 /* TuNKDownloadManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuNKDownloadManger.h; sourceTree = "<group>"; };
+		2A27727427B3738300A064F7 /* TuImageViewTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuImageViewTask.h; sourceTree = "<group>"; };
+		2A27727627B3738300A064F7 /* UIImageView+TuNetworkAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+TuNetworkAdditions.h"; sourceTree = "<group>"; };
+		2A27727727B3738300A064F7 /* TuNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuNetworkOperation.h; sourceTree = "<group>"; };
+		2A27727827B3738300A064F7 /* TuNetworkImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuNetworkImageCache.h; sourceTree = "<group>"; };
+		2A27727927B3738300A064F7 /* TuNetworkReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuNetworkReachability.h; sourceTree = "<group>"; };
+		2A27727A27B3738300A064F7 /* TuNKDownloadAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuNKDownloadAdapter.h; sourceTree = "<group>"; };
+		2A27727B27B3738300A064F7 /* TuNKNetworkArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuNKNetworkArg.h; sourceTree = "<group>"; };
+		2A27727C27B3738300A064F7 /* TuNKDownloadItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuNKDownloadItem.h; sourceTree = "<group>"; };
+		2A27727D27B3738300A064F7 /* TuNKImageAnalysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuNKImageAnalysis.h; sourceTree = "<group>"; };
+		2A27727E27B3738300A064F7 /* TuNKDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuNKDownloadTask.h; sourceTree = "<group>"; };
+		2A27727F27B3738300A064F7 /* TuNKFaceMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuNKFaceMark.h; sourceTree = "<group>"; };
+		2A27728027B3738300A064F7 /* TUCProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUCProtocol.h; sourceTree = "<group>"; };
+		2A27728127B3738300A064F7 /* TuNetworkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuNetworkEngine.h; sourceTree = "<group>"; };
+		2A27728227B3738300A064F7 /* TUCCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUCCore.h; sourceTree = "<group>"; };
+		2A27728327B3738300A064F7 /* TUCEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUCEnum.h; sourceTree = "<group>"; };
+		2A27728527B3738300A064F7 /* TMacUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMacUtils.h; sourceTree = "<group>"; };
+		2A27728627B3738300A064F7 /* SelesParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelesParameters.h; sourceTree = "<group>"; };
+		2A27728727B3738300A064F7 /* TuDefindConfigs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuDefindConfigs.h; sourceTree = "<group>"; };
+		2A27728827B3738300A064F7 /* SelesImageIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelesImageIOS.h; sourceTree = "<group>"; };
+		2A27728927B3738300A064F7 /* TuDataJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuDataJson.h; sourceTree = "<group>"; };
+		2A27744B27B395F200A064F7 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		2A27744C27B3960900A064F7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		2A333CB525F8C1820049E610 /* EditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewModel.swift; sourceTree = "<group>"; };
 		2A333CB725F9E5E70049E610 /* MovieCutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCutController.swift; sourceTree = "<group>"; };
 		2A515457265B7644009381C0 /* TTTextAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTextAnimationView.swift; sourceTree = "<group>"; };
@@ -563,9 +701,6 @@
 		A69DC85E26CBBC2B008773F7 /* AudioQueuePlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AudioQueuePlayer.h; path = TuSDKVEDemo/Module/AudioQueuePlayer.h; sourceTree = SOURCE_ROOT; };
 		A69DC85F26CBBC2B008773F7 /* AudioQueuePlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AudioQueuePlayer.m; path = TuSDKVEDemo/Module/AudioQueuePlayer.m; sourceTree = SOURCE_ROOT; };
 		A69F9CC326F2211A000756BC /* TTSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSViewController.swift; sourceTree = "<group>"; };
-		A6A5EDE4273A0F62003AD821 /* TuSDKPulseEditor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKPulseEditor.framework; sourceTree = "<group>"; };
-		A6A5EDE5273A0F62003AD821 /* TuSDKPulse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKPulse.framework; sourceTree = "<group>"; };
-		A6A5EDE6273A0F62003AD821 /* TuSDKPulseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKPulseCore.framework; sourceTree = "<group>"; };
 		B807182A256B9998009DD0E7 /* sound_cat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_cat.mp3; sourceTree = "<group>"; };
 		B807182B256B9998009DD0E7 /* sound_relieve.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_relieve.mp3; sourceTree = "<group>"; };
 		B807182E256B9998009DD0E7 /* sound_oldmovie.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_oldmovie.mp3; sourceTree = "<group>"; };
@@ -733,12 +868,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A27744E27B3963800A064F7 /* libresolv.9.tbd in Frameworks */,
+				2A27721027B3737A00A064F7 /* TuSDKPulseEditor.a in Frameworks */,
 				A606B78426E0C57500214078 /* AVFoundation.framework in Frameworks */,
-				A6A5EDEA273A110E003AD821 /* TuSDKPulse.framework in Frameworks */,
 				A69DC86126CBBC87008773F7 /* AudioToolbox.framework in Frameworks */,
+				2A27728A27B3738400A064F7 /* TuSDKPulse.a in Frameworks */,
+				2A27728B27B3738400A064F7 /* TuSDKPulseCore.a in Frameworks */,
 				D7DE9104256B8F1E006BF6AF /* Pods_TuSDKVEDemo.framework in Frameworks */,
-				A6A5EDEE273A110E003AD821 /* TuSDKPulseEditor.framework in Frameworks */,
-				A6A5EDEC273A110E003AD821 /* TuSDKPulseCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -789,6 +925,280 @@
 				2A832474260DBC9C008F6D74 /* StitchTableView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2A2771EB27B3737A00A064F7 /* TuSDKPulseEditor */ = {
+			isa = PBXGroup;
+			children = (
+				2A2771EC27B3737A00A064F7 /* include */,
+				2A27720F27B3737A00A064F7 /* TuSDKPulseEditor.a */,
+			);
+			path = TuSDKPulseEditor;
+			sourceTree = "<group>";
+		};
+		2A2771EC27B3737A00A064F7 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				2A2771ED27B3737A00A064F7 /* TUPVECropEffect.h */,
+				2A2771EE27B3737A00A064F7 /* TUPVEFadeEffect.h */,
+				2A2771EF27B3737A00A064F7 /* TUPVEGraffitiClip.h */,
+				2A2771F027B3737A00A064F7 /* TUPVEColorAdjustEffect.h */,
+				2A2771F127B3737A00A064F7 /* TUPVEStretchEffect.h */,
+				2A2771F227B3737A00A064F7 /* TUPVEMatteEffect.h */,
+				2A2771F327B3737A00A064F7 /* TUPTimeRemappingEffect.h */,
+				2A2771F427B3737A00A064F7 /* TUPVEditorComposition.h */,
+				2A2771F527B3737A00A064F7 /* TUPVETransformEffect.h */,
+				2A2771F627B3737A00A064F7 /* TUPVEFreezeEffect.h */,
+				2A2771F727B3737A00A064F7 /* TUPVERepeatEffect.h */,
+				2A2771F827B3737A00A064F7 /* TUPVESilenceClip.h */,
+				2A2771F927B3737A00A064F7 /* TUPVEditorModel.h */,
+				2A2771FA27B3737A00A064F7 /* TUPVETusdkParticleEffect.h */,
+				2A2771FB27B3737A00A064F7 /* TUPVEBubbleTextClip.h */,
+				2A2771FC27B3737A00A064F7 /* TUPVEText2DClip.h */,
+				2A2771FD27B3737A00A064F7 /* TUPVETusdkMVEffect.h */,
+				2A2771FE27B3737A00A064F7 /* TUPVEditorLayer.h */,
+				2A2771FF27B3737A00A064F7 /* TuSDKPulseEditor.h */,
+				2A27720027B3737A00A064F7 /* TUPVEMosaicEffect.h */,
+				2A27720127B3737A00A064F7 /* TUPVETusdkFilterEffect.h */,
+				2A27720227B3737A00A064F7 /* TUPVEditorClipLayer.h */,
+				2A27720327B3737A00A064F7 /* TUPVEditorClip.h */,
+				2A27720427B3737A00A064F7 /* TUPVEFileClip.h */,
+				2A27720527B3737A00A064F7 /* TUPVEAnimationTextClip.h */,
+				2A27720627B3737A00A064F7 /* TUPVETrimEffect.h */,
+				2A27720727B3737A00A064F7 /* TUPVEditorEditorModel.h */,
+				2A27720827B3737A00A064F7 /* TUPVERepeatEffectV2.h */,
+				2A27720927B3737A00A064F7 /* TUPVECanvasResizeEffect.h */,
+				2A27720A27B3737A00A064F7 /* TUPVEditorEffect.h */,
+				2A27720B27B3737A00A064F7 /* TUPVEImageClip.h */,
+				2A27720C27B3737A00A064F7 /* TUPVEditor.h */,
+				2A27720D27B3737A00A064F7 /* TUPVEPitchEffect.h */,
+				2A27720E27B3737A00A064F7 /* TUPVETusdkSceneEffect.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		2A27721127B3738200A064F7 /* TuSDKPulse */ = {
+			isa = PBXGroup;
+			children = (
+				2A27721227B3738200A064F7 /* include */,
+				2A27722627B3738200A064F7 /* TuSDKPulse.a */,
+			);
+			path = TuSDKPulse;
+			sourceTree = "<group>";
+		};
+		2A27721227B3738200A064F7 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				2A27721327B3738200A064F7 /* TUPMediaInspector.h */,
+				2A27721427B3738200A064F7 /* TUPPlayer.h */,
+				2A27721527B3738200A064F7 /* TUPPermission.h */,
+				2A27721627B3738200A064F7 /* TUPConfig.h */,
+				2A27721727B3738200A064F7 /* TUPUtils.h */,
+				2A27721827B3738200A064F7 /* TUPPathMarshal.h */,
+				2A27721927B3738200A064F7 /* TUPEngine.h */,
+				2A27721A27B3738200A064F7 /* TUPDispatchQueue.h */,
+				2A27721B27B3738200A064F7 /* TUPVideoPlayer.h */,
+				2A27721C27B3738200A064F7 /* TUPProperty.h */,
+				2A27721D27B3738200A064F7 /* TUPTranscoder.h */,
+				2A27721E27B3738200A064F7 /* TUPBase.h */,
+				2A27721F27B3738200A064F7 /* TUPDisplayView.h */,
+				2A27722027B3738200A064F7 /* TUPVideoPreprocessor.h */,
+				2A27722127B3738200A064F7 /* TUPProducer.h */,
+				2A27722227B3738200A064F7 /* TUPThread.h */,
+				2A27722327B3738200A064F7 /* TuSDKPulse.h */,
+				2A27722427B3738200A064F7 /* TUPStreamInfo.h */,
+				2A27722527B3738200A064F7 /* TUPThumbnailMaker.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		2A27722727B3738300A064F7 /* TuSDKPulseCore */ = {
+			isa = PBXGroup;
+			children = (
+				2A27722827B3738300A064F7 /* TuSDKPulseCore.a */,
+				2A27722927B3738300A064F7 /* include */,
+			);
+			path = TuSDKPulseCore;
+			sourceTree = "<group>";
+		};
+		2A27722927B3738300A064F7 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				2A27722A27B3738300A064F7 /* TuSDKPulseCore.h */,
+				2A27722B27B3738300A064F7 /* tools */,
+				2A27723527B3738300A064F7 /* category */,
+				2A27724927B3738300A064F7 /* UIKit */,
+				2A27725327B3738300A064F7 /* secrets */,
+				2A27725827B3738300A064F7 /* source */,
+				2A27726F27B3738300A064F7 /* network */,
+				2A27728027B3738300A064F7 /* TUCProtocol.h */,
+				2A27728127B3738300A064F7 /* TuNetworkEngine.h */,
+				2A27728227B3738300A064F7 /* TUCCore.h */,
+				2A27728327B3738300A064F7 /* TUCEnum.h */,
+				2A27728427B3738300A064F7 /* cx */,
+				2A27728927B3738300A064F7 /* TuDataJson.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		2A27722B27B3738300A064F7 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				2A27722C27B3738300A064F7 /* TuResult.h */,
+				2A27722D27B3738300A064F7 /* TuTSFileManager.h */,
+				2A27722E27B3738300A064F7 /* TuTSLog.h */,
+				2A27722F27B3738300A064F7 /* TuTSBundle.h */,
+				2A27723027B3738300A064F7 /* TuTSKeychainUtils.h */,
+				2A27723127B3738300A064F7 /* TuTSDeviceSettings.h */,
+				2A27723227B3738300A064F7 /* TuTSMath.h */,
+				2A27723327B3738300A064F7 /* TuThread.h */,
+				2A27723427B3738300A064F7 /* TuTSByte.h */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
+		2A27723527B3738300A064F7 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				2A27723627B3738300A064F7 /* TuTSImage+Extend.h */,
+				2A27723727B3738300A064F7 /* TuTSScreen+Extend.h */,
+				2A27723827B3738300A064F7 /* TuICView+Extend.h */,
+				2A27723927B3738300A064F7 /* TuTSAVAudioPlayer+Extend.h */,
+				2A27723A27B3738300A064F7 /* TuTSCATransition+Extend.h */,
+				2A27723B27B3738300A064F7 /* TuTSDate+Extend.h */,
+				2A27723C27B3738300A064F7 /* TuTSNSDictionary+Extend.h */,
+				2A27723D27B3738300A064F7 /* TuTSALAssetsGrouped+CreateTimeDesc.h */,
+				2A27723E27B3738300A064F7 /* TuTSNSArray+Extend.h */,
+				2A27723F27B3738300A064F7 /* TuTSPHAssets+Extend.h */,
+				2A27724027B3738300A064F7 /* TuTSNSData+ImageExtend.h */,
+				2A27724127B3738300A064F7 /* TuTSNSMutableDictionary+ImageMetadata.h */,
+				2A27724227B3738300A064F7 /* TuTSAVCaptureDevice+Extend.h */,
+				2A27724327B3738300A064F7 /* TuTSALAssets+Extend.h */,
+				2A27724427B3738300A064F7 /* TuTSString+Extend.h */,
+				2A27724527B3738300A064F7 /* TuTSNSUserDefaults+Extend.h */,
+				2A27724627B3738300A064F7 /* TuTSNSData+Extend.h */,
+				2A27724727B3738300A064F7 /* TuTSUIColor+Extend.h */,
+				2A27724827B3738300A064F7 /* TuTSDevice+Extend.h */,
+			);
+			path = category;
+			sourceTree = "<group>";
+		};
+		2A27724927B3738300A064F7 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				2A27724A27B3738300A064F7 /* TuTSVolumeButton.h */,
+				2A27724B27B3738300A064F7 /* TuTSAnimation.h */,
+				2A27724C27B3738300A064F7 /* TuTSMotion.h */,
+				2A27724D27B3738300A064F7 /* TuRatioType.h */,
+				2A27724E27B3738300A064F7 /* TuAOCellGridViewAlgorithmic.h */,
+				2A27724F27B3738300A064F7 /* TuLocation.h */,
+				2A27725027B3738300A064F7 /* TuWaterMarkOption.h */,
+				2A27725127B3738300A064F7 /* TuRegionHandler.h */,
+				2A27725227B3738300A064F7 /* TuTSAsset.h */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		2A27725327B3738300A064F7 /* secrets */ = {
+			isa = PBXGroup;
+			children = (
+				2A27725427B3738300A064F7 /* TuStatistics.h */,
+				2A27725527B3738300A064F7 /* TuAOFile.h */,
+				2A27725627B3738300A064F7 /* TuAOValid.h */,
+				2A27725727B3738300A064F7 /* TuAuth.h */,
+			);
+			path = secrets;
+			sourceTree = "<group>";
+		};
+		2A27725827B3738300A064F7 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				2A27725927B3738300A064F7 /* sticker */,
+				2A27726127B3738300A064F7 /* brush */,
+				2A27726827B3738300A064F7 /* filter */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		2A27725927B3738300A064F7 /* sticker */ = {
+			isa = PBXGroup;
+			children = (
+				2A27725A27B3738300A064F7 /* TuStickerCategory.h */,
+				2A27725B27B3738300A064F7 /* TuStickerLocalPackage.h */,
+				2A27725C27B3738300A064F7 /* TuStickerAdapter.h */,
+				2A27725D27B3738300A064F7 /* TuStickerGroup.h */,
+				2A27725E27B3738300A064F7 /* TuSticker.h */,
+				2A27725F27B3738300A064F7 /* TuOnlineStickerDownloader.h */,
+				2A27726027B3738300A064F7 /* TuStickerText.h */,
+			);
+			path = sticker;
+			sourceTree = "<group>";
+		};
+		2A27726127B3738300A064F7 /* brush */ = {
+			isa = PBXGroup;
+			children = (
+				2A27726227B3738300A064F7 /* TuBrushGroup.h */,
+				2A27726327B3738300A064F7 /* TuBrushLocalPackage.h */,
+				2A27726427B3738300A064F7 /* TuBrushManager.h */,
+				2A27726527B3738300A064F7 /* TuBrushAdapter.h */,
+				2A27726627B3738300A064F7 /* TuBrushSize.h */,
+				2A27726727B3738300A064F7 /* TuBrush.h */,
+			);
+			path = brush;
+			sourceTree = "<group>";
+		};
+		2A27726827B3738300A064F7 /* filter */ = {
+			isa = PBXGroup;
+			children = (
+				2A27726927B3738300A064F7 /* TuFilterAdapter.h */,
+				2A27726A27B3738300A064F7 /* TuFilterOption.h */,
+				2A27726B27B3738300A064F7 /* TuFilterLocalPackage.h */,
+				2A27726C27B3738300A064F7 /* TuFilterUtils.h */,
+				2A27726D27B3738300A064F7 /* TuFilterParameter.h */,
+				2A27726E27B3738300A064F7 /* TuFilterGroup.h */,
+			);
+			path = filter;
+			sourceTree = "<group>";
+		};
+		2A27726F27B3738300A064F7 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				2A27727027B3738300A064F7 /* TuNKImageColorArgument.h */,
+				2A27727127B3738300A064F7 /* TuNKNetworkEngine.h */,
+				2A27727227B3738300A064F7 /* TuNKImageAutoColorAnalysis.h */,
+				2A27727327B3738300A064F7 /* TuNKDownloadManger.h */,
+				2A27727427B3738300A064F7 /* TuImageViewTask.h */,
+				2A27727527B3738300A064F7 /* core */,
+				2A27727A27B3738300A064F7 /* TuNKDownloadAdapter.h */,
+				2A27727B27B3738300A064F7 /* TuNKNetworkArg.h */,
+				2A27727C27B3738300A064F7 /* TuNKDownloadItem.h */,
+				2A27727D27B3738300A064F7 /* TuNKImageAnalysis.h */,
+				2A27727E27B3738300A064F7 /* TuNKDownloadTask.h */,
+				2A27727F27B3738300A064F7 /* TuNKFaceMark.h */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		2A27727527B3738300A064F7 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				2A27727627B3738300A064F7 /* UIImageView+TuNetworkAdditions.h */,
+				2A27727727B3738300A064F7 /* TuNetworkOperation.h */,
+				2A27727827B3738300A064F7 /* TuNetworkImageCache.h */,
+				2A27727927B3738300A064F7 /* TuNetworkReachability.h */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		2A27728427B3738300A064F7 /* cx */ = {
+			isa = PBXGroup;
+			children = (
+				2A27728527B3738300A064F7 /* TMacUtils.h */,
+				2A27728627B3738300A064F7 /* SelesParameters.h */,
+				2A27728727B3738300A064F7 /* TuDefindConfigs.h */,
+				2A27728827B3738300A064F7 /* SelesImageIOS.h */,
+			);
+			path = cx;
 			sourceTree = "<group>";
 		};
 		2A3CD8C425F8C12B006B98CA /* VideoEditor */ = {
@@ -1079,9 +1489,9 @@
 		A6A5EDE3273A0F62003AD821 /* TuSDK */ = {
 			isa = PBXGroup;
 			children = (
-				A6A5EDE4273A0F62003AD821 /* TuSDKPulseEditor.framework */,
-				A6A5EDE5273A0F62003AD821 /* TuSDKPulse.framework */,
-				A6A5EDE6273A0F62003AD821 /* TuSDKPulseCore.framework */,
+				2A27721127B3738200A064F7 /* TuSDKPulse */,
+				2A27722727B3738300A064F7 /* TuSDKPulseCore */,
+				2A2771EB27B3737A00A064F7 /* TuSDKPulseEditor */,
 			);
 			path = TuSDK;
 			sourceTree = "<group>";
@@ -1356,6 +1766,8 @@
 		D77D6B1824989D7900844D76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2A27744C27B3960900A064F7 /* libz.tbd */,
+				2A27744B27B395F200A064F7 /* libresolv.9.tbd */,
 				2A1BEB0E263C00ED000EDCCD /* TuSDKPulse.framework */,
 				2A1BEB0F263C00ED000EDCCD /* TuSDKPulseCore.framework */,
 				2A1BEB10263C00ED000EDCCD /* TuSDKPulseEditor.framework */,
@@ -2074,6 +2486,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TuSDKVEDemo/Resources/TuSDK/TuSDKPulseEditor",
+					"$(PROJECT_DIR)/TuSDKVEDemo/Resources/TuSDK/TuSDKPulse",
+					"$(PROJECT_DIR)/TuSDKVEDemo/Resources/TuSDK/TuSDKPulseCore",
+				);
 				MARKETING_VERSION = 1.0.6;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = org.lasque.TuSDKEditor;
@@ -2117,6 +2535,12 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TuSDKVEDemo/Resources/TuSDK/TuSDKPulseEditor",
+					"$(PROJECT_DIR)/TuSDKVEDemo/Resources/TuSDK/TuSDKPulse",
+					"$(PROJECT_DIR)/TuSDKVEDemo/Resources/TuSDK/TuSDKPulseCore",
 				);
 				MARKETING_VERSION = 1.0.6;
 				ONLY_ACTIVE_ARCH = YES;

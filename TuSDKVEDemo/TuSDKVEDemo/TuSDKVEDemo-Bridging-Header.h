@@ -8,6 +8,9 @@
 
 #ifndef TuSDKVEDemo_Bridging_Header_h
 #define TuSDKVEDemo_Bridging_Header_h
+#import "TuSDKPulse.h"
+#import "TuSDKPulseEditor.h"
+#import "TuSDKPulseCore.h"
 #import "VideoEditorViewController.h"
 #import "VEManager.h"
 #import "TuImageOverlayView.h"
