@@ -44,9 +44,10 @@ class Navigator: NSObject {
         case freeze = "视频定格"
         case mosaic = "马赛克"
         case matte = "视频蒙版"
+        case gif = "GIF"
         case draft = "草稿箱"
         
-        static var all: [Scene] = [ .cut, .segment, .video, .pictureVideo, .pictures, .media, .reverse, .slow, .repeat, .ratio, .cover, .speed, .pip, .crop, .color, .audioMix, .transform, .background, .filter, .mv, .timbre, .tts, .audioPitch, .transition, .scenario, .particle, .text, .bubbleText, .graffiti, .freeze, .mosaic, .matte, .draft]
+        static var all: [Scene] = [ .cut, .segment, .video, .pictureVideo, .pictures, .media, .reverse, .slow, .repeat, .ratio, .cover, .speed, .pip, .crop, .color, .audioMix, .transform, .background, .filter, .mv, .timbre, .tts, .audioPitch, .transition, .scenario, .particle, .text, .bubbleText, .graffiti, .freeze, .mosaic, .matte, .gif, .draft]
 
     }
     let imagePicker = ImagePicker()
@@ -73,6 +74,12 @@ class Navigator: NSObject {
         }
         if segue == .tts {
             sender?.navigationController?.pushViewController(TTSViewController(), animated: true)
+            return
+        }
+        if segue == .gif {
+            let path = Bundle.main.path(forResource: "gif_1", ofType: ".gif")
+            let viewModel = EditorViewModel(scene: .gif, sources: [ResourceModel(state: .gif, filename: path!, coverImage: nil)])
+            sender?.navigationController?.pushViewController(GifController(viewModel: viewModel), animated: true)
             return
         }
         if let draft = draft {

@@ -30,7 +30,10 @@ class AnimationTextController: EditorStickerController {
             self.clip = TUPVEditorClip(ctx, withType: TUPVEAnimationTextClip_TYPE_NAME)
             builder.holder.text = defaultText
             let marshalStr = TUPPathMarshal.marshalPath(Bundle.main.path(forResource: "SourceHanSansSC-Normal", ofType: "ttf")!)
-            builder.holder.fonts = [marshalStr]
+            let fontStyle1 = TUPPathMarshal.marshalPath(Bundle.main.path(forResource: "站酷快乐体2016修订版_0", ofType: "ttf")!)
+            let fontStyle2 = TUPPathMarshal.marshalPath(Bundle.main.path(forResource: "AliHYAiHei", ofType: "ttf")!)
+            let fontStyle3 = TUPPathMarshal.marshalPath(Bundle.main.path(forResource: "NotoColorEmoji", ofType: "ttf")!)
+            builder.holder.fonts = [marshalStr, fontStyle3]
         }
         init(index: Int, clipLayer: TUPVEditorClipLayer, clip: TUPVEditorClip) {
             self.index = index
@@ -259,8 +262,8 @@ extension AnimationTextController: UICollectionViewDataSource, UICollectionViewD
         collectionView = UICollectionView(frame: CGRect(x: 0, y: sliderView.frame.maxY + 10, width: UIScreen.width, height: 110), collectionViewLayout: flowLayout)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = .black
         collectionView.register(TTCollectionViewvalue1Cell.self, forCellWithReuseIdentifier: "ReuseIdentifier")
+        collectionView.backgroundColor = .black
         collectionView.showsHorizontalScrollIndicator = false
         contentView.addSubview(collectionView)
         

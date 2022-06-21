@@ -4,9 +4,13 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Headers/TUPTimeRemappingEffect.h</key>
+		<data>
+		K2rURBOvq0bWux6pzc6PeKjYgCs=
+		</data>
 		<key>Headers/TUPVEAnimationTextClip.h</key>
 		<data>
-		0EgNzalsalCthKDQVDhf1O7zKWo=
+		7D/ReGnJBw4hew8ia2gXVJ/OmEE=
 		</data>
 		<key>Headers/TUPVEBubbleTextClip.h</key>
 		<data>
@@ -35,6 +39,10 @@
 		<key>Headers/TUPVEFreezeEffect.h</key>
 		<data>
 		H/7prypZdQOSUh5GZSAQCpDfCgA=
+		</data>
+		<key>Headers/TUPVEGifClip.h</key>
+		<data>
+		KZVwg3trxy/mF0ghBWagFPczxFI=
 		</data>
 		<key>Headers/TUPVEGraffitiClip.h</key>
 		<data>
@@ -134,11 +142,11 @@
 		</data>
 		<key>Headers/TuSDKPulseEditor.h</key>
 		<data>
-		CmFoqMJloudyBqH+gVPkQoGWBGI=
+		rFIFALyIYJQvb5nTxf+hlLvnTQA=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		rXPviKLwvCUCnT3LkNCYzyVPszM=
+		Qx1oZKJGiFZL00/qr2KDJKq4cYg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -147,15 +155,26 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/TUPTimeRemappingEffect.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			K2rURBOvq0bWux6pzc6PeKjYgCs=
+			</data>
+			<key>hash2</key>
+			<data>
+			Bs/aFJKY4TPV2p8zLepF+BW5vaffcYjmVkUVcG8FueU=
+			</data>
+		</dict>
 		<key>Headers/TUPVEAnimationTextClip.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			0EgNzalsalCthKDQVDhf1O7zKWo=
+			7D/ReGnJBw4hew8ia2gXVJ/OmEE=
 			</data>
 			<key>hash2</key>
 			<data>
-			1eo6qpeo5nb20V//FhHB4K7+lu5Y2d7mAzC3PtN0aq0=
+			JuUWZWmpox5wqSAUeVqnSikwDsRECmSnCccQnuZXOqY=
 			</data>
 		</dict>
 		<key>Headers/TUPVEBubbleTextClip.h</key>
@@ -233,6 +252,17 @@
 			<key>hash2</key>
 			<data>
 			9wJ+DmpQ/db6YaFLUVgbwrDEDayzbmVt+l56pZ6T5Ig=
+			</data>
+		</dict>
+		<key>Headers/TUPVEGifClip.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			KZVwg3trxy/mF0ghBWagFPczxFI=
+			</data>
+			<key>hash2</key>
+			<data>
+			jCIpxB8sD5rTsBWQwDd/yfDO52UAeSpblNV44GXJwYU=
 			</data>
 		</dict>
 		<key>Headers/TUPVEGraffitiClip.h</key>
@@ -503,11 +533,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			CmFoqMJloudyBqH+gVPkQoGWBGI=
+			rFIFALyIYJQvb5nTxf+hlLvnTQA=
 			</data>
 			<key>hash2</key>
 			<data>
-			EgZ7/Bzq2dV/KzB3IgnZ2kXZ5t9e2YLZFchzB1UQeOU=
+			KC31hgtngc+ClgVUItfYYlbMpOWjG8B9TE/SEjI2p4E=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

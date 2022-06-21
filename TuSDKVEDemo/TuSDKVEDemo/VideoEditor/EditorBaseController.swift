@@ -107,7 +107,7 @@ extension EditorBaseController {
             self.playToggle()
         }
         controlView.pauseCompleted = { [weak self] in
-            guard let `self` = self, self.isPlaying else { return }
+            guard let `self` = self else { return }
             self.pause()
         }
         controlView.valueChangedCompleted = {[weak self] progress in
@@ -123,7 +123,8 @@ extension EditorBaseController {
             if progress >= 1 {
                 self.seek(Int(self.playerDuration - minTimeInterval))
             } else {
-                self.seek(Int(progress * self.playerDuration))
+                self.syncSeek(Int(progress * self.playerDuration))
+                self.play()
             }
         }
     }
@@ -173,6 +174,13 @@ extension EditorBaseController: TUPPlayerDelegate {
         player.seek(to: pts)
         controlView.progress(current: pts, duration: playerDuration)
     }
+    
+    internal func syncSeek(_ pts: Int) {
+        currentTs = pts
+        player.previewSyncFrame(pts)
+        controlView.progress(current: pts, duration: playerDuration)
+    }
+    
     internal func seekCurrent() {
         seek(currentTs)
     }
@@ -183,9 +191,8 @@ extension EditorBaseController: TUPPlayerDelegate {
         }
     }
     internal func play() {
-        DispatchQueue.main.async {
-            self.isPlaying = self.player.play()
-        }
+        let ret = self.player.play()
+        self.isPlaying = ret
     }
     internal func fetchLock() {
         pause()
@@ -247,3 +254,4 @@ extension EditorBaseController {
     }
 }
  
+

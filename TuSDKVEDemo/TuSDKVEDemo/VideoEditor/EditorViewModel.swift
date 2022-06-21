@@ -160,7 +160,7 @@ extension EditorViewModel: TUPProducerDelegate {
             let config = TUPProducer_OutputConfig()
             config.watermark = UIImage.init(named: "sample_watermark")!
             config.watermarkPosition = -1
-            config.scale = 0
+            config.scale = 1
             let sandboxURL = TuFileManager.createURL(state: .video, name: String.currentTimestamp + ".mov")
             
             let producer = self.editor.newProducer() as! TUPVEditorProducer

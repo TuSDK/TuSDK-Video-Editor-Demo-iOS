@@ -26,8 +26,8 @@ class SceneViewController: UITableViewController {
         let calendar = Calendar.current
         let year = calendar.component(.year, from: date)
         
-        let tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.width, height: 40))
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: UIScreen.width, height: 40))
+        let tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.width(), height: 40))
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: UIScreen.width(), height: 40))
         label.textColor = .black
         label.numberOfLines = 0
         label.textAlignment = .center

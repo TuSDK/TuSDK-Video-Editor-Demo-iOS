@@ -23,6 +23,7 @@
 #import <TuSDKPulseEditor/TUPVESilenceClip.h>
 #import <TuSDKPulseEditor/TUPVEFileClip.h>
 #import <TuSDKPulseEditor/TUPVEImageClip.h>
+#import <TuSDKPulseEditor/TUPVEGifClip.h>
 
 #import <TuSDKPulseEditor/TUPVEStretchEffect.h>
 #import <TuSDKPulseEditor/TUPVETransformEffect.h>
@@ -44,3 +45,5 @@
 #import <TuSDKPulseEditor/TUPVEMosaicEffect.h>
 #import <TuSDKPulseEditor/TUPVEFadeEffect.h>
 #import <TuSDKPulseEditor/TUPVEMatteEffect.h>
+#import <TuSDKPulseEditor/TUPTimeRemappingEffect.h>
+

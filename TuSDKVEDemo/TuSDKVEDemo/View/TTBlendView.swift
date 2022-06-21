@@ -35,6 +35,7 @@ class TTBlendView: UIView, UICollectionViewDelegate, UICollectionViewDataSource 
         collectionView.dataSource = self
         collectionView.backgroundColor = .black
         collectionView.register(TTCollectionViewCell.self, forCellWithReuseIdentifier: "TTBlendView")
+        
         addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
             make.height.equalTo(45)

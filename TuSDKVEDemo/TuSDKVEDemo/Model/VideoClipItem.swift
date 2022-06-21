@@ -29,12 +29,22 @@ class VideoClipItem {
         self.index += index
         self.source = source
         let sourcePath = source.path().absoluteString
+        // 使用外部导入绝对路径
+//        let sourcePath = source.filename
         config = TUPConfig()
         if source.state == .image {
             audioClip = TUPVEditorClip(ctx, withType: TUPVESilenceClip_AUDIO_TYPE_NAME)
             videoClip = TUPVEditorClip(ctx, withType: TUPVEImageClip_TYPE_NAME)
             config.setString(sourcePath, forKey: TUPVEImageClip_CONFIG_PATH)
             config.setNumber(NSNumber(value: imageClipDuration), forKey: TUPVEImageClip_CONFIG_DURATION)
+            let audioConfig = TUPConfig()
+            audioConfig.setNumber(NSNumber(value: imageClipDuration), forKey: TUPVESilenceClip_CONFIG_DURATION)
+            audioClip.setConfig(audioConfig)
+        } else if source.state == .gif {
+            audioClip = TUPVEditorClip(ctx, withType: TUPVESilenceClip_AUDIO_TYPE_NAME)
+            videoClip = TUPVEditorClip(ctx, withType: TUPVEGifClip_TYPE_NAME)
+            config.setString(sourcePath, forKey: TUPVEGifClip_CONFIG_PATH)
+            config.setNumber(NSNumber(value: imageClipDuration), forKey: TUPVEGifClip_CONFIG_DURATION)
             let audioConfig = TUPConfig()
             audioConfig.setNumber(NSNumber(value: imageClipDuration), forKey: TUPVESilenceClip_CONFIG_DURATION)
             audioClip.setConfig(audioConfig)

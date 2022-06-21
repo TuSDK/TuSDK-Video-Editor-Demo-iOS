@@ -23,6 +23,7 @@ struct ResourceModel {
     enum State: Int {
         case image = 1
         case video
+        case gif
     }
     let state: State
     let filename: String
@@ -35,6 +36,8 @@ struct ResourceModel {
     init(sandbox path: String) {
         if path.hasSuffix(".png") || path.hasSuffix(".PNG") || path.hasSuffix(".jpg") || path.hasSuffix(".JPG") {
             self.state = .image
+        } else if path.hasPrefix(".gif") || path.hasPrefix(".GIF") {
+            self.state = .gif
         } else {
             self.state = .video
         }
@@ -43,6 +46,9 @@ struct ResourceModel {
     }
     
     func path() -> URL {
-        TuFileManager.createURL(state: .resource, name: filename)
+        if self.state == .gif {
+            return URL(string: self.filename)!
+        }
+        return TuFileManager.createURL(state: .resource, name: filename)
     }
 }

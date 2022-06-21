@@ -8,8 +8,6 @@
 
 import UIKit
 import SVProgressHUD
-import TuSDKPulseCore
-
 func printLog<T>(_ message: T,
                     file: String = #file,
                   method: String = #function,
@@ -63,7 +61,7 @@ extension UIDevice {
     //通过获取屏幕的宽高来判断
     @objc class func isX() -> Bool {
         let maxB = max(UIScreen.main.bounds.height, UIScreen.main.bounds.width)
-        if maxB == 812 || maxB == 896 || maxB == 844 || maxB == 926 {
+        if maxB == 812 || maxB == 896{
             return true
         }
         return false
@@ -74,10 +72,10 @@ extension CGFloat {
         return UIScreen.main.bounds.height / 812
     }
     static var safeBottom: CGFloat {
-        return UIDevice.lsqIsDeviceiPhoneX() ? 34 : 0
+        return UIDevice.isX() ? 34 : 0
     }
     static var naviHeight: CGFloat {
-        return UIDevice.lsqIsDeviceiPhoneX() ? 88 : 64
+        return UIDevice.isX() ? 88 : 64
     }
 }
 

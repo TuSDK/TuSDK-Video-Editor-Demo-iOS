@@ -10,7 +10,7 @@ import UIKit
 
 class AudioMixController: EditorBaseController {
     class AudioMixItem {
-        let musicList = ["eye_of_forgiveness", "lovely_piano_song"]
+        let musicList = ["city_sunshine", "eye_of_forgiveness", "lovely_piano_song", "motions", "pickled_pink", "rush"]
         var volumeMap: [Int: Float] = [:]
         let audioConfig = TUPConfig()
         let layerIndex = 1010

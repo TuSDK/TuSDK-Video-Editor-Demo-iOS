@@ -7,7 +7,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-
+typedef NS_ENUM(NSUInteger, TUPVEAnimationTextClip_BoundType) {
+    TUPVEAnimationTextClip_BoundTypeAll,
+    TUPVEAnimationTextClip_BoundTypeTextAll,
+    TUPVEAnimationTextClip_BoundTypeTextLine,
+};
 
 FOUNDATION_EXPORT NSString *const TUPVEAnimationTextClip_TYPE_NAME;
 FOUNDATION_EXPORT NSString *const TUPVEAnimationTextClip_CONFIG_DURATION;
@@ -50,6 +54,7 @@ typedef NS_ENUM(NSInteger, TUPVEAnimationTextClip_OrderType) {
 @interface TUPVEAnimationTextClip_Background : NSObject
 @property(nonatomic, strong) UIColor *color;        // 颜色
 @property(nonatomic, assign) double opacity;        // 不透明度 [0-1.0]
+@property(nonatomic, assign) TUPVEAnimationTextClip_BoundType boundType;
 @end
 
 // 下划线

@@ -6,15 +6,15 @@
 	<dict>
 		<key>Frameworks/TuSDKPulseCore.framework/Info.plist</key>
 		<data>
-		dIhb+E603u8w6wuZ7Z40MowMfT4=
+		oF/6eTQhfMTm29HYHEhV1q+gICU=
 		</data>
 		<key>Frameworks/TuSDKPulseCore.framework/TuSDKPulseCore</key>
 		<data>
-		MAGsYoHTkxwM5LIn3KKabAg45MM=
+		udqKktKtzkS2nQEeAzP6gkUM9JU=
 		</data>
 		<key>Frameworks/TuSDKPulseCore.framework/_CodeSignature/CodeResources</key>
 		<data>
-		tk6gf7uPY83gqQKnLkSw5bA83Yo=
+		tmZ4cSlZN+nuVc/DDGXrqtf1pI0=
 		</data>
 		<key>Headers/TUPBase.h</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Headers/TUPDispatchQueue.h</key>
 		<data>
-		BNbY7JI5IIscUChxOcHdk2CULzo=
+		YSn8nMhFX2BCoBowrBM3Tbu0VcA=
 		</data>
 		<key>Headers/TUPDisplayView.h</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Headers/TUPEngine.h</key>
 		<data>
-		6Fh6lZEXpXfpO4Ele10esXveTY8=
+		YeH2E2cyGA5uSjKJZYrVFCpJHl0=
 		</data>
 		<key>Headers/TUPMediaInspector.h</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Headers/TUPPlayer.h</key>
 		<data>
-		yfHpPFMeCbbSeYqXo84EBm5bBoE=
+		b4476PiGxliqlvQPV5OKdcghnw0=
 		</data>
 		<key>Headers/TUPProducer.h</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Headers/TUPProperty.h</key>
 		<data>
-		LCFzunMdYAv03VmYzvVWZVw2Pyg=
+		TaKIkZsYUbrKwpu9nPXFtnuKerI=
 		</data>
 		<key>Headers/TUPStreamInfo.h</key>
 		<data>
@@ -90,11 +90,11 @@
 		</data>
 		<key>Headers/TuSDKPulse.h</key>
 		<data>
-		RaD7Td8BBr/d0Nl7UJ8tn2BkiMQ=
+		ha1KHcreOZD/1VqxnSAR7GoiPmc=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		PFMS+oZdZhvO4Dl7t+BG+XxxioA=
+		Zjn7YV60POy++ONIpcKLgCbzKPE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -107,33 +107,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			dIhb+E603u8w6wuZ7Z40MowMfT4=
+			oF/6eTQhfMTm29HYHEhV1q+gICU=
 			</data>
 			<key>hash2</key>
 			<data>
-			3SQwZWc4E0BgQ/J6c0GVAud0K4XlVZ566A2wzD1MdE8=
+			NCKmwDZImvv/RfrTIslP4imkhioNRq/toc4dtnoEAhM=
 			</data>
 		</dict>
 		<key>Frameworks/TuSDKPulseCore.framework/TuSDKPulseCore</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			MAGsYoHTkxwM5LIn3KKabAg45MM=
+			udqKktKtzkS2nQEeAzP6gkUM9JU=
 			</data>
 			<key>hash2</key>
 			<data>
-			oLtb5XyKCeqTGfqSaMGuv7cIbTxt3x66Q83xI+SlZ0g=
+			dF65AUjLh1MCA+budDC0r6WBRz2brjGszk725YNCq9k=
 			</data>
 		</dict>
 		<key>Frameworks/TuSDKPulseCore.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tk6gf7uPY83gqQKnLkSw5bA83Yo=
+			tmZ4cSlZN+nuVc/DDGXrqtf1pI0=
 			</data>
 			<key>hash2</key>
 			<data>
-			673ENxmg1hXFiZe3QdPe52ofjnYMUfCcgfW6+EnNYnY=
+			5NJSXgU12OPavvDHg3Ga0EDASN4jmrLdUIWXbsqOe94=
 			</data>
 		</dict>
 		<key>Headers/TUPBase.h</key>
@@ -162,11 +162,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			BNbY7JI5IIscUChxOcHdk2CULzo=
+			YSn8nMhFX2BCoBowrBM3Tbu0VcA=
 			</data>
 			<key>hash2</key>
 			<data>
-			xqfw41O5Q7EQqZX3QpQ6yusiYp8G1kbT7x9u41MPLCk=
+			cay6NHnHQt/kafEzbzWiFwpnjg6jvFlJ77ZXTm66PRk=
 			</data>
 		</dict>
 		<key>Headers/TUPDisplayView.h</key>
@@ -184,11 +184,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6Fh6lZEXpXfpO4Ele10esXveTY8=
+			YeH2E2cyGA5uSjKJZYrVFCpJHl0=
 			</data>
 			<key>hash2</key>
 			<data>
-			QrhiCI4y5OnPv6zCWcGIrK7szU0vCC1lNuH7zrx9mJM=
+			1tSbOFdU4jk/M4sIBnBEXAi1Po9lN8CMZj6XSPlKUtc=
 			</data>
 		</dict>
 		<key>Headers/TUPMediaInspector.h</key>
@@ -228,11 +228,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			yfHpPFMeCbbSeYqXo84EBm5bBoE=
+			b4476PiGxliqlvQPV5OKdcghnw0=
 			</data>
 			<key>hash2</key>
 			<data>
-			WK8zX2YgXev9/5EmocOafO/rbzuM3n//2v3bpeP/EVU=
+			iRk1p5th+EUfyf0BIhtPvNascgIMUmrK0VOi8fHKTNk=
 			</data>
 		</dict>
 		<key>Headers/TUPProducer.h</key>
@@ -250,11 +250,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			LCFzunMdYAv03VmYzvVWZVw2Pyg=
+			TaKIkZsYUbrKwpu9nPXFtnuKerI=
 			</data>
 			<key>hash2</key>
 			<data>
-			2E7ZiPZEmxg1/rGXcnXVr5OZcxU4BfIShe01vqlB8F0=
+			oDyzSUT9vOf+nVI1XD8MpP51KFhqPnj3ga4kex1b57c=
 			</data>
 		</dict>
 		<key>Headers/TUPStreamInfo.h</key>
@@ -338,11 +338,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			RaD7Td8BBr/d0Nl7UJ8tn2BkiMQ=
+			ha1KHcreOZD/1VqxnSAR7GoiPmc=
 			</data>
 			<key>hash2</key>
 			<data>
-			xtEMoiLFp1+q3Wjfe7kqSyK7GJea50OSEdYrCKspxBg=
+			WPdn3DPAvOuYzzJQGtFfzlX1Fk+F4q2gTIqg6fX3A38=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
