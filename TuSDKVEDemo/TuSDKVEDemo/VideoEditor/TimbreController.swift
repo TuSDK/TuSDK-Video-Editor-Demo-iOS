@@ -37,7 +37,7 @@ class TimbreController: UIViewController {
         super.viewDidLoad()
 
         self.view.backgroundColor = .black
-        self.title = Navigator.Scene.timbre.rawValue
+//        self.title = Navigator.Scene.timbre.rawValue
         setupView()
         
         setupAudioSession()

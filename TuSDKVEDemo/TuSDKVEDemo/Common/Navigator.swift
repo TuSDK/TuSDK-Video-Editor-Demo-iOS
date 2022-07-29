@@ -32,8 +32,8 @@ class Navigator: NSObject {
         case background = "视频背景"
         case filter = "滤镜特效"
         case mv = "MV特效"
-        case timbre = "音色转换"
-        case tts = "文字转语音"
+//        case timbre = "音色转换"
+//        case tts = "文字转语音"
         case audioPitch = "音频变声"
         case transition = "转场特效"
         case scenario = "场景特效"
@@ -47,7 +47,7 @@ class Navigator: NSObject {
         case gif = "GIF"
         case draft = "草稿箱"
         
-        static var all: [Scene] = [ .cut, .segment, .video, .pictureVideo, .pictures, .media, .reverse, .slow, .repeat, .ratio, .cover, .speed, .pip, .crop, .color, .audioMix, .transform, .background, .filter, .mv, .timbre, .tts, .audioPitch, .transition, .scenario, .particle, .text, .bubbleText, .graffiti, .freeze, .mosaic, .matte, .gif, .draft]
+        static var all: [Scene] = [ .cut, .segment, .video, .pictureVideo, .pictures, .media, .reverse, .slow, .repeat, .ratio, .cover, .speed, .pip, .crop, .color, .audioMix, .transform, .background, .filter, .mv, .audioPitch, .transition, .scenario, .particle, .text, .bubbleText, .graffiti, .freeze, .mosaic, .matte, .gif, .draft]
 
     }
     let imagePicker = ImagePicker()
@@ -68,14 +68,14 @@ class Navigator: NSObject {
             sender?.navigationController?.pushViewController(DraftViewController(), animated: true)
             return
         }
-        if segue == .timbre {
-            sender?.navigationController?.pushViewController(TimbreController(), animated: true)
-            return
-        }
-        if segue == .tts {
-            sender?.navigationController?.pushViewController(TTSViewController(), animated: true)
-            return
-        }
+//        if segue == .timbre {
+//            sender?.navigationController?.pushViewController(TimbreController(), animated: true)
+//            return
+//        }
+//        if segue == .tts {
+//            sender?.navigationController?.pushViewController(TTSViewController(), animated: true)
+//            return
+//        }
         if segue == .gif {
             let path = Bundle.main.path(forResource: "gif_1", ofType: ".gif")
             let viewModel = EditorViewModel(scene: .gif, sources: [ResourceModel(state: .gif, filename: path!, coverImage: nil)])

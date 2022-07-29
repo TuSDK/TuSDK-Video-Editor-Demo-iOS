@@ -34,7 +34,7 @@ class TTSViewController: UIViewController {
     func setupView() {
         
         self.view.backgroundColor = .black
-        self.title = Navigator.Scene.tts.rawValue
+//        self.title = Navigator.Scene.tts.rawValue
         
         let margin = 15
         
