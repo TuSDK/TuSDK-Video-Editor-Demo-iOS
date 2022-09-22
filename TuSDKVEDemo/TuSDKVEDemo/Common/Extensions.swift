@@ -72,10 +72,10 @@ extension CGFloat {
         return UIScreen.main.bounds.height / 812
     }
     static var safeBottom: CGFloat {
-        return UIDevice.isX() ? 34 : 0
+        return UIDevice.lsqIsDeviceiPhoneX() ? 34 : 0
     }
     static var naviHeight: CGFloat {
-        return UIDevice.isX() ? 88 : 64
+        return UIDevice.lsqIsDeviceiPhoneX() ? 88 : 64
     }
 }
 
