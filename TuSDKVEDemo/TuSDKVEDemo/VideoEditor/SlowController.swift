@@ -102,9 +102,9 @@ extension SlowController {
             make.width.equalTo(UIScreen.width())
             make.height.equalTo(50)
         }
-        let countBarView = SliderBarView(title: "慢动作倍数（1 ~ 4）", state: .native)
+        let countBarView = SliderBarView(title: "慢动作倍数（1 ~ 2）", state: .native)
         countBarView.isRounded = true
-        countBarView.slider.maximumValue = 4
+        countBarView.slider.maximumValue = 2
         countBarView.slider.minimumValue = 1
         countBarView.slider.isContinuous = false
         countBarView.slider.value = videoItem.multiple
