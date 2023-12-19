@@ -12,11 +12,19 @@ extension NSManagedObjectContext {
         guard let entityDescriptions = persistentStoreCoordinator?.managedObjectModel.entities else { return }
         for entity in entityDescriptions {
             guard let entityName = entity.name else { continue }
-            guard let objects = try? fetch(NSFetchRequest(entityName: entityName)) else { continue }
-            print("== \(entityName) (\(objects.count)) ==")
-            for object in objects {
-                print(String(describing: object))
+            if #available(iOS 15.0, *) {
+                guard let objects = try? fetch(NSFetchRequest(entityName: entityName)) else { continue }
+                print("== \(entityName) (\(objects.count)) ==")
+                for object in objects {
+                    print(String(describing: object))
+                }
+            } else {
+                // Fallback on earlier versions
             }
+//            print("== \(entityName) (\(objects.count)) ==")
+//            for object in objects {
+//                print(String(describing: object))
+//            }
         }
     }
 
