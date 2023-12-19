@@ -14,6 +14,198 @@ trap 'on_error $LINENO' ERR
 RSYNC_PROTECT_TMP_FILES=(--filter "P .*.??????")
 
 
+variant_for_slice()
+{
+  case "$1" in
+  "CAudioKit.xcframework/ios-arm64")
+    echo ""
+    ;;
+  "CAudioKit.xcframework/ios-arm64_x86_64-maccatalyst")
+    echo "maccatalyst"
+    ;;
+  "CAudioKit.xcframework/ios-arm64_x86_64-simulator")
+    echo "simulator"
+    ;;
+  "CAudioKit.xcframework/macos-arm64_x86_64")
+    echo ""
+    ;;
+  "CAudioKit.xcframework/tvos-arm64")
+    echo ""
+    ;;
+  "CAudioKit.xcframework/tvos-arm64_x86_64-simulator")
+    echo "simulator"
+    ;;
+  "AudioKit.xcframework/ios-arm64")
+    echo ""
+    ;;
+  "AudioKit.xcframework/ios-arm64_x86_64-maccatalyst")
+    echo "maccatalyst"
+    ;;
+  "AudioKit.xcframework/ios-arm64_x86_64-simulator")
+    echo "simulator"
+    ;;
+  "AudioKit.xcframework/macos-arm64_x86_64")
+    echo ""
+    ;;
+  "AudioKit.xcframework/tvos-arm64")
+    echo ""
+    ;;
+  "AudioKit.xcframework/tvos-arm64_x86_64-simulator")
+    echo "simulator"
+    ;;
+  "STK.xcframework/ios-arm64")
+    echo ""
+    ;;
+  "STK.xcframework/ios-arm64_x86_64-maccatalyst")
+    echo "maccatalyst"
+    ;;
+  "STK.xcframework/ios-arm64_x86_64-simulator")
+    echo "simulator"
+    ;;
+  "STK.xcframework/macos-arm64_x86_64")
+    echo ""
+    ;;
+  "STK.xcframework/tvos-arm64")
+    echo ""
+    ;;
+  "STK.xcframework/tvos-arm64_x86_64-simulator")
+    echo "simulator"
+    ;;
+  "soundpipe.xcframework/ios-arm64")
+    echo ""
+    ;;
+  "soundpipe.xcframework/ios-arm64_x86_64-maccatalyst")
+    echo "maccatalyst"
+    ;;
+  "soundpipe.xcframework/ios-arm64_x86_64-simulator")
+    echo "simulator"
+    ;;
+  "soundpipe.xcframework/macos-arm64_x86_64")
+    echo ""
+    ;;
+  "soundpipe.xcframework/tvos-arm64")
+    echo ""
+    ;;
+  "soundpipe.xcframework/tvos-arm64_x86_64-simulator")
+    echo "simulator"
+    ;;
+  "sporth.xcframework/ios-arm64")
+    echo ""
+    ;;
+  "sporth.xcframework/ios-arm64_x86_64-maccatalyst")
+    echo "maccatalyst"
+    ;;
+  "sporth.xcframework/ios-arm64_x86_64-simulator")
+    echo "simulator"
+    ;;
+  "sporth.xcframework/macos-arm64_x86_64")
+    echo ""
+    ;;
+  "sporth.xcframework/tvos-arm64")
+    echo ""
+    ;;
+  "sporth.xcframework/tvos-arm64_x86_64-simulator")
+    echo "simulator"
+    ;;
+  esac
+}
+
+archs_for_slice()
+{
+  case "$1" in
+  "CAudioKit.xcframework/ios-arm64")
+    echo "arm64"
+    ;;
+  "CAudioKit.xcframework/ios-arm64_x86_64-maccatalyst")
+    echo "arm64 x86_64"
+    ;;
+  "CAudioKit.xcframework/ios-arm64_x86_64-simulator")
+    echo "arm64 x86_64"
+    ;;
+  "CAudioKit.xcframework/macos-arm64_x86_64")
+    echo "arm64 x86_64"
+    ;;
+  "CAudioKit.xcframework/tvos-arm64")
+    echo "arm64"
+    ;;
+  "CAudioKit.xcframework/tvos-arm64_x86_64-simulator")
+    echo "arm64 x86_64"
+    ;;
+  "AudioKit.xcframework/ios-arm64")
+    echo "arm64"
+    ;;
+  "AudioKit.xcframework/ios-arm64_x86_64-maccatalyst")
+    echo "arm64 x86_64"
+    ;;
+  "AudioKit.xcframework/ios-arm64_x86_64-simulator")
+    echo "arm64 x86_64"
+    ;;
+  "AudioKit.xcframework/macos-arm64_x86_64")
+    echo "arm64 x86_64"
+    ;;
+  "AudioKit.xcframework/tvos-arm64")
+    echo "arm64"
+    ;;
+  "AudioKit.xcframework/tvos-arm64_x86_64-simulator")
+    echo "arm64 x86_64"
+    ;;
+  "STK.xcframework/ios-arm64")
+    echo "arm64"
+    ;;
+  "STK.xcframework/ios-arm64_x86_64-maccatalyst")
+    echo "arm64 x86_64"
+    ;;
+  "STK.xcframework/ios-arm64_x86_64-simulator")
+    echo "arm64 x86_64"
+    ;;
+  "STK.xcframework/macos-arm64_x86_64")
+    echo "arm64 x86_64"
+    ;;
+  "STK.xcframework/tvos-arm64")
+    echo "arm64"
+    ;;
+  "STK.xcframework/tvos-arm64_x86_64-simulator")
+    echo "arm64 x86_64"
+    ;;
+  "soundpipe.xcframework/ios-arm64")
+    echo "arm64"
+    ;;
+  "soundpipe.xcframework/ios-arm64_x86_64-maccatalyst")
+    echo "arm64 x86_64"
+    ;;
+  "soundpipe.xcframework/ios-arm64_x86_64-simulator")
+    echo "arm64 x86_64"
+    ;;
+  "soundpipe.xcframework/macos-arm64_x86_64")
+    echo "arm64 x86_64"
+    ;;
+  "soundpipe.xcframework/tvos-arm64")
+    echo "arm64"
+    ;;
+  "soundpipe.xcframework/tvos-arm64_x86_64-simulator")
+    echo "arm64 x86_64"
+    ;;
+  "sporth.xcframework/ios-arm64")
+    echo "arm64"
+    ;;
+  "sporth.xcframework/ios-arm64_x86_64-maccatalyst")
+    echo "arm64 x86_64"
+    ;;
+  "sporth.xcframework/ios-arm64_x86_64-simulator")
+    echo "arm64 x86_64"
+    ;;
+  "sporth.xcframework/macos-arm64_x86_64")
+    echo "arm64 x86_64"
+    ;;
+  "sporth.xcframework/tvos-arm64")
+    echo "arm64"
+    ;;
+  "sporth.xcframework/tvos-arm64_x86_64-simulator")
+    echo "arm64 x86_64"
+    ;;
+  esac
+}
+
 copy_dir()
 {
   local source="$1"
@@ -27,7 +219,9 @@ copy_dir()
 SELECT_SLICE_RETVAL=""
 
 select_slice() {
-  local paths=("$@")
+  local xcframework_name="$1"
+  xcframework_name="${xcframework_name##*/}"
+  local paths=("${@:2}")
   # Locate the correct slice of the .xcframework for the current architectures
   local target_path=""
 
@@ -43,29 +237,15 @@ select_slice() {
   fi
   for i in ${!paths[@]}; do
     local matched_all_archs="1"
-    for target_arch in $target_archs
-    do
-      if ! [[ "${paths[$i]}" == *"$target_variant"* ]]; then
+    local slice_archs="$(archs_for_slice "${xcframework_name}/${paths[$i]}")"
+    local slice_variant="$(variant_for_slice "${xcframework_name}/${paths[$i]}")"
+    for target_arch in $target_archs; do
+      if ! [[ "${slice_variant}" == "$target_variant" ]]; then
         matched_all_archs="0"
         break
       fi
 
-      # Verifies that the path contains the variant string (simulator or maccatalyst) if the variant is set.
-      if [[ -z "$target_variant" && ("${paths[$i]}" == *"simulator"* || "${paths[$i]}" == *"maccatalyst"*) ]]; then
-        matched_all_archs="0"
-        break
-      fi
-
-      # This regex matches all possible variants of the arch in the folder name:
-      # Let's say the folder name is: ios-armv7_armv7s_arm64_arm64e/CoconutLib.framework
-      # We match the following: -armv7_, _armv7s_, _arm64_ and _arm64e/.
-      # If we have a specific variant: ios-i386_x86_64-simulator/CoconutLib.framework
-      # We match the following: -i386_ and _x86_64-
-      # When the .xcframework wraps a static library, the folder name does not include
-      # any .framework. In that case, the folder name can be: ios-arm64_armv7
-      # We also match _armv7$ to handle that case.
-      local target_arch_regex="[_\-]${target_arch}([\/_\-]|$)"
-      if ! [[ "${paths[$i]}" =~ $target_arch_regex ]]; then
+      if ! echo "${slice_archs}" | tr " " "\n" | grep -F -q -x "$target_arch"; then
         matched_all_archs="0"
         break
       fi
@@ -87,10 +267,10 @@ install_xcframework() {
   local paths=("${@:4}")
 
   # Locate the correct slice of the .xcframework for the current architectures
-  select_slice "${paths[@]}"
+  select_slice "${basepath}" "${paths[@]}"
   local target_path="$SELECT_SLICE_RETVAL"
   if [[ -z "$target_path" ]]; then
-    echo "warning: [CP] Unable to find matching .xcframework slice in '${paths[@]}' for the current build architectures ($ARCHS)."
+    echo "warning: [CP] $(basename ${basepath}): Unable to find matching slice in '${paths[@]}' for the current build architectures ($ARCHS) and platform (${EFFECTIVE_PLATFORM_NAME-${PLATFORM_NAME}})."
     return
   fi
   local source="$basepath/$target_path"
@@ -107,7 +287,7 @@ install_xcframework() {
 
 install_xcframework "${PODS_ROOT}/AudioKit/CAudioKit.xcframework" "AudioKit/C" "framework" "ios-arm64" "ios-arm64_x86_64-maccatalyst" "ios-arm64_x86_64-simulator"
 install_xcframework "${PODS_ROOT}/AudioKit/AudioKit.xcframework" "AudioKit/Core" "framework" "ios-arm64" "ios-arm64_x86_64-maccatalyst" "ios-arm64_x86_64-simulator"
-install_xcframework "${PODS_ROOT}/AudioKit/STK.xcframework" "AudioKit/STK" "framework" "ios-arm64_x86_64-simulator" "ios-arm64_x86_64-maccatalyst" "ios-arm64"
-install_xcframework "${PODS_ROOT}/AudioKit/soundpipe.xcframework" "AudioKit/Soundpipe" "framework" "ios-arm64_x86_64-simulator" "ios-arm64" "ios-arm64_x86_64-maccatalyst"
-install_xcframework "${PODS_ROOT}/AudioKit/sporth.xcframework" "AudioKit/Sporth" "framework" "ios-arm64" "ios-arm64_x86_64-simulator" "ios-arm64_x86_64-maccatalyst"
+install_xcframework "${PODS_ROOT}/AudioKit/STK.xcframework" "AudioKit/STK" "framework" "ios-arm64" "ios-arm64_x86_64-maccatalyst" "ios-arm64_x86_64-simulator"
+install_xcframework "${PODS_ROOT}/AudioKit/soundpipe.xcframework" "AudioKit/Soundpipe" "framework" "ios-arm64" "ios-arm64_x86_64-maccatalyst" "ios-arm64_x86_64-simulator"
+install_xcframework "${PODS_ROOT}/AudioKit/sporth.xcframework" "AudioKit/Sporth" "framework" "ios-arm64" "ios-arm64_x86_64-maccatalyst" "ios-arm64_x86_64-simulator"
 

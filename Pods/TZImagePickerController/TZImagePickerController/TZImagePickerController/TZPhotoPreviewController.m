@@ -79,9 +79,7 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     [UIApplication sharedApplication].statusBarHidden = YES;
-    if (_currentIndex) {
-        [_collectionView setContentOffset:CGPointMake((self.view.tz_width + 20) * self.currentIndex, 0) animated:NO];
-    }
+    [_collectionView setContentOffset:CGPointMake((self.view.tz_width + 20) * self.currentIndex, 0) animated:NO];
     [self refreshNaviBarAndBottomBarState];
 }
 
@@ -212,6 +210,7 @@
     }
     [self.view addSubview:_collectionView];
     [_collectionView registerClass:[TZPhotoPreviewCell class] forCellWithReuseIdentifier:@"TZPhotoPreviewCell"];
+    [_collectionView registerClass:[TZPhotoPreviewCell class] forCellWithReuseIdentifier:@"TZPhotoPreviewCellGIF"];
     [_collectionView registerClass:[TZVideoPreviewCell class] forCellWithReuseIdentifier:@"TZVideoPreviewCell"];
     [_collectionView registerClass:[TZGifPreviewCell class] forCellWithReuseIdentifier:@"TZGifPreviewCell"];
     
@@ -503,7 +502,8 @@
             [weakSelf didICloudSyncStatusChanged:model];
         };
     } else {
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TZPhotoPreviewCell" forIndexPath:indexPath];
+        NSString *reuseId = model.type == TZAssetModelMediaTypePhotoGif ? @"TZPhotoPreviewCellGIF" : @"TZPhotoPreviewCell";
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseId forIndexPath:indexPath];
         TZPhotoPreviewCell *photoPreviewCell = (TZPhotoPreviewCell *)cell;
         photoPreviewCell.cropRect = _tzImagePickerVc.cropRect;
         photoPreviewCell.allowCrop = _tzImagePickerVc.allowCrop;

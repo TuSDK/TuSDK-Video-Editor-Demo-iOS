@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.4.4)
+  - Alamofire (5.8.1)
   - AudioKit (5.1.0):
     - AudioKit/C (= 5.1.0)
     - AudioKit/Core (= 5.1.0)
@@ -16,8 +16,7 @@ PODS:
   - AudioKit/Sporth (5.1.0):
     - AudioKit/Soundpipe
   - AudioKit/STK (5.1.0)
-  - AvailableHapticFeedback (1.0.2)
-  - Bugly (2.5.90)
+  - AvailableHapticFeedback (1.0.4)
   - ColorSlider (4.4)
   - FCFileManager (1.0.20)
   - Gifu (3.3)
@@ -30,13 +29,16 @@ PODS:
   - RSKPlaceholderTextView (6.0.3)
   - SnapKit (4.2.0)
   - SVProgressHUD (2.2.5)
-  - SweeterSwift (1.1.4)
-  - TZImagePickerController (3.6.6)
+  - SweeterSwift (1.2.3)
+  - TZImagePickerController (3.8.4):
+    - TZImagePickerController/Basic (= 3.8.4)
+    - TZImagePickerController/Location (= 3.8.4)
+  - TZImagePickerController/Basic (3.8.4)
+  - TZImagePickerController/Location (3.8.4)
 
 DEPENDENCIES:
   - Alamofire
   - AudioKit
-  - Bugly
   - ColorSlider (from `https://github.com/TintGit/ColorSlider.git`, tag `4.4`)
   - FCFileManager
   - Gifu (= 3.3)
@@ -52,7 +54,6 @@ SPEC REPOS:
     - Alamofire
     - AudioKit
     - AvailableHapticFeedback
-    - Bugly
     - FCFileManager
     - Gifu
     - HandyJSON
@@ -75,10 +76,9 @@ CHECKOUT OPTIONS:
     :tag: '4.4'
 
 SPEC CHECKSUMS:
-  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
   AudioKit: 81246a4ccdd7ca3c6e0076f913070e90987b4369
-  AvailableHapticFeedback: 9b21b9f6d3e4566015988b5de35b40abefe6c09a
-  Bugly: 88bc32c0acc6fef7b74d610f0319ee7560d6b9fe
+  AvailableHapticFeedback: cd3cb476743764b3efe8645d25e6b359d375ddb0
   ColorSlider: d4bdb56d2a8197e6a24b8e4672e9c81157f60e4d
   FCFileManager: e0f73316e6aa2eb04d2ff4caa75fe7df1ae44270
   Gifu: 97c2a3c3865fbc834ab13f797e2e8e7729a1853c
@@ -88,9 +88,9 @@ SPEC CHECKSUMS:
   RSKPlaceholderTextView: fc8c8932546298ec9d5e5572284aa42adb87b066
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  SweeterSwift: 8a90cf3156f5a1b6f39785c479369a16633b5ea9
-  TZImagePickerController: edf61b8e87f26e3e445aa50eb66254bd7f4859db
+  SweeterSwift: 3910bab8ba35b6964d5169a3c52b2c87d930b61c
+  TZImagePickerController: f1c9f1cae6ac0e30b31aaa9698f9bf4a7cf5b84f
 
-PODFILE CHECKSUM: 5b23eca1e7470278faa13df2461f39128024d888
+PODFILE CHECKSUM: 9fd0b51709ffa9ff2633ffb04afe4dc55496f67a
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.13.0

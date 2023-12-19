@@ -20,7 +20,7 @@ target 'TuSDKVEDemo' do
    pod 'ColorSlider',:git => 'https://github.com/TintGit/ColorSlider.git' , :tag => '4.4'
    pod 'RSKGrowingTextView','6.0.3'
    pod 'HandyJSON', '~> 5.0.2'
-   pod 'Bugly'
+#   pod 'Bugly'
    pod 'FCFileManager'
    pod 'Alamofire'
    pod 'AudioKit'

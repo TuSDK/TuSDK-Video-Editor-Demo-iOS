@@ -12,7 +12,7 @@
 #import <TuSDKVEDemo-Swift.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "TuTextOverlayView.h"
-#import <Bugly/Bugly.h>
+//#import <Bugly/Bugly.h>
 #ifdef DEBUG
 //#import <DoraemonKit/DoraemonManager.h>
 #endif
@@ -46,7 +46,7 @@
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[SceneViewController alloc] init]];
     [self.window makeKeyAndVisible];
-    [Bugly startWithAppId:@"5dd19afc0a"];
+//    [Bugly startWithAppId:@"5dd19afc0a"];
     
 #ifdef DEBUG
 //    [[DoraemonManager shareInstance] install];
